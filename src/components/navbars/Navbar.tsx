@@ -1,14 +1,13 @@
-import React, { FC } from 'react';
+import React, { FC, MouseEvent } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLanguage } from '@fortawesome/free-solid-svg-icons';
+import styled from 'styled-components/macro';
 
 import {
   Locales,
   localizationSelector,
   SET_LOCALE,
 } from '../../features/localization/localizationSlice';
-import styled from 'styled-components/macro';
 
 const Navbar: FC = (): JSX.Element => {
   const dispatch = useDispatch();
@@ -17,7 +16,7 @@ const Navbar: FC = (): JSX.Element => {
 
   // Thanks to currying I can pass a value in onClick
   const localizationHandler = (language: Locales) => (
-    e: React.MouseEvent<HTMLAnchorElement>
+    e: MouseEvent<HTMLAnchorElement>
   ) => {
     e.preventDefault();
     const newLocale = language as Locales;
@@ -29,7 +28,10 @@ const Navbar: FC = (): JSX.Element => {
     <NavbarContent>
       <strong>{navbarItem1}</strong>
       <NavbarDropdown>
-        <FontAwesomeLanguage icon={faLanguage} size="2x"></FontAwesomeLanguage>
+        <FontAwesomeLanguage
+          icon={['fas', 'language']}
+          size="2x"
+        ></FontAwesomeLanguage>
         <NavbarDropdownContent>
           <a href="!#" onClick={localizationHandler(Locales.PL)}>
             {Locales.PL}
