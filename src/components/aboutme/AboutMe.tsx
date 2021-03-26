@@ -7,7 +7,7 @@ const AboutMe: FC = (): JSX.Element => {
   const { aboutMeH1 } = localization;
 
   return (
-    <div>
+    <div className="body">
       <h1>{aboutMeH1}</h1>
 
       <br></br>

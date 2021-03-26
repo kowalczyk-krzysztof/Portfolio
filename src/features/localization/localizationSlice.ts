@@ -21,7 +21,6 @@ interface Locale {
 const locale_EN: Locale = {
   name: Locales.ENG,
   navbarItem1: 'About me',
-
   aboutMeH1: 'My personal project',
 };
 const locale_PL: Locale = {
