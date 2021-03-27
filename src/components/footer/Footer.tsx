@@ -5,9 +5,9 @@ export const BottomNavbar: FC = (): JSX.Element => {
   return (
     <footer>
       <div>
-        <p>Powered by:</p>
+        <p>Powered by: / ignore this i'll make this footer proper later</p>
         <FontAwesomeIcon
-          icon="react"
+          icon={['fab', 'react']}
           size="2x"
           color="#61dbfb"
         ></FontAwesomeIcon>
