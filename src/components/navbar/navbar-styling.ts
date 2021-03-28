@@ -12,11 +12,10 @@ export const StyledLogo = styled.h1`
 `;
 // Theme toggle
 export const StyledThemeToggle = styled.div`
-  display: block;
   order: 1;
+  display: block;
   text-align: center; /* for label to align I need to use text */
-  margin: 10px;
-  padding-right: 20px;
+  margin-right: 30px;
 
   /* How this works:
     // The box 
@@ -32,51 +31,45 @@ export const StyledThemeToggle = styled.div`
     8. Make a :checked:before and do a transform: translateX(the width of box). This will move circle to the other side of the box
   
    */
-  label {
-    input {
-      border: 3px solid #707070;
-      width: 50px;
-      height: 25px;
-      appearance: none; /* hides default checkbox*/
-      background: #fafafa;
-      outline: none;
-      border-radius: 20px; /* slider-like edges */
-      transition: 0.5s; /* slow translition between toggles */
-    }
+  input {
+    border: 3px solid #707070;
+    width: 50px;
+    height: 25px;
+    appearance: none; /* hides default checkbox*/
+    background: #fafafa;
+    outline: none;
+    border-radius: 20px; /* slider-like edges */
+    transition: 0.5s; /* slow translition between toggles */
+  }
 
-    input :checked {
-      background: #1b263b;
-    }
-    /* slider circle */
-    input :before {
-      content: ''; /* needs to be empty */
-      /* needs to be absolute*/
-      position: absolute;
+  input :checked {
+    background: #1b263b;
+  }
+  /* slider circle */
+  input :before {
+    content: ''; /* needs to be empty */
+    /* needs to be absolute*/
+    position: absolute;
 
-      margin: -3px; /*if I set a border then I need to add a margin of equal px to circle */
-      width: 25px;
-      height: 25px;
-      background: #415a77;
+    margin: -3px; /*if I set a border then I need to add a margin of equal px to circle */
+    width: 25px;
+    height: 25px;
+    background: #415a77;
 
-      border-radius: 50%;
-      transform: scale(
-        0.85
-      ); /* makes the circle slightly bigger than the rest */
-      transition: 0.5s;
-    }
+    border-radius: 50%;
+    transform: scale(0.85); /* makes the circle slightly bigger than the rest */
+    transition: 0.5s;
+  }
 
-    input :checked:before {
-      transform: scale(0.85) translateX(29px); /* this does the sliding process */
-    }
+  input :checked:before {
+    transform: scale(0.85) translateX(29px); /* this does the sliding process */
   }
 `;
 // Language toggle
 export const StyledLanguage = styled.div`
   order: 2;
-
   display: flex;
   justify-content: flex-end;
-  margin-right: 5px;
 
   button * {
     padding-right: 5px;
@@ -101,33 +94,29 @@ export const StyledLinks = styled.div`
     border-top: 1px ridge #e0e1dd;
     font-size: 18px;
   }
-
-  a :last-child {
-    border-bottom: 1px ridge #e0e1dd;
-  }
 `;
 // Menu button
 export const StyledMenuButton = styled.button`
   order: 3;
   font-size: 30px;
-  padding-left: 5px;
+  margin-left: 35px;
 `;
 /* Navbar
 The logic behind this:
 1. On screen width >= 576x this is just a regular flex container with display row - the menu button is hidden (display: none)
 2. On screen width < 576 px all the elements you want to hide are set to display: none and the menu button is displayed
-3. Menu button toggles display betwen none and block. To achieve the column-like look, the display has to be block AND width: 100%
+3. Menu button toggles display betwen none and block. To achieve the column-like look, the display has to be block AND width: 100% and IMPORTANT - flex-wrep: wrap HAS TO BE SET ON THE NAVBAR OTHERWISE ITEMS WON'T GET PUSHED TO NEW LINE
 */
 export const StyledNavbar = styled.nav`
-  /* position: sticky;
+  position: sticky;
   top: 0;
-  this makes it actually sticky */
+  z-index: 1;
+  /* Both of above make it actually sticky, z-index is not needed unless you have other z-index elements */
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   user-select: none;
-
   /*Those settings are for non-mobile devices */
   @media only screen and (min-width: 768px) {
     justify-content: flex-start;
@@ -135,14 +124,16 @@ export const StyledNavbar = styled.nav`
       display: none;
     }
 
-    * {
+    ${StyledLinks} {
       width: auto;
       display: inline-flex;
-    }
-
-    ${StyledLinks} {
       order: 1;
       flex: 1;
+      margin-right: 10px;
+
+      a {
+        border: none;
+      }
 
       a :first-child {
         background: #008adc;
@@ -151,11 +142,6 @@ export const StyledNavbar = styled.nav`
           background: #00a1f2;
         }
       }
-
-      a {
-        border: none;
-      }
-      margin-right: 10px;
     }
 
     ${StyledThemeToggle} {
@@ -170,7 +156,6 @@ export const StyledNavbar = styled.nav`
 
     ${StyledLanguage} {
       order: 3;
-
       align-items: center;
     }
   }

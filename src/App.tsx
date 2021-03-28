@@ -17,7 +17,6 @@ import Footer from './components/footer/Footer';
 import About from './components/about/About';
 import { themeSelector } from './features/themetoggle/themeToggleSlice';
 import { GlobalStyle } from './createGlobalStyle';
-
 // Adding icons to library makes it so I don't need to import them in every file
 library.add(faLanguage, faBars, faCircle, faReact, faTimes);
 
