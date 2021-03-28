@@ -1,5 +1,4 @@
 import { Locale } from './localizationSlice';
-
 // Values for locale names
 export enum LocaleNames {
   ENG = 'ENG',

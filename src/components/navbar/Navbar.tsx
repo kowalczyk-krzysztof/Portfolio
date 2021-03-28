@@ -8,7 +8,6 @@ import {
 // Styling
 import { StyledNavbar, StyledLogo, StyledMenuButton } from './navbar-styling';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
 // Components
 import LinkList from './LinkList';
 import ThemeToggle from './ThemeToggle';
@@ -34,9 +33,9 @@ const Navbar: FC = (): JSX.Element => {
           <FontAwesomeIcon icon="times" fixedWidth></FontAwesomeIcon>
         )}
       </StyledMenuButton>
-      <LanguageToggle></LanguageToggle>
-      <LinkList></LinkList>
-      <ThemeToggle></ThemeToggle>
+      <LanguageToggle />
+      <LinkList />
+      <ThemeToggle />
     </StyledNavbar>
   );
 };

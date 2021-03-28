@@ -18,9 +18,7 @@ export const ThemeToggle: FC = () => {
 
   return (
     <StyledThemeToggle>
-      <label>
-        <input type="checkbox" onClick={themeToggler}></input>
-      </label>
+      <input type="checkbox" onClick={themeToggler}></input>
     </StyledThemeToggle>
   );
 };

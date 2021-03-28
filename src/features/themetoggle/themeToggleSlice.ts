@@ -17,7 +17,6 @@ interface ThemeToggleProps {
 const initialState: ThemeToggleProps = {
   theme: lightTheme,
 };
-
 // Slice
 const themeToggleSlice = createSlice({
   name: `themeToggle`,
@@ -31,7 +30,6 @@ const themeToggleSlice = createSlice({
     },
   },
 });
-
 // Selectors
 export const themeSelector = (state: RootState) => state.themeToggle.theme;
 // Actions and reducer

@@ -7,7 +7,6 @@ interface MenuToggle {
 const initialState: MenuToggle = {
   menu: 'none',
 };
-
 // Slice
 const menuToggleSlice = createSlice({
   name: `menuToggle`,
@@ -21,7 +20,6 @@ const menuToggleSlice = createSlice({
     },
   },
 });
-
 // Selectors
 export const menuToggleSelector = (state: RootState) => state.menuToggle.menu;
 // Actions and reducer

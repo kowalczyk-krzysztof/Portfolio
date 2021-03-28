@@ -1,7 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from '../../app/store';
 import { locale_EN, locale_PL, LocaleNames } from './locales';
-
 // Interface for locale properties
 export interface Locale {
   name: LocaleNames;
@@ -18,7 +17,6 @@ interface Localization {
 const initialState: Localization = {
   locale: locale_EN,
 };
-
 // Slice
 const localizationSlice = createSlice({
   name: `localization`,
@@ -30,7 +28,6 @@ const localizationSlice = createSlice({
     },
   },
 });
-
 // Selectors
 export const localizationSelector = (state: RootState) =>
   state.localization.locale;

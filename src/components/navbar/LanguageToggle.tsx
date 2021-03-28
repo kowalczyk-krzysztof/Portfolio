@@ -11,7 +11,6 @@ import { StyledLanguage } from './navbar-styling';
 const LanguageToggle: FC = (): JSX.Element => {
   const dispatch = useDispatch();
   const localization = useSelector(localizationSelector);
-
   // Thanks to currying I can pass a value in onClick
   const localizationHandler = (language: LocaleNames) => (
     e: MouseEvent<HTMLButtonElement>
