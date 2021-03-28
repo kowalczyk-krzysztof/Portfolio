@@ -1,10 +1,4 @@
 import styled from 'styled-components/macro';
-// MobileDropDownItem
-const MobileDropDownItem = styled.div`
-  width: 100%;
-  display: ${(props) => props.id};
-`;
-
 // Logo
 export const StyledLogo = styled.h1`
   flex: 1;
@@ -17,12 +11,86 @@ export const StyledLogo = styled.h1`
   }
 `;
 // Theme toggle
-export const StyledThemeToggle = styled(MobileDropDownItem)`
-  order: 3;
+export const StyledThemeToggle = styled.div`
+  display: block;
+  order: 1;
   text-align: center; /* for label to align I need to use text */
+  margin: 10px;
+  padding-right: 20px;
+
+  /* How this works:
+    // The box 
+    1. You make a checkbox and hide the appeareance of it so the ugly default one goes away
+    2. Define the width and height of the box
+    3. Do border radius 20px for smooth circle-like edges
+    // Circle in the box
+    4. Add a :before with content of empty string (important, otherwise it won't work)
+    5. Make the position absolute (important!!!!)
+    6. Set the height the same as the box and width as half of the box, do border-radius 20px for edges
+    7. Do a transform: scale(1.1) to make it slightly bigger than the box
+    // Sliding the cricle
+    8. Make a :checked:before and do a transform: translateX(the width of box). This will move circle to the other side of the box
+  
+   */
+  label {
+    input {
+      border: 3px solid #707070;
+      width: 50px;
+      height: 25px;
+      appearance: none; /* hides default checkbox*/
+      background: #fafafa;
+      outline: none;
+      border-radius: 20px; /* slider-like edges */
+      transition: 0.5s; /* slow translition between toggles */
+    }
+
+    input :checked {
+      background: #1b263b;
+    }
+    /* slider circle */
+    input :before {
+      content: ''; /* needs to be empty */
+      /* needs to be absolute*/
+      position: absolute;
+
+      margin: -3px; /*if I set a border then I need to add a margin of equal px to circle */
+      width: 25px;
+      height: 25px;
+      background: #415a77;
+
+      border-radius: 50%;
+      transform: scale(
+        0.85
+      ); /* makes the circle slightly bigger than the rest */
+      transition: 0.5s;
+    }
+
+    input :checked:before {
+      transform: scale(0.85) translateX(29px); /* this does the sliding process */
+    }
+  }
+`;
+// Language toggle
+export const StyledLanguage = styled.div`
+  order: 2;
+
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 5px;
+
+  button * {
+    padding-right: 5px;
+  }
+
+  button:hover {
+    transform: scale(1.1, 1.1);
+    cursor: pointer;
+  }
 `;
 // Links
-export const StyledLinks = styled(MobileDropDownItem)`
+export const StyledLinks = styled.div`
+  width: 100%;
+  display: ${(props) => props.id};
   order: 3;
   a {
     /* inline components can't have any align properites so this has to be a block*/
@@ -38,25 +106,9 @@ export const StyledLinks = styled(MobileDropDownItem)`
     border-bottom: 1px ridge #e0e1dd;
   }
 `;
-// Language toggle
-export const StyledLanguage = styled.div`
-  order: 1;
-  display: flex;
-  justify-content: flex-end;
-  margin-right: 5px;
-
-  button * {
-    padding-right: 5px;
-  }
-
-  button:hover {
-    transform: scale(1.1, 1.1);
-    cursor: pointer;
-  }
-`;
 // Menu button
 export const StyledMenuButton = styled.button`
-  order: 2;
+  order: 3;
   font-size: 30px;
   padding-left: 5px;
 `;
@@ -77,7 +129,7 @@ export const StyledNavbar = styled.nav`
   user-select: none;
 
   /*Those settings are for non-mobile devices */
-  @media only screen and (min-width: 576px) {
+  @media only screen and (min-width: 768px) {
     justify-content: flex-start;
     ${StyledMenuButton} {
       display: none;
@@ -118,6 +170,7 @@ export const StyledNavbar = styled.nav`
 
     ${StyledLanguage} {
       order: 3;
+
       align-items: center;
     }
   }

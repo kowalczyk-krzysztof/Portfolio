@@ -8,8 +8,6 @@ export interface ThemeProps {
   name: ThemeNames;
   body: string;
   text: string;
-  navbarBg: string;
-  navbarLinkHover: string;
 }
 
 interface ThemeToggleProps {

@@ -5,14 +5,12 @@ import {
   SET_LOCALE,
 } from '../../features/localization/localizationSlice';
 import { LocaleNames } from '../../features/localization/locales';
-import { menuToggleSelector } from '../../features/menutoggle/menuToggleSlice';
 // Styling
 import { StyledLanguage } from './navbar-styling';
 
 const LanguageToggle: FC = (): JSX.Element => {
   const dispatch = useDispatch();
   const localization = useSelector(localizationSelector);
-  const display = useSelector(menuToggleSelector);
 
   // Thanks to currying I can pass a value in onClick
   const localizationHandler = (language: LocaleNames) => (
@@ -25,7 +23,7 @@ const LanguageToggle: FC = (): JSX.Element => {
   };
 
   return (
-    <StyledLanguage id={display}>
+    <StyledLanguage>
       <button onClick={localizationHandler(LocaleNames.ENG)}>
         <img
           src={`${process.env.PUBLIC_URL}/flag_ENG.png`}

@@ -28,7 +28,7 @@ export const GlobalStyle = createGlobalStyle<CustomTheme>`
     font-weight: 400;
  }
   ${StyledNavbar} {
-    background: ${({ theme }) => theme.navbarBg};
+    background: #0D1B2A;
 
     button {
       outline: none;
@@ -45,7 +45,7 @@ export const GlobalStyle = createGlobalStyle<CustomTheme>`
    
 
     a:hover {
-      background: ${({ theme }) => theme.navbarLinkHover};
+      background: #415A77;
     }
   }
 `;
@@ -54,15 +54,9 @@ export const lightTheme: ThemeProps = {
   name: ThemeNames.LIGHT,
   body: '#FFFF',
   text: '#363537',
-  navbarBg: '#0D1B2A',
-  navbarLinkHover: '#415A77',
 };
 export const darkTheme: ThemeProps = {
   name: ThemeNames.DARK,
   body: '#1B263B',
   text: '#E0E1DD',
-  navbarBg: '#0D1B2A',
-  navbarLinkHover: '#415A77',
 };
-
-// const styledFormatting = styled.div``;
