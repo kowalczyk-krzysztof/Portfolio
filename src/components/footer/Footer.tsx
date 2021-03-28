@@ -9,7 +9,9 @@ export const BottomNavbar: FC = (): JSX.Element => {
         <FontAwesomeIcon
           icon={['fab', 'react']}
           size="2x"
-          color="#61dbfb"
+          style={{ color: '#61dbfb' }}
+          mask={['fas', 'circle']}
+          flip="horizontal"
         ></FontAwesomeIcon>
       </div>
     </footer>

@@ -1,90 +1,124 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styled from 'styled-components/macro';
-
-// Default dropdown content - has to be invisible
-export const StyledDropdownContent = styled.div`
-  display: none;
-  position: absolute;
-`;
-// Dropdown "button"
-export const StyledDropdown = styled.div`
-  order: 3;
-  background: inherit;
-  :hover ${StyledDropdownContent} {
-    display: flex;
-    flex-direction: column;
-    background: inherit;
-
-    button {
-      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-      background: inherit;
-      color: #fafafa;
-      border: none;
-      outline: none; // makes it so there's no outline on click
-    }
-  }
-`;
-// Icon for mobile dropdown menu
-export const StyledBarsIcon = styled(FontAwesomeIcon)`
-  color: #fafafa;
-  display: none;
-  order: 4;
-`;
-// Icon for dropndown menu for language toggling
-export const StyledLanguageIcon = styled(FontAwesomeIcon)`
-  color: #fafafa;
-  margin: 5px;
-`;
-// Navbar
-export const StyledNavbar = styled.nav`
-  position: sticky;
-  top: 0; // this + sticky makes it actually sticky
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  flex-basis: 100%;
-  @media only screen and (max-width: 600px) {
-    div:not(:first-child) {
-      display: none;
-    }
-
-    div:first-child a:not(:first-child) {
-      display: none;
-    }
-
-    div:first-child a:first-child:after {
-      content: '';
-    }
-
-    ${StyledBarsIcon} {
-      display: block;
-      margin-right: 5px;
-    }
-  }
+// MobileDropDownItem
+const MobileDropDownItem = styled.div`
+  width: 100%;
+  display: ${(props) => props.id};
 `;
 
-// Navbar links
-export const StyledLinks = styled.div`
+// Logo
+export const StyledLogo = styled.h1`
   flex: 1;
   order: 1;
-  // Aligns have no effect on inline elements
-  a:first-of-type {
-    background: #007d00;
-    padding: 15px;
-    :hover {
-      background: #00bf00;
-    }
-  }
+  font-size: 20px;
+  margin-left: 20px;
 
-  a {
+  :hover {
     color: #fafafa;
-    padding: 15px;
-    text-decoration: none;
-    display: inline-flex;
   }
 `;
 // Theme toggle
-export const StyledThemeToggle = styled.div`
+export const StyledThemeToggle = styled(MobileDropDownItem)`
+  order: 3;
+  text-align: center; /* for label to align I need to use text */
+`;
+// Links
+export const StyledLinks = styled(MobileDropDownItem)`
+  order: 3;
+  a {
+    /* inline components can't have any align properites so this has to be a block*/
+    display: block;
+    padding: 15px 15px 15px 15px;
+    text-decoration: none;
+    text-align: center;
+    border-top: 1px ridge #e0e1dd;
+    font-size: 18px;
+  }
+
+  a :last-child {
+    border-bottom: 1px ridge #e0e1dd;
+  }
+`;
+// Language toggle
+export const StyledLanguage = styled.div`
+  order: 1;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 5px;
+
+  button * {
+    padding-right: 5px;
+  }
+
+  button:hover {
+    transform: scale(1.1, 1.1);
+    cursor: pointer;
+  }
+`;
+// Menu button
+export const StyledMenuButton = styled.button`
   order: 2;
-  margin-right: 10px;
+  font-size: 30px;
+  padding-left: 5px;
+`;
+/* Navbar
+The logic behind this:
+1. On screen width >= 576x this is just a regular flex container with display row - the menu button is hidden (display: none)
+2. On screen width < 576 px all the elements you want to hide are set to display: none and the menu button is displayed
+3. Menu button toggles display betwen none and block. To achieve the column-like look, the display has to be block AND width: 100%
+*/
+export const StyledNavbar = styled.nav`
+  /* position: sticky;
+  top: 0;
+  this makes it actually sticky */
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  user-select: none;
+
+  /*Those settings are for non-mobile devices */
+  @media only screen and (min-width: 576px) {
+    justify-content: flex-start;
+    ${StyledMenuButton} {
+      display: none;
+    }
+
+    * {
+      width: auto;
+      display: inline-flex;
+    }
+
+    ${StyledLinks} {
+      order: 1;
+      flex: 1;
+
+      a :first-child {
+        background: #008adc;
+
+        :hover {
+          background: #00a1f2;
+        }
+      }
+
+      a {
+        border: none;
+      }
+      margin-right: 10px;
+    }
+
+    ${StyledThemeToggle} {
+      order: 2;
+      border: none;
+    }
+
+    ${StyledLogo} {
+      flex: 0;
+      margin-right: 30px;
+    }
+
+    ${StyledLanguage} {
+      order: 3;
+      align-items: center;
+    }
+  }
 `;
