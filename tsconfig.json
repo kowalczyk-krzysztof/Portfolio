@@ -2,19 +2,6 @@
   "compilerOptions": {
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
-    "plugins": [
-      {
-        "name": "typescript-styled-plugin",
-        "tags": [
-          "styled",
-          "css",
-          "sty",
-          "createGlobalStyle",
-          "createGlobalStyle<CustomTheme>"
-        ]
-      }
-    ],
-
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
