@@ -5,7 +5,12 @@ import { ThemeProvider } from 'styled-components';
 // FontAwesome
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faReact } from '@fortawesome/free-brands-svg-icons';
-import { faLanguage, faBars } from '@fortawesome/free-solid-svg-icons';
+import {
+  faLanguage,
+  faBars,
+  faCircle,
+  faTimes,
+} from '@fortawesome/free-solid-svg-icons';
 // Components
 import Navbar from './components/navbar/Navbar';
 import Footer from './components/footer/Footer';
@@ -14,7 +19,7 @@ import { themeSelector } from './features/themetoggle/themeToggleSlice';
 import { GlobalStyle } from './createGlobalStyle';
 
 // Adding icons to library makes it so I don't need to import them in every file
-library.add(faLanguage, faReact, faBars);
+library.add(faLanguage, faBars, faCircle, faReact, faTimes);
 
 const App = (): JSX.Element => {
   // Assigning a theme based on store

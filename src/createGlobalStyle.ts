@@ -18,29 +18,51 @@ export interface CustomTheme {
 }
 
 export const GlobalStyle = createGlobalStyle<CustomTheme>`
-body {
-   background: ${({ theme }) => theme.body};
-   color: ${({ theme }) => theme.text};
-   margin: 0px;
+ 
+ body {
+    background: ${({ theme }) => theme.body};
+    color: ${({ theme }) => theme.text};
+    margin: 0px;
+    font-size: 18px;
+    font-family: 'Lato';
+    font-weight: 400;
  }
   ${StyledNavbar} {
-    background:${({ theme }) => theme.navbarBg};
-    a:hover{
-      background:${({ theme }) => theme.navbarLinkHover}
-    }}
+    background: ${({ theme }) => theme.navbarBg};
+
+    button {
+      outline: none;
+      border: none;
+      
+    }
+
+    * {
+      color: #E0E1DD;
+      background: inherit;
+      
+    }
+
+   
+
+    a:hover {
+      background: ${({ theme }) => theme.navbarLinkHover};
+    }
+  }
 `;
 
 export const lightTheme: ThemeProps = {
   name: ThemeNames.LIGHT,
   body: '#FFFF',
   text: '#363537',
-  navbarBg: '#3b5998',
-  navbarLinkHover: '#8b9dc3',
+  navbarBg: '#0D1B2A',
+  navbarLinkHover: '#415A77',
 };
 export const darkTheme: ThemeProps = {
   name: ThemeNames.DARK,
-  body: '#222222',
-  text: '#FAFAFA',
-  navbarBg: '#0f4c75',
-  navbarLinkHover: '#3282b8',
+  body: '#1B263B',
+  text: '#E0E1DD',
+  navbarBg: '#0D1B2A',
+  navbarLinkHover: '#415A77',
 };
+
+// const styledFormatting = styled.div``;
