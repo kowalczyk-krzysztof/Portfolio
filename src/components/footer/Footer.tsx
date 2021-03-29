@@ -1,20 +1,16 @@
 import React, { FC } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// Components
+import ContactLinks from './ContactLinks';
+import Copyright from './Copyright';
+// Styling
+import { StyledFooter } from './footer-styling';
 
 export const BottomNavbar: FC = (): JSX.Element => {
   return (
-    <footer>
-      <div>
-        <p>Powered by: / ignore this i'll make this footer proper later</p>
-        <FontAwesomeIcon
-          icon={['fab', 'react']}
-          size="2x"
-          style={{ color: '#61dbfb' }}
-          mask={['fas', 'circle']}
-          flip="horizontal"
-        ></FontAwesomeIcon>
-      </div>
-    </footer>
+    <StyledFooter>
+      <ContactLinks />
+      <Copyright />
+    </StyledFooter>
   );
 };
 

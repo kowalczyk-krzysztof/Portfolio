@@ -5,7 +5,7 @@ import {
   SET_THEME_LIGHT,
 } from '../../features/themetoggle/themeToggleSlice';
 // Styling
-import { StyledThemeToggle } from './navbar-styling';
+import { StyledThemeToggle, StyledThemeToggleSlider } from './navbar-styling';
 
 export const ThemeToggle: FC = () => {
   const dispatch = useDispatch();
@@ -18,7 +18,10 @@ export const ThemeToggle: FC = () => {
 
   return (
     <StyledThemeToggle>
-      <input type="checkbox" onClick={themeToggler}></input>
+      <StyledThemeToggleSlider
+        type="checkbox"
+        onClick={themeToggler}
+      ></StyledThemeToggleSlider>
     </StyledThemeToggle>
   );
 };

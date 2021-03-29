@@ -6,7 +6,7 @@ import {
 } from '../../features/localization/localizationSlice';
 import { LocaleNames } from '../../features/localization/locales';
 // Styling
-import { StyledLanguage } from './navbar-styling';
+import { StyledLanguage, StyledLanguageButtons } from './navbar-styling';
 
 const LanguageToggle: FC = (): JSX.Element => {
   const dispatch = useDispatch();
@@ -17,21 +17,24 @@ const LanguageToggle: FC = (): JSX.Element => {
   ) => {
     e.preventDefault();
     const newLocale = language as LocaleNames;
-
-    if (localization.name !== newLocale) dispatch(SET_LOCALE(newLocale));
+    // This timeout here is needed because of how I implemented collapsing dropdown menu ( refer to clickAway method in MenuButton.tsx ) Without the timeout, the links in dropdown menu would get their names changed before the menu collapses, leading to a weird flash.
+    if (localization.name !== newLocale)
+      setTimeout(() => {
+        dispatch(SET_LOCALE(newLocale));
+      }, 101);
   };
 
   return (
     <StyledLanguage>
-      <button onClick={localizationHandler(LocaleNames.ENG)}>
+      <StyledLanguageButtons onClick={localizationHandler(LocaleNames.ENG)}>
         <img
           src={`${process.env.PUBLIC_URL}/flag_ENG.png`}
           alt="flag_ENG"
-        ></img>{' '}
-      </button>
-      <button onClick={localizationHandler(LocaleNames.PL)}>
+        ></img>
+      </StyledLanguageButtons>
+      <StyledLanguageButtons onClick={localizationHandler(LocaleNames.PL)}>
         <img src={`${process.env.PUBLIC_URL}/flag_PL.png`} alt="flag_PL"></img>
-      </button>
+      </StyledLanguageButtons>
     </StyledLanguage>
   );
 };
