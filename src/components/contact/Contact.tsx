@@ -1,15 +1,13 @@
 import React, { FC } from 'react';
-import { useSelector } from 'react-redux';
-import { localizationSelector } from '../../features/localization/localizationSlice';
+// import { useSelector } from 'react-redux';
+// import { localizationSelector } from '../../features/localization/localizationSlice';
 
-const About: FC = (): JSX.Element => {
-  const localization = useSelector(localizationSelector);
-  const { aboutH1 } = localization;
+const Contact: FC = (): JSX.Element => {
+  // const localization = useSelector(localizationSelector);
 
   return (
     <div>
-      <h1>{aboutH1}</h1>
-
+      <h1>Yolo</h1>
       <p>
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Non rerum
         recusandae voluptatibus expedita doloremque quisquam sunt aperiam
@@ -122,24 +120,8 @@ const About: FC = (): JSX.Element => {
         temporibus non distinctio explicabo expedita maxime iure praesentium! Ea
         tempora quaerat magnam iure ducimus corporis.
       </p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorum error
-        voluptas alias nobis! Quibusdam eligendi suscipit repellat nostrum
-        possimus minus unde inventore, perferendis cumque corporis iste nesciunt
-        aliquam sunt, vel eaque est provident iusto nam quis, perspiciatis
-        saepe? Iusto blanditiis, suscipit harum magni iste pariatur natus minus
-        quod animi! Fugiat accusamus voluptatibus ipsa culpa! Nisi quidem ab non
-        officia quam similique nihil. Eaque voluptatum facere corrupti iure?
-        Blanditiis aut omnis qui laudantium officia pariatur earum, veniam
-        porro, dolore minima optio nihil dolor temporibus rerum? Sed cupiditate
-        quidem ex dolorem enim ipsum incidunt ipsam harum quibusdam? Repellat
-        sit sapiente reiciendis laborum ut incidunt qui, minus iure nihil libero
-        dolorum, cum fugiat non beatae architecto. Quae maiores minus
-        reiciendis. Eos ut nesciunt officiis, esse laborum obcaecati? Quasi
-        corporis dolorum harum.
-      </p>
     </div>
   );
 };
 
-export default About;
+export default Contact;

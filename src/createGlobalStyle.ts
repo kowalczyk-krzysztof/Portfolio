@@ -1,6 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
 import { ThemeProps } from './features/themetoggle/themeToggleSlice';
-import { StyledNavbar } from './components/navbar/navbar-styling';
 /*Styled components global ThemeProps explained.
 1. Define an interface that will contain all theme props
 2. Define an interface CustomTheme with property "theme" that will be of type "ThemeProps" and use it in createGlobalStyle<CustomTheme>
@@ -15,34 +14,26 @@ export interface CustomTheme {
 }
 
 export const GlobalStyle = createGlobalStyle<CustomTheme>`
+
+  html {
+   
+    font-size: 16px;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+  }
  
  body {
     background: ${({ theme }) => theme.body};
     color: ${({ theme }) => theme.text};
-    margin: 0px;
-    font-size: 18px;
+    margin: 0;
+    font-size: 1.125rem;
     font-family: 'Lato';
     font-weight: 400;
+    min-width: 320px;
+    padding-top: 54px;
+    
+    
+    /*  padding top is required for the navbar to not cut text if it's fixed */
  }
- 
- ${StyledNavbar} {
-    background: #0D1B2A;
-
-    * {
-      color: #E0E1DD;
-      background: inherit;   
-    }
-
-    button {
-      outline: none;
-      border: none;
-      
-    }
-
-    a:hover {
-      background: #415A77;
-    }
-  }
 `;
 
 export const lightTheme: ThemeProps = {
