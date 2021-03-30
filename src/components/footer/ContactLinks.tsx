@@ -1,15 +1,18 @@
 import React, { FC } from 'react';
 import { useSelector } from 'react-redux';
-import { localizationSelector } from '../../features/localization/localizationSlice';
+import {
+  localizationSelector,
+  Locale,
+} from '../../features/localization/localizationSlice';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // Styling
 import { StyledContactList } from './footer-styling';
 
 const ContactLinks: FC = (): JSX.Element => {
-  const localization = useSelector(localizationSelector);
+  const localization: Locale = useSelector(localizationSelector);
 
-  const { navbarContact } = localization;
+  const { navbarContact }: { navbarContact: string } = localization;
 
   const githubName: string = `${process.env.REACT_APP_GITHUB_USERNAME}`;
   const githubLink: string = `https://github.com/${githubName}`;

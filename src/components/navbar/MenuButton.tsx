@@ -4,6 +4,7 @@ import {
   SET_MENU_DISPLAY_NONE,
   SET_MENU_DISPLAY_BLOCK,
   menuToggleSelector,
+  MenuDisplay,
 } from '../../features/menutoggle/menuToggleSlice';
 // Styling
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -11,13 +12,14 @@ import { StyledMenuButton, StyledMenu } from './navbar-styling';
 
 const MenuButton: FC = (): JSX.Element => {
   const dispatch = useDispatch();
-  const display = useSelector(menuToggleSelector);
+  const display: MenuDisplay = useSelector(menuToggleSelector);
   // Toggling visibility of dropdown menu
-  const clickHandler = (e: MouseEvent<HTMLButtonElement>) => {
-    if (display === 'none') dispatch(SET_MENU_DISPLAY_BLOCK());
+  const clickHandler = (e: MouseEvent<HTMLButtonElement>): void => {
+    if (display === MenuDisplay.NONE) dispatch(SET_MENU_DISPLAY_BLOCK());
     else dispatch(SET_MENU_DISPLAY_NONE());
   };
 
+  // TODO: Fix onScroll
   // useEffect(() => {});
 
   // const test = () => {
@@ -26,14 +28,14 @@ const MenuButton: FC = (): JSX.Element => {
 
   // TODO: Make this so this dispatch only happens when you're actually scrolling not when you're scrolled
 
-  const scrollAway = () => {
+  const scrollAway = (): void => {
     dispatch(SET_MENU_DISPLAY_NONE());
 
     window.removeEventListener('scroll', scrollAway);
   };
 
   /* Collapsing dropdown on clicking away - dropdown menu consists of links and onBlur triggers before link's onClick, because of that there has to be a timeout or clicking on links would not work  */
-  const clickAway = (e: React.FocusEvent) => {
+  const clickAway = (e: React.FocusEvent): void => {
     if (display === 'none') return; // if dropdown is already collapsed, clickAway won't triger
     console.log('Clicked away');
     // console.log(e.relatedTarget);

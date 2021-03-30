@@ -10,8 +10,8 @@ import { StyledThemeToggle, StyledThemeToggleSlider } from './navbar-styling';
 export const ThemeToggle: FC = () => {
   const dispatch = useDispatch();
 
-  const themeToggler = (e: MouseEvent<HTMLInputElement>) => {
-    const isChecked = e.currentTarget.checked;
+  const themeToggler = (e: MouseEvent<HTMLInputElement>): void => {
+    const isChecked: boolean = e.currentTarget.checked;
     if (isChecked === true) dispatch(SET_THEME_DARK());
     if (isChecked === false) dispatch(SET_THEME_LIGHT());
   };
