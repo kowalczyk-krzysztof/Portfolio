@@ -35,8 +35,6 @@ export const StyledFooter = styled.footer`
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-
-  width: 100%;
   background: #0d1b2a;
   justify-content: flex-start;
   box-shadow: 0px 0px 0px 2px rgba(0, 0, 0, 0.4);

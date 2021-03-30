@@ -1,4 +1,4 @@
-import React, { FC, useRef } from 'react';
+import React, { FC } from 'react';
 import { useSelector } from 'react-redux';
 import { localizationSelector } from '../../features/localization/localizationSlice';
 import { menuToggleSelector } from '../../features/menutoggle/menuToggleSlice';
@@ -10,10 +10,8 @@ const LinkList: FC = (): JSX.Element => {
   const display = useSelector(menuToggleSelector);
   const { navbarAbout, navbarContact, navbarHome } = localization;
 
-  const test = useRef(null);
-
   return (
-    <StyledLinks display={display} ref={test}>
+    <StyledLinks display={display}>
       <StyledLink href="/" id="test">
         {navbarHome}
       </StyledLink>

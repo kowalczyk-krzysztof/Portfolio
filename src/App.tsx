@@ -18,9 +18,12 @@ import Footer from './components/footer/Footer';
 import About from './components/about/About';
 import Contact from './components/contact/Contact';
 import Homegapage from './components/homepage/Homepage';
-
 import { themeSelector } from './features/themetoggle/themeToggleSlice';
-import { GlobalStyle } from './createGlobalStyle';
+import {
+  GlobalStyle,
+  MainContainer,
+  ContentContainer,
+} from './createGlobalStyle';
 // Adding icons to library makes it so I don't need to import them in every file
 library.add(
   faLanguage,
@@ -45,13 +48,17 @@ const App = (): JSX.Element => {
       <Router>
         <GlobalStyle />
         <Navbar />
-        <Switch>
-          <Route exact path="/about" component={About}></Route>
-          <Route exact path="/contact" component={Contact}></Route>
-          <Route path="/" component={Homegapage}></Route>
-        </Switch>
+        <MainContainer>
+          <ContentContainer>
+            <Switch>
+              <Route exact path="/about" component={About}></Route>
+              <Route exact path="/contact" component={Contact}></Route>
+              <Route path="/" component={Homegapage}></Route>
+            </Switch>
+          </ContentContainer>
+        </MainContainer>
+        <Footer />
       </Router>
-      <Footer />
     </ThemeProvider>
   );
 };

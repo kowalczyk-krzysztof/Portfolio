@@ -1,4 +1,4 @@
-import React, { FC, MouseEvent, useEffect } from 'react';
+import React, { FC, MouseEvent } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {
   SET_MENU_DISPLAY_NONE,
@@ -18,16 +18,18 @@ const MenuButton: FC = (): JSX.Element => {
     else dispatch(SET_MENU_DISPLAY_NONE());
   };
 
-  useEffect(() => {
-    // If dropdown menu is visible then add a scroll eventListener that will close the menu
-    if (display === 'block')
-      window.addEventListener('scroll', scrollAway, { once: true });
-    else return;
-  });
+  // useEffect(() => {});
+
+  // const test = () => {
+  //   window.addEventListener('scroll', scrollAway, { once: true });
+  // };
+
+  // TODO: Make this so this dispatch only happens when you're actually scrolling not when you're scrolled
 
   const scrollAway = () => {
     dispatch(SET_MENU_DISPLAY_NONE());
-    console.log('Scrolled away');
+
+    window.removeEventListener('scroll', scrollAway);
   };
 
   /* Collapsing dropdown on clicking away - dropdown menu consists of links and onBlur triggers before link's onClick, because of that there has to be a timeout or clicking on links would not work  */
@@ -40,13 +42,17 @@ const MenuButton: FC = (): JSX.Element => {
       dispatch(SET_MENU_DISPLAY_NONE());
     }, 100);
 
-    window.removeEventListener('scroll', scrollAway); // this has to be done or otherwise scrollAway would trigger after clickAway
+    // window.removeEventListener('scroll', scrollAway); // this has to be done or otherwise scrollAway would trigger after clickAway
   };
 
   // Both of those FontAwesome icons need to be fixedWidth otherwise there will be weird clipping
   return (
     <StyledMenu>
-      <StyledMenuButton onClick={clickHandler} onBlur={clickAway}>
+      <StyledMenuButton
+        onClick={clickHandler}
+        onBlur={clickAway}
+        onScrollCapture={scrollAway}
+      >
         {display === 'none' ? (
           <FontAwesomeIcon icon="bars" fixedWidth></FontAwesomeIcon>
         ) : (

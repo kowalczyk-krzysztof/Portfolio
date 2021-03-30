@@ -6,7 +6,7 @@ const Contact: FC = (): JSX.Element => {
   // const localization = useSelector(localizationSelector);
 
   return (
-    <div>
+    <main>
       <h1>Yolo</h1>
       <p>
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Non rerum
@@ -120,7 +120,22 @@ const Contact: FC = (): JSX.Element => {
         temporibus non distinctio explicabo expedita maxime iure praesentium! Ea
         tempora quaerat magnam iure ducimus corporis.
       </p>
-    </div>
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi facere,
+        quia voluptatem sunt nulla, laboriosam eum autem reiciendis dolores eos
+        in deserunt nemo quas ea? Voluptate at cupiditate labore dolorum iure,
+        nam quam odit sunt voluptas nemo excepturi eius est, iusto aliquid!
+        Consequuntur qui ea vel vitae enim rem quasi dolorem. Alias nulla sint
+        porro et aliquam quas. Modi aliquid vero corrupti reiciendis? Velit,
+        perferendis tenetur facilis vitae amet cupiditate, itaque in corrupti
+        hic blanditiis magni voluptate recusandae cum dicta consequuntur at,
+        dolorum neque ut minus adipisci ipsum suscipit tempore consectetur
+        ullam! Qui adipisci molestiae aut dicta at? Incidunt, animi odit
+        voluptate, natus aliquid dignissimos, consequatur accusamus impedit eum
+        nisi necessitatibus provident architecto. Voluptate dolor est sequi
+        ducimus pariatur ipsam, dignissimos sint corrupti repudiandae omnis.
+      </p>
+    </main>
   );
 };
 
