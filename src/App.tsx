@@ -18,7 +18,10 @@ import Footer from './components/footer/Footer';
 import About from './components/about/About';
 import Contact from './components/contact/Contact';
 import Homegapage from './components/homepage/Homepage';
-import { themeSelector } from './features/themetoggle/themeToggleSlice';
+import {
+  themeSelector,
+  ThemeProps,
+} from './features/themetoggle/themeToggleSlice';
 import {
   GlobalStyle,
   MainContainer,
@@ -37,7 +40,7 @@ library.add(
 
 const App = (): JSX.Element => {
   // Assigning a theme based on store
-  const theme = useSelector(themeSelector);
+  const theme: ThemeProps = useSelector(themeSelector);
 
   /* For a general path (eg. when someone enters an invalid route like /foo ) you need to do a <Router path="/">
      This can't be an exact path. All exact paths have to be ABOVE this path otherwise that path would always render. 

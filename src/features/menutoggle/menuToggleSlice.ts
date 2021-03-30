@@ -1,11 +1,16 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { RootState } from '../../app/store';
 
+export enum MenuDisplay {
+  NONE = 'none',
+  BLOCK = 'block',
+}
+
 interface MenuToggle {
-  menu: string;
+  menu: MenuDisplay;
 }
 const initialState: MenuToggle = {
-  menu: 'none',
+  menu: MenuDisplay.NONE,
 };
 // Slice
 const menuToggleSlice = createSlice({
@@ -13,10 +18,10 @@ const menuToggleSlice = createSlice({
   initialState,
   reducers: {
     SET_MENU_DISPLAY_NONE(state) {
-      state.menu = 'none';
+      state.menu = MenuDisplay.NONE;
     },
     SET_MENU_DISPLAY_BLOCK(state) {
-      state.menu = 'block';
+      state.menu = MenuDisplay.BLOCK;
     },
   },
 });
