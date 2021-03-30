@@ -7,8 +7,12 @@ import {
   MenuDisplay,
 } from '../../features/menutoggle/menuToggleSlice';
 // Styling
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { StyledMenuButton, StyledMenu } from './navbar-styling';
+import {
+  StyledMenuButton,
+  StyledMenu,
+  StyledBars,
+  StyledTimes,
+} from './navbar-styling';
 
 const MenuButton: FC = (): JSX.Element => {
   const dispatch = useDispatch();
@@ -55,10 +59,10 @@ const MenuButton: FC = (): JSX.Element => {
         onBlur={clickAway}
         onScrollCapture={scrollAway}
       >
-        {display === 'none' ? (
-          <FontAwesomeIcon icon="bars" fixedWidth></FontAwesomeIcon>
+        {display === MenuDisplay.NONE ? (
+          <StyledBars size="30" title="Open Menu" />
         ) : (
-          <FontAwesomeIcon icon="times" fixedWidth></FontAwesomeIcon>
+          <StyledTimes size="30" title="Close Menu" />
         )}
       </StyledMenuButton>
     </StyledMenu>

@@ -2,16 +2,6 @@ import React from 'react';
 import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { ThemeProvider } from 'styled-components';
-// FontAwesome
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { faReact, faGithub } from '@fortawesome/free-brands-svg-icons';
-import {
-  faLanguage,
-  faBars,
-  faCircle,
-  faTimes,
-  faEnvelope,
-} from '@fortawesome/free-solid-svg-icons';
 // Components
 import Navbar from './components/navbar/Navbar';
 import Footer from './components/footer/Footer';
@@ -27,16 +17,12 @@ import {
   MainContainer,
   ContentContainer,
 } from './createGlobalStyle';
-// Adding icons to library makes it so I don't need to import them in every file
-library.add(
-  faLanguage,
-  faBars,
-  faCircle,
-  faReact,
-  faTimes,
-  faGithub,
-  faEnvelope
-);
+// FontAwesome - no longer needed, changed to styled icons
+// import { library } from '@fortawesome/fontawesome-svg-core';
+// Adding icons to library makes it so I don't need to import them in every file - NOT NEEDED - keeping this as a reference
+// library.add(
+//   faReact,
+// );
 
 const App = (): JSX.Element => {
   // Assigning a theme based on store

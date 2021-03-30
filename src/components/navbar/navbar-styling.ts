@@ -1,4 +1,13 @@
 import styled from 'styled-components/macro';
+import { Bars, Times } from '@styled-icons/fa-solid';
+
+// Icons
+export const StyledBars = styled(Bars)`
+  padding-bottom: 5px;
+`;
+export const StyledTimes = styled(Times)`
+  padding-bottom: 5px;
+`;
 // Logo container
 export const StyledLogo = styled.div`
   order: 1;
@@ -122,9 +131,7 @@ export const StyledMenu = styled.div`
   order: 2;
 `;
 // Menu button
-export const StyledMenuButton = styled.button`
-  font-size: 1.875rem;
-`;
+export const StyledMenuButton = styled.button``;
 /* Navbar
 The logic behind this:
 1. On screen width >= 576x this is just a regular flex container with display row - the menu button is hidden (display: none)
