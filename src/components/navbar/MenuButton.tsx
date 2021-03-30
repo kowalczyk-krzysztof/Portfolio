@@ -1,4 +1,4 @@
-import React, { FC, MouseEvent } from 'react';
+import React, { FC, useEffect, KeyboardEvent } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {
   SET_MENU_DISPLAY_NONE,
@@ -10,59 +10,74 @@ import {
 import {
   StyledMenuButton,
   StyledMenu,
-  StyledBars,
-  StyledTimes,
+  MenuIconWrapper,
 } from './navbar-styling';
+import { Bars, Times } from '@styled-icons/fa-solid';
 
+/* How to useRef with TypeScript
+const inputRef = useRef<HTMLDivElement>(null);
+if (inputRef && inputRef.current) {
+   console.log(inputRef.current.offsetTop);
+}
+*/
 const MenuButton: FC = (): JSX.Element => {
   const dispatch = useDispatch();
   const display: MenuDisplay = useSelector(menuToggleSelector);
+
+  useEffect(() => {
+    if (display === MenuDisplay.BLOCK)
+      // Collapse dropdown on scroll, adding onScroll to a component won't work because I need to check the body, not the component itself, so I need to add an event listener
+      return document.addEventListener('scroll', scrollAway, { once: true });
+  });
+
   // Toggling visibility of dropdown menu
-  const clickHandler = (e: MouseEvent<HTMLButtonElement>): void => {
+  const clickHandler = (): void => {
     if (display === MenuDisplay.NONE) dispatch(SET_MENU_DISPLAY_BLOCK());
     else dispatch(SET_MENU_DISPLAY_NONE());
   };
 
-  // TODO: Fix onScroll
-  // useEffect(() => {});
-
-  // const test = () => {
-  //   window.addEventListener('scroll', scrollAway, { once: true });
-  // };
-
-  // TODO: Make this so this dispatch only happens when you're actually scrolling not when you're scrolled
-
+  // I need to return document.removeEventListener('scroll', scrollAway); for all the other closing methods to stop this triggering if menu has been already closed
   const scrollAway = (): void => {
     dispatch(SET_MENU_DISPLAY_NONE());
-
-    window.removeEventListener('scroll', scrollAway);
   };
 
-  /* Collapsing dropdown on clicking away - dropdown menu consists of links and onBlur triggers before link's onClick, because of that there has to be a timeout or clicking on links would not work  */
-  const clickAway = (e: React.FocusEvent): void => {
-    if (display === 'none') return; // if dropdown is already collapsed, clickAway won't triger
-    console.log('Clicked away');
-    // console.log(e.relatedTarget);
+  // Esc key handler
+  const pressEsc = (e: KeyboardEvent<HTMLButtonElement>): void => {
+    e.preventDefault(); // has to be done or otherwise space would trigger the button
+    if (e.key === `Escape`) dispatch(SET_MENU_DISPLAY_NONE());
+    console.log(e.key);
+
+    return document.removeEventListener('scroll', scrollAway);
+  };
+
+  /* Collapsing dropdown menu on clicking away (onBlur) - dropdown menu consists of links and onBlur triggers before link's onClick, because of that there has to be a timeout or clicking on links would not work  */
+  const clickAway = (): void => {
+    if (display === MenuDisplay.NONE) return; // if dropdown is already collapsed, clickAway won't triger
 
     setTimeout(() => {
       dispatch(SET_MENU_DISPLAY_NONE());
     }, 100);
-
-    // window.removeEventListener('scroll', scrollAway); // this has to be done or otherwise scrollAway would trigger after clickAway
+    return document.removeEventListener('scroll', scrollAway);
   };
 
-  // Both of those FontAwesome icons need to be fixedWidth otherwise there will be weird clipping
+  // Both of those icons need to be same size otherwise there will be weird clipping
   return (
     <StyledMenu>
       <StyledMenuButton
         onClick={clickHandler}
         onBlur={clickAway}
-        onScrollCapture={scrollAway}
+        onKeyDown={(e: KeyboardEvent<HTMLButtonElement>) => pressEsc(e)}
       >
         {display === MenuDisplay.NONE ? (
-          <StyledBars size="30" title="Open Menu" />
+          <MenuIconWrapper>
+            <Bars size="30" />
+          </MenuIconWrapper>
         ) : (
-          <StyledTimes size="30" title="Close Menu" />
+          // <Bars size="30" color="white" />
+          // <Times size="30" color="white" />
+          <MenuIconWrapper>
+            <Times size="30" />
+          </MenuIconWrapper>
         )}
       </StyledMenuButton>
     </StyledMenu>

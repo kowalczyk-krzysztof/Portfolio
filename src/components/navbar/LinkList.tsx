@@ -26,15 +26,9 @@ const LinkList: FC = (): JSX.Element => {
 
   return (
     <StyledLinks display={display}>
-      <StyledLink href="/" id="test">
-        {navbarHome}
-      </StyledLink>
-      <StyledLink href="about" id="test1">
-        {navbarAbout}
-      </StyledLink>
-      <StyledLink href="contact" id="test1">
-        {navbarContact}
-      </StyledLink>
+      <StyledLink href="/">{navbarHome}</StyledLink>
+      <StyledLink href="about">{navbarAbout}</StyledLink>
+      <StyledLink href="contact">{navbarContact}</StyledLink>
     </StyledLinks>
   );
 };

@@ -5,11 +5,9 @@ import {
   Locale,
 } from '../../features/localization/localizationSlice';
 // Styling
-import {
-  StyledContactList,
-  StyledEnvelope,
-  StyledGithub,
-} from './footer-styling';
+import { Envelope } from '@styled-icons/fa-regular/';
+import { Github } from '@styled-icons/fa-brands';
+import { FooterIconWrapper, StyledContactList } from './footer-styling';
 
 const ContactLinks: FC = (): JSX.Element => {
   const localization: Locale = useSelector(localizationSelector);
@@ -23,17 +21,18 @@ const ContactLinks: FC = (): JSX.Element => {
   return (
     <StyledContactList>
       <span>{navbarContact}</span>
-
-      <a href={githubLink}>
-        <StyledGithub
-          size="20"
-          title="
+      <FooterIconWrapper>
+        <a href={githubLink}>
+          <Github
+            size="20"
+            title="
         GitHub"
-        />
-      </a>
-      <a href={`mailto:${myEmail}`}>
-        <StyledEnvelope size="20" title="Email Address" />
-      </a>
+          />
+        </a>
+        <a href={`mailto:${myEmail}`}>
+          <Envelope size="20" title="Email Address" />
+        </a>
+      </FooterIconWrapper>
     </StyledContactList>
   );
 };

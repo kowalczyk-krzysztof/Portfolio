@@ -1,12 +1,12 @@
 import styled from 'styled-components/macro';
-import { Bars, Times } from '@styled-icons/fa-solid';
 
 // Icons
-export const StyledBars = styled(Bars)`
+export const MenuIconWrapper = styled.div`
   padding-bottom: 5px;
-`;
-export const StyledTimes = styled(Times)`
-  padding-bottom: 5px;
+
+  :hover {
+    color: #fafafa;
+  }
 `;
 // Logo container
 export const StyledLogo = styled.div`
@@ -156,8 +156,8 @@ export const StyledNavbar = styled.header`
     border: none;
     outline: none;
   }
-
-  * {
+  div,
+  a {
     color: #e0e1dd;
   }
 
