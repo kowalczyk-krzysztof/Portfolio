@@ -4,10 +4,12 @@ import {
   localizationSelector,
   Locale,
 } from '../../features/localization/localizationSlice';
-
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // Styling
-import { StyledContactList } from './footer-styling';
+import {
+  StyledContactList,
+  StyledEnvelope,
+  StyledGithub,
+} from './footer-styling';
 
 const ContactLinks: FC = (): JSX.Element => {
   const localization: Locale = useSelector(localizationSelector);
@@ -23,10 +25,14 @@ const ContactLinks: FC = (): JSX.Element => {
       <span>{navbarContact}</span>
 
       <a href={githubLink}>
-        <FontAwesomeIcon icon={['fab', 'github']}></FontAwesomeIcon>
+        <StyledGithub
+          size="20"
+          title="
+        GitHub"
+        />
       </a>
       <a href={`mailto:${myEmail}`}>
-        <FontAwesomeIcon icon="envelope"></FontAwesomeIcon>
+        <StyledEnvelope size="20" title="Email Address" />
       </a>
     </StyledContactList>
   );

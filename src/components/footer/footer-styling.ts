@@ -1,4 +1,10 @@
 import styled from 'styled-components/macro';
+import { Envelope } from '@styled-icons/fa-regular/';
+import { Github } from '@styled-icons/fa-brands';
+
+// Icons
+export const StyledEnvelope = styled(Envelope)``;
+export const StyledGithub = styled(Github)``;
 // Copyright
 export const StyledCopyright = styled.div`
   font-size: 0.55rem;
