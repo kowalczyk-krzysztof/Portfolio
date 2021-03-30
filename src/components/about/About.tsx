@@ -7,7 +7,7 @@ const About: FC = (): JSX.Element => {
   const { aboutH1 } = localization;
 
   return (
-    <div>
+    <main>
       <h1>{aboutH1}</h1>
 
       <p>
@@ -138,7 +138,7 @@ const About: FC = (): JSX.Element => {
         reiciendis. Eos ut nesciunt officiis, esse laborum obcaecati? Quasi
         corporis dolorum harum.
       </p>
-    </div>
+    </main>
   );
 };
 

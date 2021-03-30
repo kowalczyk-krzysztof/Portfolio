@@ -131,12 +131,14 @@ The logic behind this:
 2. On screen width < 576 px all the elements you want to hide are set to display: none and the menu button is displayed
 3. Menu button toggles display betwen none and block. To achieve the column-like look, the display has to be block AND width: 100% and IMPORTANT - flex-wrep: wrap HAS TO BE SET ON THE NAVBAR OTHERWISE ITEMS WON'T GET PUSHED TO NEW LINE
 */
-export const StyledNavbar = styled.nav`
+export const StyledNavbar = styled.header`
   display: flex;
   flex-wrap: wrap;
+  /* Position has to be fixed or sticky to stick to the top. Top: 0 is also needed. Since I don't want dropdown to push down the content, it has to be fixed and I need to add padding-top to body so it doesn't cut main content*/
   position: fixed;
-  width: 100%;
   top: 0;
+  width: 100%;
+
   box-shadow: 0 2px 0px 0px rgba(0, 0, 0, 0.4);
   background: #0d1b2a;
   align-items: center;
