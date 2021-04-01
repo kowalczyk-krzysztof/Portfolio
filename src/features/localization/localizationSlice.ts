@@ -21,6 +21,7 @@ export interface Locale {
   enterName: string;
   enterEmail: string;
   enterMessage: string;
+  unsubmittedData: string;
 }
 
 interface Localization {

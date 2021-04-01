@@ -24,6 +24,7 @@ export const locale_EN: Locale = {
   enterName: 'Please enter your name',
   enterEmail: 'Please enter your e-mail',
   enterMessage: `Message field can't be empty`,
+  unsubmittedData: `You have some unsubmitted data, are you sure you want to leave?`,
 };
 export const locale_PL: Locale = {
   name: LocaleNames.PL,
@@ -44,4 +45,5 @@ export const locale_PL: Locale = {
   enterName: 'Wprowadź swoje imię i nazwisko',
   enterEmail: 'Wprowadź swój email',
   enterMessage: 'Wiadomość nie może być pusta',
+  unsubmittedData: `Na pewno chcesz wyjść? Niezapisane dane zostaną utracone`,
 };
