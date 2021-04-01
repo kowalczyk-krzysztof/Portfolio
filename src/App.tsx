@@ -36,8 +36,8 @@ const App = (): JSX.Element => {
     <ThemeProvider theme={theme}>
       <Router>
         <GlobalStyle />
-        <Navbar />
         <MainContainer>
+          <Navbar />
           <ContentContainer>
             <Switch>
               <Route exact path="/about" component={About}></Route>
@@ -45,8 +45,8 @@ const App = (): JSX.Element => {
               <Route path="/" component={Homegapage}></Route>
             </Switch>
           </ContentContainer>
+          <Footer />
         </MainContainer>
-        <Footer />
       </Router>
     </ThemeProvider>
   );

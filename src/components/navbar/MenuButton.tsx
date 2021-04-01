@@ -45,7 +45,6 @@ const MenuButton: FC = (): JSX.Element => {
   const pressEsc = (e: KeyboardEvent<HTMLButtonElement>): void => {
     e.preventDefault(); // has to be done or otherwise space would trigger the button
     if (e.key === `Escape`) dispatch(SET_MENU_DISPLAY_NONE());
-    console.log(e.key);
 
     return document.removeEventListener('scroll', scrollAway);
   };
@@ -70,13 +69,11 @@ const MenuButton: FC = (): JSX.Element => {
       >
         {display === MenuDisplay.NONE ? (
           <MenuIconWrapper>
-            <Bars size="30" />
+            <Bars size="32" />
           </MenuIconWrapper>
         ) : (
-          // <Bars size="30" color="white" />
-          // <Times size="30" color="white" />
           <MenuIconWrapper>
-            <Times size="30" />
+            <Times size="32" />
           </MenuIconWrapper>
         )}
       </StyledMenuButton>

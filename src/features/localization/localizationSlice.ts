@@ -7,7 +7,11 @@ export interface Locale {
   navbarHome: string;
   navbarAbout: string;
   navbarContact: string;
-  aboutH1: string;
+  homeH1: string;
+  homeH2: string;
+  homeDescription: string;
+  homePassion: string;
+  learnMore: string;
 }
 
 interface Localization {

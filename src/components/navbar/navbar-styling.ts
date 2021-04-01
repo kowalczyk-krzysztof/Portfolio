@@ -15,10 +15,11 @@ export const StyledLogo = styled.div`
 `;
 // Logo text
 export const StyledLogoH1 = styled.h1`
-  font-size: 1.25rem;
+  font-size: calc(16px + 1vh);
   margin: 15px 15px;
+  color: #4d96bb;
   :hover {
-    color: #fafafa;
+    color: #74b9db;
   }
 `;
 // Theme toggle cintainer
@@ -44,14 +45,15 @@ export const StyledThemeToggleSlider = styled.input`
   
    */
 
-  border: 3px solid #707070;
-  width: 50px;
-  height: 25px;
+  border: 4px solid #4d96bb;
+  width: 60px;
+  height: 30px;
   appearance: none; /* hides default checkbox*/
   background: #fafafa;
+  opacity: 0.8;
   outline: none;
   border-radius: 20px; /* slider-like edges */
-  transition: 0.5s; /* slow translition between toggles */
+  transition: 0.6s; /* slow translition between toggles */
 
   :checked {
     background: #1b263b;
@@ -61,19 +63,20 @@ export const StyledThemeToggleSlider = styled.input`
     content: ''; /* needs to be empty */
     /* needs to be absolute*/
     position: absolute;
+    opacity: 0, 8;
 
-    margin: -3px; /*if I set a border then I need to add a margin of equal px to circle */
-    width: 25px;
-    height: 25px;
-    background: linear-gradient(177deg, #0d1b2a, #415a77);
+    margin: -4px; /*if I set a border then I need to add a margin of equal px to circle */
+    width: 30px;
+    height: 30px;
+    background: #30649b;
 
     border-radius: 50%;
-    transform: scale(0.85); /* makes the circle slightly bigger than the rest */
-    transition: 0.5s;
+    transform: scale(0.9); /* makes the circle slightly bigger than the rest */
+    transition: 0.6s;
   }
 
   :checked:before {
-    transform: scale(0.85) translateX(29px); /* this does the sliding process */
+    transform: scale(0.85) translateX(34px); /* this does the sliding process */
   }
 `;
 // Language toggle container
@@ -85,12 +88,12 @@ export const StyledLanguage = styled.div`
 // Language toggle buttons
 export const StyledLanguageButtons = styled.button`
   margin: 0 5px;
+  transform: scale(1.2);
+
   :hover {
-    transform: scale(1.1, 1.1);
+    transform: scale(1.3, 1.3);
   }
 `;
-// Links container
-
 /*
 Props with custom names in styled-components:
 You need to pass an interface with an object to the component.
@@ -99,12 +102,13 @@ Example:
 const foo = styled.div<{bar: any}>`
  color: black;
 `*/
+// Links container
 export const StyledLinks = styled.div<{
   display: string;
 }>`
-  width: 100%;
   display: ${(props) => props.display};
   order: 3;
+  width: 100%;
 `;
 // Links
 export const StyledLink = styled.a`
@@ -112,10 +116,12 @@ export const StyledLink = styled.a`
   display: block;
   outline: none;
   padding: 15px;
+
   text-decoration: none;
   text-align: center;
   border-top: 1px ridge #e0e1dd;
-  font-size: 1.125rem;
+  font-size: calc(16px + 1vh);
+  background: #0d1b2a;
   :hover {
     background: #415a77;
     color: #fafafa;
@@ -141,10 +147,26 @@ The logic behind this:
 export const StyledNavbar = styled.header`
   display: flex;
   flex-wrap: wrap;
-  /* Position has to be fixed or sticky to stick to the top. Top: 0 is also needed. Since I don't want dropdown to push down the content, it has to be fixed and I need to add padding-top to body so it doesn't cut main content*/
-  position: fixed;
-  top: 0;
   width: 100%;
+  justify-content: space-between;
+
+  /* After thinking about it, I decided to make the navbar not sticky because there won't be much scrolling done */
+
+  /*
+          NON-STICKY NAVBAR DROPDOWN DON'T PUSH PAGE DOWN
+          1. Set the navbar position to abosolute
+          2. Set content container padding to match the navbar
+  */
+
+  /*
+  STICKY NAVBAR SETTINGS
+  
+  Position has to be fixed or sticky to stick to the top. Top: 0 is also needed. Since I don't want dropdown to push down the content, it has to be fixed and I need to add padding-top to body so it doesn't cut main content*/
+  /* position: fixed;
+  top: 0;
+  width: 100%; */
+  position: absolute;
+  z-index: 1;
 
   box-shadow: 0 2px 0px 0px rgba(0, 0, 0, 0.4);
   background: #0d1b2a;
@@ -171,9 +193,11 @@ export const StyledNavbar = styled.header`
       display: inline-flex;
       order: 1;
       flex: 1;
+      position: static;
     }
 
     ${StyledLink} {
+      top: 0;
       border: none;
       box-shadow: none;
 
@@ -188,6 +212,16 @@ export const StyledNavbar = styled.header`
 
     ${StyledLogo} {
       flex: 0;
+    }
+  }
+
+  @media only screen and (max-width: 280px) {
+    ${StyledLanguageButtons} {
+      padding: 0px;
+    }
+
+    ${StyledMenuButton} {
+      margin-right: 0px;
     }
   }
 `;

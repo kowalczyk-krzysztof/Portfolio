@@ -20,17 +20,17 @@ const ContactLinks: FC = (): JSX.Element => {
 
   return (
     <StyledContactList>
-      <span>{navbarContact}</span>
+      <p>{navbarContact}</p>
       <FooterIconWrapper>
         <a href={githubLink}>
           <Github
-            size="20"
+            size="32"
             title="
         GitHub"
           />
         </a>
         <a href={`mailto:${myEmail}`}>
-          <Envelope size="20" title="Email Address" />
+          <Envelope size="32" title="Email Address" />
         </a>
       </FooterIconWrapper>
     </StyledContactList>

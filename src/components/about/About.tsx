@@ -1,18 +1,16 @@
 import React, { FC } from 'react';
-import { useSelector } from 'react-redux';
-import {
-  localizationSelector,
-  Locale,
-} from '../../features/localization/localizationSlice';
+// import { useSelector } from 'react-redux';
+// import {
+//   localizationSelector,
+//   Locale,
+// } from '../../features/localization/localizationSlice';
 
 const About: FC = (): JSX.Element => {
-  const localization: Locale = useSelector(localizationSelector);
-  const { aboutH1 }: { aboutH1: string } = localization;
+  // const localization: Locale = useSelector(localizationSelector);
+  // const { aboutH1 }: { aboutH1: string } = localization;
 
   return (
     <main>
-      <h1>{aboutH1}</h1>
-
       <p>
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Non rerum
         recusandae voluptatibus expedita doloremque quisquam sunt aperiam

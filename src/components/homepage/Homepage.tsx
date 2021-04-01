@@ -1,22 +1,35 @@
 import React, { FC } from 'react';
-// import { useSelector } from 'react-redux';
-// import { localizationSelector } from '../../features/localization/localizationSlice';
+import { useSelector } from 'react-redux';
+import {
+  localizationSelector,
+  Locale,
+} from '../../features/localization/localizationSlice';
+// Styling
+import { HomepageContent } from './homepage-styling';
 
 const Homepage: FC = (): JSX.Element => {
-  // const localization = useSelector(localizationSelector);
-
+  const localization: Locale = useSelector(localizationSelector);
+  const {
+    homeH1,
+    homeH2,
+    homeDescription,
+    homePassion,
+    learnMore,
+  }: {
+    homeH1: string;
+    homeH2: string;
+    homeDescription: string;
+    learnMore: string;
+    homePassion: string;
+  } = localization;
   return (
-    <main>
-      <h1>Home</h1>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero
-        distinctio odio vero itaque porro qui, earum modi optio eos voluptatem
-        animi ea nobis deserunt eligendi minus praesentium totam vitae esse
-        officiis, consequuntur magni facilis saepe reprehenderit! Tempore
-        voluptate officiis vel delectus iure voluptatibus numquam deserunt
-        debitis autem! Aliquam, suscipit temporibus.
-      </p>
-    </main>
+    <HomepageContent>
+      <h1>{homeH1}</h1>
+      <h2> {homeH2}</h2>
+      <p>{homeDescription}</p>
+      <p> {homePassion}</p>
+      <a href="/about">{learnMore}</a>
+    </HomepageContent>
   );
 };
 
