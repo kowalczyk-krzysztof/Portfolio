@@ -16,7 +16,7 @@ import {
 const ContactLinks: FC = (): JSX.Element => {
   const localization: Locale = useSelector(localizationSelector);
 
-  const { navbarContact }: { navbarContact: string } = localization;
+  const { navbarContact } = localization;
 
   const githubName: string = `${process.env.REACT_APP_GITHUB_USERNAME}`;
   const githubLink: string = `https://github.com/${githubName}`;

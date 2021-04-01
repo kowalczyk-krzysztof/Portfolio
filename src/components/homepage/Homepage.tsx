@@ -15,12 +15,6 @@ const Homepage: FC = (): JSX.Element => {
     homeDescription,
     homePassion,
     learnMore,
-  }: {
-    homeH1: string;
-    homeH2: string;
-    homeDescription: string;
-    learnMore: string;
-    homePassion: string;
   } = localization;
   return (
     <HomepageContent>
