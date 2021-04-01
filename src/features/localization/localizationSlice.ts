@@ -12,6 +12,15 @@ export interface Locale {
   homeDescription: string;
   homePassion: string;
   learnMore: string;
+  buttonSend: string;
+  contactH1: string;
+  contactNameField: string;
+  contactEmailField: string;
+  contactMessageField: string;
+  inputCharactersLeft: string;
+  enterName: string;
+  enterEmail: string;
+  enterMessage: string;
 }
 
 interface Localization {
