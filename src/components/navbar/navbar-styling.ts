@@ -205,6 +205,7 @@ export const StyledNavbar = styled.header`
       order: 1;
       flex: 1;
       position: static;
+      animation: none;
     }
 
     ${StyledLink} {
