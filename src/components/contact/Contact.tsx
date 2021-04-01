@@ -1,14 +1,23 @@
 import React, { FC, useState, FormEvent } from 'react';
 import { useSelector } from 'react-redux';
+import { Prompt } from 'react-router-dom';
 import {
   localizationSelector,
   Locale,
 } from '../../features/localization/localizationSlice';
+// Styling
+import { StyledWarning, StyledContainer } from './contact-styling';
 
+// Input fields
 enum FieldNames {
   NAME = 'name',
   EMAIL = 'email',
   MESSAGE = 'message',
+}
+// Setting opacity of warning fields
+enum WarningDisplay {
+  HIDE = 0,
+  SHOW = 1,
 }
 
 const Contact: FC = (): JSX.Element => {
@@ -24,6 +33,7 @@ const Contact: FC = (): JSX.Element => {
     enterName,
     enterEmail,
     enterMessage,
+    unsubmittedData,
   } = localization;
   // Text area max rows
   const maxRows = 8;
@@ -32,19 +42,29 @@ const Contact: FC = (): JSX.Element => {
 
   // Name field
   const [name, setName] = useState(``);
+  // Check if name is empty
+  const [showNameWarning, setShowNameWarning] = useState(WarningDisplay.HIDE);
   // Email field
   const [email, setEmail] = useState(``);
+  // Check if email is empty
+  const [showEmailWarning, setShowEmailWarning] = useState(WarningDisplay.HIDE);
   // Message field
   const [message, setMessage] = useState('');
+  // Check if msg is empty
+  const [showMessageWarning, setShowMessageWarning] = useState(
+    WarningDisplay.HIDE
+  );
+  // Display characters left in text area
   const [charactersLeft, setcharactersLeft] = useState(messageMaxLength);
-
   // Submit button state
   const [isDisabled, setIsDiabled] = useState(false);
+  // Warning if user is trying to leave page with unsubmitted data
+  const [isTryingToLeave, setIsTryingToLeave] = useState(false);
+
   // const localization = useSelector(localizationSelector);
   const onChange = (e: FormEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const targetValue = e.currentTarget.value;
     const targetName = e.currentTarget.name;
-    // Has to be - 1 because I want to return the characters left, not maxlength
 
     if (targetName === FieldNames.NAME) setName(targetValue);
     if (targetName === FieldNames.EMAIL) setEmail(targetValue);
@@ -53,24 +73,14 @@ const Contact: FC = (): JSX.Element => {
       setcharactersLeft(messageMaxLength - targetValue.length);
       setMessage(targetValue);
     }
+    // Check if user is trying to leave the page with unsubmitted data
+    if (targetValue !== '') setIsTryingToLeave(true);
+    else setIsTryingToLeave(false);
   };
-  //
-  const fieldLengthValidator = (
-    content: string,
-    fieldName: FieldNames
-  ): boolean => {
-    let message;
-
-    if (fieldName === FieldNames.NAME) message = enterName;
-
-    if (fieldName === FieldNames.EMAIL) message = enterEmail;
-
-    if (fieldName === FieldNames.MESSAGE) message = enterMessage;
-
-    if (content.length === 0) {
-      alert(message);
-      return false;
-    } else return true;
+  // Checking if fields are empty
+  const emptyFieldValidator = (content: string): boolean => {
+    if (content === '') return false;
+    else return true;
   };
 
   const onSubmit = (e: FormEvent<HTMLFormElement>) => {
@@ -78,17 +88,32 @@ const Contact: FC = (): JSX.Element => {
 
     // Validating if fields are empty
     // name, email and message are states of fields (so e.currentTarget.value from onChange)
-    const nameValidation = fieldLengthValidator(name, FieldNames.NAME);
-    if (nameValidation === true) setName(name);
-    else setName('');
+    const nameValidation = emptyFieldValidator(name);
+    if (nameValidation === true) {
+      setName(name);
+      setShowNameWarning(WarningDisplay.HIDE);
+    } else {
+      setName('');
+      setShowNameWarning(WarningDisplay.SHOW);
+    }
 
-    const emailValidation = fieldLengthValidator(email, FieldNames.EMAIL);
-    if (emailValidation === true) setEmail(email);
-    else setEmail('');
+    const emailValidation = emptyFieldValidator(email);
+    if (emailValidation === true) {
+      setEmail(email);
+      setShowEmailWarning(WarningDisplay.HIDE);
+    } else {
+      setEmail('');
+      setShowEmailWarning(WarningDisplay.SHOW);
+    }
 
-    const messageValidation = fieldLengthValidator(message, FieldNames.MESSAGE);
-    if (messageValidation === true) setMessage(message);
-    else setMessage('');
+    const messageValidation = emptyFieldValidator(message);
+    if (messageValidation === true) {
+      setMessage(message);
+      setShowMessageWarning(WarningDisplay.HIDE);
+    } else {
+      setMessage('');
+      setShowMessageWarning(WarningDisplay.SHOW);
+    }
 
     // If all fields are valid then disable button, reset all fields and (this is TODO) send e-mail and let user know if e-mail was sent
     if (
@@ -97,15 +122,20 @@ const Contact: FC = (): JSX.Element => {
       messageValidation === true
     ) {
       setName('');
+      setShowNameWarning(WarningDisplay.HIDE);
       setEmail('');
+      setShowEmailWarning(WarningDisplay.HIDE);
       setMessage('');
+      setShowMessageWarning(WarningDisplay.HIDE);
       setIsDiabled(true);
+      setIsTryingToLeave(false);
     }
   };
 
   return (
-    <main>
+    <StyledContainer>
       <h1>{contactH1}</h1>
+      <Prompt when={isTryingToLeave} message={unsubmittedData}></Prompt>
       <form onSubmit={onSubmit}>
         <label htmlFor={FieldNames.NAME}>{contactNameField}</label>
         <input
@@ -115,6 +145,8 @@ const Contact: FC = (): JSX.Element => {
           value={name}
           placeholder={contactNameField}
         ></input>
+
+        <StyledWarning display={showNameWarning}>{enterName}</StyledWarning>
         <label htmlFor={FieldNames.EMAIL}>{contactEmailField}</label>
         <input
           type="text"
@@ -123,6 +155,7 @@ const Contact: FC = (): JSX.Element => {
           value={email}
           placeholder={contactEmailField}
         ></input>
+        <StyledWarning display={showEmailWarning}>{enterEmail}</StyledWarning>
         <label htmlFor={FieldNames.MESSAGE}>{contactMessageField}</label>
         <textarea
           rows={maxRows}
@@ -132,13 +165,16 @@ const Contact: FC = (): JSX.Element => {
           value={message}
           placeholder={contactMessageField}
         ></textarea>
+        <StyledWarning display={showMessageWarning}>
+          {enterMessage}
+        </StyledWarning>
         <p>
           {inputCharactersLeft}
           {charactersLeft}
         </p>
         <input type="submit" value={buttonSend} disabled={isDisabled}></input>
       </form>
-    </main>
+    </StyledContainer>
   );
 };
 
