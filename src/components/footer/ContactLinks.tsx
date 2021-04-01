@@ -7,7 +7,11 @@ import {
 // Styling
 import { Envelope } from '@styled-icons/fa-regular/';
 import { Github } from '@styled-icons/fa-brands';
-import { FooterIconWrapper, StyledContactList } from './footer-styling';
+import {
+  FooterIconWrapper,
+  StyledContactList,
+  StyledContactLink,
+} from './footer-styling';
 
 const ContactLinks: FC = (): JSX.Element => {
   const localization: Locale = useSelector(localizationSelector);
@@ -18,20 +22,21 @@ const ContactLinks: FC = (): JSX.Element => {
   const githubLink: string = `https://github.com/${githubName}`;
   const myEmail: string = `${process.env.REACT_APP_EMAIL}`;
 
+  // Can't use <Link> with external links
   return (
     <StyledContactList>
       <p>{navbarContact}</p>
       <FooterIconWrapper>
-        <a href={githubLink}>
+        <StyledContactLink href={githubLink}>
           <Github
-            size="32"
+            size="24"
             title="
         GitHub"
           />
-        </a>
-        <a href={`mailto:${myEmail}`}>
-          <Envelope size="32" title="Email Address" />
-        </a>
+        </StyledContactLink>
+        <StyledContactLink href={`mailto:${myEmail}`}>
+          <Envelope size="24" title="Email Address" />
+        </StyledContactLink>
       </FooterIconWrapper>
     </StyledContactList>
   );

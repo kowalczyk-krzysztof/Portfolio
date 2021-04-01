@@ -1,9 +1,14 @@
-import styled from 'styled-components/macro';
+import styled, { keyframes } from 'styled-components/macro';
+import { Link } from 'react-router-dom';
 
+// This animation is needed to avoid flickering
+const MenuFade = keyframes`
+from {opacity: 0;}
+  to {opacity: 1;}
+`;
 // Icons
 export const MenuIconWrapper = styled.div`
   padding-bottom: 5px;
-
   :hover {
     color: #fafafa;
   }
@@ -26,7 +31,7 @@ export const StyledLogoH1 = styled.h1`
 export const StyledThemeToggle = styled.div`
   order: 1;
   display: block;
-  margin-right: 15px;
+  margin-right: 5px;
 `;
 // Theme toggle slider
 export const StyledThemeToggleSlider = styled.input`
@@ -87,11 +92,14 @@ export const StyledLanguage = styled.div`
 `;
 // Language toggle buttons
 export const StyledLanguageButtons = styled.button`
-  margin: 0 5px;
   transform: scale(1.2);
 
   :hover {
-    transform: scale(1.3, 1.3);
+    transform: scale(1.25, 1.25);
+  }
+
+  :last-of-type {
+    margin: 0 10px;
   }
 `;
 /*
@@ -109,9 +117,10 @@ export const StyledLinks = styled.div<{
   display: ${(props) => props.display};
   order: 3;
   width: 100%;
+  animation: ${MenuFade} 250ms ease-in-out both;
 `;
 // Links
-export const StyledLink = styled.a`
+export const StyledLink = styled(Link)`
   /* inline components can't have any align properites so this has to be a block*/
   display: block;
   outline: none;
@@ -137,7 +146,9 @@ export const StyledMenu = styled.div`
   order: 2;
 `;
 // Menu button
-export const StyledMenuButton = styled.button``;
+export const StyledMenuButton = styled.button`
+  margin-right: 15px;
+`;
 /* Navbar
 The logic behind this:
 1. On screen width >= 576x this is just a regular flex container with display row - the menu button is hidden (display: none)

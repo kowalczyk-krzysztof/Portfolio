@@ -5,7 +5,7 @@ import {
   Locale,
 } from '../../features/localization/localizationSlice';
 // Styling
-import { HomepageContent } from './homepage-styling';
+import { HomepageContent, StyledHomepageLink } from './homepage-styling';
 
 const Homepage: FC = (): JSX.Element => {
   const localization: Locale = useSelector(localizationSelector);
@@ -28,7 +28,7 @@ const Homepage: FC = (): JSX.Element => {
       <h2> {homeH2}</h2>
       <p>{homeDescription}</p>
       <p> {homePassion}</p>
-      <a href="/about">{learnMore}</a>
+      <StyledHomepageLink to="/about">{learnMore}</StyledHomepageLink>
     </HomepageContent>
   );
 };

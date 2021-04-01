@@ -1,7 +1,30 @@
 import styled from 'styled-components/macro';
+import { Link } from 'react-router-dom';
+// Link
+export const StyledHomepageLink = styled(Link)`
+  cursor: pointer;
+  font-size: calc(14px + 1vh);
+  box-sizing: border-box;
+  margin: calc(12px + 1vh);
+  padding: calc(5px + 1vh);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  text-decoration: none;
+  outline: none;
+  color: #e0e1dd;
 
+  background: #4d96bb;
+
+  :after {
+    content: ' >';
+  }
+
+  :hover {
+    background: #74b9db;
+  }
+`;
 // Homepage container
-export const HomepageContent = styled.div`
+export const HomepageContent = styled.main`
   /* This margin centers the container */
   margin: 0 auto;
   z-index: 0;
@@ -37,29 +60,6 @@ export const HomepageContent = styled.div`
 
   p :last-of-type {
     margin-bottom: calc(30px + 1vh);
-  }
-
-  a {
-    cursor: pointer;
-    font-size: calc(14px + 1vh);
-    box-sizing: border-box;
-    margin: calc(12px + 1vh);
-    padding: calc(5px + 1vh);
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    border-radius: 10px;
-    text-decoration: none;
-    outline: none;
-    color: #e0e1dd;
-
-    background: #4d96bb;
-
-    :after {
-      content: ' >';
-    }
-
-    :hover {
-      background: #74b9db;
-    }
   }
 
   @media only screen and (min-width: 768px) {

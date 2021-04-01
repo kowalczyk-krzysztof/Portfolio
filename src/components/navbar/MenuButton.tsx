@@ -49,31 +49,20 @@ const MenuButton: FC = (): JSX.Element => {
     return document.removeEventListener('scroll', scrollAway);
   };
 
-  /* Collapsing dropdown menu on clicking away (onBlur) - dropdown menu consists of links and onBlur triggers before link's onClick, because of that there has to be a timeout or clicking on links would not work  */
-  const clickAway = (): void => {
-    if (display === MenuDisplay.NONE) return; // if dropdown is already collapsed, clickAway won't triger
-
-    setTimeout(() => {
-      dispatch(SET_MENU_DISPLAY_NONE());
-    }, 100);
-    return document.removeEventListener('scroll', scrollAway);
-  };
-
   // Both of those icons need to be same size otherwise there will be weird clipping
   return (
     <StyledMenu>
       <StyledMenuButton
         onClick={clickHandler}
-        onBlur={clickAway}
         onKeyDown={(e: KeyboardEvent<HTMLButtonElement>) => pressEsc(e)}
       >
         {display === MenuDisplay.NONE ? (
           <MenuIconWrapper>
-            <Bars size="32" />
+            <Bars size="34" title="Open menu" />
           </MenuIconWrapper>
         ) : (
           <MenuIconWrapper>
-            <Times size="32" />
+            <Times size="34" title="Close menu" />
           </MenuIconWrapper>
         )}
       </StyledMenuButton>
