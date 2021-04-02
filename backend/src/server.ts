@@ -32,7 +32,7 @@ app.use('/api/v1/email', limiter, emailRouter);
 
 const PORT = ((process.env.PORT as unknown) as number) || 5000;
 
-if (process.env.PORT === 'PRODUCTION') {
+if (process.env.NODE_ENV === 'PRODUCTION') {
   app.use(express.static('/frontend/build'));
 }
 
