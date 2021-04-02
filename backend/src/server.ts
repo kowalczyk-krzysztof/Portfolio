@@ -4,6 +4,7 @@ import rateLimit from 'express-rate-limit';
 import cors from 'cors';
 import helmet from 'helmet';
 import cookieParser from 'cookie-parser';
+import path from 'path';
 // Routers
 import emailRouter from './routes/email';
 
@@ -32,9 +33,11 @@ app.use('/api/v1/email', limiter, emailRouter);
 
 const PORT = ((process.env.PORT as unknown) as number) || 5000;
 
-if (process.env.NODE_ENV === 'PRODUCTION') {
-  app.use(express.static('/frontend/build'));
-}
+app.use(express.static(path.join(__dirname, '../frontend/build')));
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname + '/../frontend/build/index.html'));
+});
 
 app.listen(PORT, (): void => {
   console.log(
