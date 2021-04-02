@@ -22,7 +22,7 @@
     "dev": "tsc -w",
     "build": "cd frontend && npm run build",
     "heroku-postbuild": "cd frontend && npm install && npm run build",
-    "start": "nodemon dist/server.js"
+    "start": "node dist/server.js"
   },
   "keywords": [],
   "author": "",
