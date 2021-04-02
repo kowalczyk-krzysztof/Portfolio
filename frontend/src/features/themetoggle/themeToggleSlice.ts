@@ -2,7 +2,6 @@ import { createSlice } from '@reduxjs/toolkit';
 import { RootState } from '../../app/store';
 // Themes
 import { lightTheme, darkTheme, ThemeNames } from '../../createGlobalStyle';
-
 // Interface defining what props does a theme have
 export interface ThemeProps {
   name: ThemeNames;

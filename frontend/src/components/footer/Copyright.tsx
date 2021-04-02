@@ -1,4 +1,5 @@
 import React, { FC } from 'react';
+// Styling
 import { StyledCopyright } from './footer-styling';
 
 export const Copyright: FC = () => {

@@ -1,9 +1,8 @@
 import React, { FC } from 'react';
+// Redux
 import { useSelector } from 'react-redux';
-import {
-  localizationSelector,
-  Locale,
-} from '../../features/localization/localizationSlice';
+import { localizationSelector } from '../../features/localization/localizationSlice';
+import { Locale } from '../../features/localization/locales';
 // Styling
 import { HomepageContent, StyledHomepageLink } from './homepage-styling';
 

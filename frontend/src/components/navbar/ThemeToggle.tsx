@@ -1,4 +1,5 @@
 import React, { FC, MouseEvent } from 'react';
+// Redux
 import { useDispatch } from 'react-redux';
 import {
   SET_THEME_DARK,

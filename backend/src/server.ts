@@ -13,12 +13,13 @@ const app = express();
 // Set body parser
 app.use(express.json());
 app.use(urlencoded({ extended: true }));
-// Rate limiting
+// Rate limiting - I only set it for the email route in case I want
+const REQUEST_LIMIT = (process.env.SEND_EMAIL_LIMIT as unknown) as number;
 const limiter = rateLimit({
-  windowMs: 10 * 60 * 100, // 10 minutes
-  max: 100, // limit each IP to 100 requests per windowMs
+  windowMs: 60 * 60 * 100, // 60 minutes
+  max: REQUEST_LIMIT, // limit each IP to 3 requests per windowMs
+  message: 'Too many requests. Try again in 1 hour',
 });
-app.use(limiter);
 // Enable CORS - this is needed so I can connect with frontend
 app.use(cors());
 // Set security headers
@@ -27,7 +28,7 @@ app.use(helmet());
 app.use(cookieParser());
 
 // Routers
-app.use('/api/v1/email', emailRouter);
+app.use('/api/v1/email', limiter, emailRouter);
 
 const PORT = ((process.env.PORT as unknown) as number) || 5000;
 

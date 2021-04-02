@@ -1,10 +1,31 @@
-import { Locale } from './localizationSlice';
 // Values for locale names
 export enum LocaleNames {
   ENG = 'ENG',
   PL = 'PL',
 }
+// Locale interface
+export interface Locale {
+  name: LocaleNames;
+  navbarHome: string;
+  navbarAbout: string;
+  navbarContact: string;
+  homeH1: string;
+  homeH2: string;
+  homeDescription: string;
+  homePassion: string;
+  learnMore: string;
+  buttonSend: string;
+  contactH1: string;
+  contactNameField: string;
+  contactEmailField: string;
+  contactMessageField: string;
+  inputCharactersLeft: string;
+  enterName: string;
+  invalidEmail: string;
+  enterMessage: string;
+}
 
+// English locale
 export const locale_EN: Locale = {
   name: LocaleNames.ENG,
   navbarHome: 'Home',
@@ -22,10 +43,10 @@ export const locale_EN: Locale = {
   contactMessageField: 'Your message',
   inputCharactersLeft: 'Characters left: ',
   enterName: 'Please enter your name',
-  enterEmail: 'Please enter your e-mail',
+  invalidEmail: 'Invalid e-mail format',
   enterMessage: `Message field can't be empty`,
-  unsubmittedData: `You have some unsubmitted data, are you sure you want to leave?`,
 };
+// Polish locale
 export const locale_PL: Locale = {
   name: LocaleNames.PL,
   navbarHome: 'Strona Główna',
@@ -43,7 +64,6 @@ export const locale_PL: Locale = {
   contactMessageField: `Twoja wiadomość`,
   inputCharactersLeft: `Pozostałe znaki: `,
   enterName: 'Wprowadź swoje imię i nazwisko',
-  enterEmail: 'Wprowadź swój email',
+  invalidEmail: 'Niepoprawny format adresu email',
   enterMessage: 'Wiadomość nie może być pusta',
-  unsubmittedData: `Na pewno chcesz wyjść? Niezapisane dane zostaną utracone`,
 };
