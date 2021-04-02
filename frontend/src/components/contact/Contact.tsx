@@ -5,6 +5,7 @@ import {
   localizationSelector,
   Locale,
 } from '../../features/localization/localizationSlice';
+import { sendEmail } from '../../utils/sendEmail';
 // Styling
 import { StyledWarning, StyledContainer } from './contact-styling';
 
@@ -121,6 +122,10 @@ const Contact: FC = (): JSX.Element => {
       emailValidation === true &&
       messageValidation === true
     ) {
+      // console.log(name);
+      // console.log(email);
+      // console.log(message);
+      sendEmail(name, email, message);
       setName('');
       setShowNameWarning(WarningDisplay.HIDE);
       setEmail('');
