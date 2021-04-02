@@ -32,6 +32,10 @@ app.use('/api/v1/email', limiter, emailRouter);
 
 const PORT = ((process.env.PORT as unknown) as number) || 5000;
 
+if (process.env.PORT === 'PRODUCTION') {
+  app.use(express.static('/frontend/build'));
+}
+
 app.listen(PORT, (): void => {
   console.log(
     `Server is up and running @ http://localhost:${PORT} in ${process.env.NODE_ENV} mode`
