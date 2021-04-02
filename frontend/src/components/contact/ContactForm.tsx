@@ -105,6 +105,7 @@ const ContactForm: FC = (): JSX.Element => {
     setName('');
     setEmail('');
     setMessage('');
+    setcharactersLeft(messageMaxLength);
   };
   // Resetting notifications
   const resetNotifications = () => {
