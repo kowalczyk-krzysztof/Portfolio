@@ -1,14 +1,13 @@
 import React, { FC, useRef, useEffect } from 'react';
+// Redux
 import { useSelector, useDispatch } from 'react-redux';
-import {
-  Locale,
-  localizationSelector,
-} from '../../features/localization/localizationSlice';
+import { localizationSelector } from '../../features/localization/localizationSlice';
 import {
   menuToggleSelector,
   MenuDisplay,
   SET_MENU_DISPLAY_NONE,
 } from '../../features/menutoggle/menuToggleSlice';
+import { Locale } from '../../features/localization/locales';
 // Styling
 import { StyledLinks, StyledLink } from './navbar-styling';
 

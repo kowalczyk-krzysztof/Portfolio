@@ -1,17 +1,20 @@
 import React from 'react';
+// React router
 import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
+// Redux
 import { useSelector } from 'react-redux';
-import { ThemeProvider } from 'styled-components';
+import {
+  themeSelector,
+  ThemeProps,
+} from './features/themetoggle/themeToggleSlice';
 // Components
 import Navbar from './components/navbar/Navbar';
 import Footer from './components/footer/Footer';
 import About from './components/about/About';
 import Contact from './components/contact/Contact';
 import Homegapage from './components/homepage/Homepage';
-import {
-  themeSelector,
-  ThemeProps,
-} from './features/themetoggle/themeToggleSlice';
+// Styling
+import { ThemeProvider } from 'styled-components';
 import {
   GlobalStyle,
   MainContainer,

@@ -1,28 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from '../../app/store';
-import { locale_EN, locale_PL, LocaleNames } from './locales';
+import { Locale, locale_EN, locale_PL, LocaleNames } from './locales';
 // Interface for locale properties
-export interface Locale {
-  name: LocaleNames;
-  navbarHome: string;
-  navbarAbout: string;
-  navbarContact: string;
-  homeH1: string;
-  homeH2: string;
-  homeDescription: string;
-  homePassion: string;
-  learnMore: string;
-  buttonSend: string;
-  contactH1: string;
-  contactNameField: string;
-  contactEmailField: string;
-  contactMessageField: string;
-  inputCharactersLeft: string;
-  enterName: string;
-  enterEmail: string;
-  enterMessage: string;
-  unsubmittedData: string;
-}
 
 interface Localization {
   locale: Locale;

@@ -1,11 +1,11 @@
 import React, { FC, MouseEvent } from 'react';
+// Redux
 import { useDispatch, useSelector } from 'react-redux';
 import {
   localizationSelector,
   SET_LOCALE,
-  Locale,
 } from '../../features/localization/localizationSlice';
-import { LocaleNames } from '../../features/localization/locales';
+import { LocaleNames, Locale } from '../../features/localization/locales';
 // Styling
 import { StyledLanguage, StyledLanguageButtons } from './navbar-styling';
 

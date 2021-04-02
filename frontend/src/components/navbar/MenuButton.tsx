@@ -1,4 +1,5 @@
 import React, { FC, useEffect, KeyboardEvent } from 'react';
+// Redux
 import { useDispatch, useSelector } from 'react-redux';
 import {
   SET_MENU_DISPLAY_NONE,
