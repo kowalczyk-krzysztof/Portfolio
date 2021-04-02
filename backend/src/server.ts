@@ -4,7 +4,6 @@ import rateLimit from 'express-rate-limit';
 import cors from 'cors';
 import helmet from 'helmet';
 import cookieParser from 'cookie-parser';
-
 // Routers
 import emailRouter from './routes/email';
 
