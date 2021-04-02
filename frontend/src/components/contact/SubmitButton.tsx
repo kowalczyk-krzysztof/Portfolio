@@ -11,12 +11,11 @@ import {
   FailedButton,
   DefaultButton,
 } from './contact-styling';
-
-import { ButtonStyle } from './ContactForm';
+import { StateStyle } from './ContactForm';
 
 export interface SubmitButtonProps {
   type: string;
-  style: ButtonStyle;
+  style: StateStyle;
   form: string;
 }
 export const SubmitButton: FC<SubmitButtonProps> = ({ style, form }) => {
@@ -24,19 +23,19 @@ export const SubmitButton: FC<SubmitButtonProps> = ({ style, form }) => {
   const localization: Locale = useSelector(localizationSelector);
   const { buttonSend } = localization;
 
-  if (style === ButtonStyle.LOADING)
+  if (style === StateStyle.LOADING)
     return (
       <LoadingButton type="submit" form={form} disabled={true}>
         Loading
       </LoadingButton>
     );
-  if (style === ButtonStyle.SUCCESS)
+  if (style === StateStyle.SUCCESS)
     return (
       <SuccessButton type="submit" form={form} disabled={true}>
         Success
       </SuccessButton>
     );
-  if (style === ButtonStyle.FAILURE)
+  if (style === StateStyle.FAILURE)
     return (
       <FailedButton type="submit" form={form} disabled={true}>
         Failure

@@ -23,6 +23,9 @@ export interface Locale {
   enterName: string;
   invalidEmail: string;
   enterMessage: string;
+  sendEmailLoading: string;
+  sendEmailSuccess: string;
+  sendEmailFailure: string;
 }
 
 // English locale
@@ -45,6 +48,9 @@ export const locale_EN: Locale = {
   enterName: 'Please enter your name',
   invalidEmail: 'Invalid e-mail format',
   enterMessage: `Message field can't be empty`,
+  sendEmailLoading: `Sending e-mail...`,
+  sendEmailSuccess: 'E-mail was sent',
+  sendEmailFailure: 'E-mail was not sent - try again later',
 };
 // Polish locale
 export const locale_PL: Locale = {
@@ -66,4 +72,7 @@ export const locale_PL: Locale = {
   enterName: 'Wprowadź swoje imię i nazwisko',
   invalidEmail: 'Niepoprawny format adresu email',
   enterMessage: 'Wiadomość nie może być pusta',
+  sendEmailLoading: `Wysyłam e-mail...`,
+  sendEmailSuccess: 'E-mail został wysłany',
+  sendEmailFailure: 'Nie udało się wysłać e-maila - spróbuj ponownie później',
 };
