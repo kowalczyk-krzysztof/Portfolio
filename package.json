@@ -4,7 +4,7 @@
   "description": "My portfolio site",
   "main": "index.js",
   "scripts": {
-    "build": "cd backend && cd src && tsc",
+    "build": "cd backend && npm install && cd src && tsc",
     "postinstall": "npm run build",
     "heroku-postbuild": "cd frontend && npm install && npm run build",
     "start": "node backend/dist/server.js"
@@ -15,7 +15,5 @@
   "engines": {
     "node": "14.15.4"
   },
-  "dependencies": {
-    "typescript": "^4.2.3"
-  }
+  "dependencies": {}
 }
