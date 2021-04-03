@@ -3,6 +3,8 @@ import styled from 'styled-components/macro';
 export const StyledContactLink = styled.a`
   color: #e0e1dd;
   margin-right: 5px;
+
+  padding-right: 5px;
   :hover {
     color: #fafafa;
   }
