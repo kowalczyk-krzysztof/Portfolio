@@ -2,7 +2,7 @@ import express, { urlencoded } from 'express';
 import dotenv from 'dotenv';
 import rateLimit from 'express-rate-limit';
 import cors from 'cors';
-// import helmet from 'helmet';
+import helmet from 'helmet';
 import cookieParser from 'cookie-parser';
 import path from 'path';
 // Routers
@@ -24,7 +24,16 @@ const limiter = rateLimit({
 // Enable CORS - this is needed so I can connect with frontend
 app.use(cors());
 // Set security headers
-// app.use(helmet());
+app.use(
+  helmet({
+    contentSecurityPolicy: {
+      directives: {
+        ...helmet.contentSecurityPolicy.getDefaultDirectives(),
+        'connect-src': ["'self'", 'ajax.cloudflare.com'],
+      },
+    },
+  })
+);
 // Set cookie parser
 app.use(cookieParser());
 
