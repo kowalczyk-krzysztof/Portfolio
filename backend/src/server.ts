@@ -28,6 +28,13 @@ app.use(helmet());
 // Set cookie parser
 app.use(cookieParser());
 
+const letsEncryptReponse = process.env.CERTBOT_RESPONSE;
+
+// Return the Let's Encrypt certbot response:
+app.get('/.well-known/acme-challenge/:content', function (req, res) {
+  res.send(letsEncryptReponse);
+});
+
 // Routers
 app.use('/api/v1/email', limiter, emailRouter);
 
