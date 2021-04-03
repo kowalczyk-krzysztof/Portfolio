@@ -24,9 +24,13 @@
     "build": "tsc",
     "postinstall": "npm run build",
     "heroku-postbuild": "cd frontend && npm install && npm run build",
-    "start": "node backend/dist/server.js"
+    "start": "node backend/dist/server.js",
+    "deploy": "git add . && git commit -m Heroku && git push heroku main"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "author": "Krzysztof Kowalczyk",
+  "license": "ISC",
+  "engines": {
+    "node": "14.15.4"
+  }
 }
