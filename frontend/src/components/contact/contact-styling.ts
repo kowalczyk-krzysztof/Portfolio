@@ -23,7 +23,12 @@ export const StyledContainer = styled.main`
   }
 `;
 
-export const StyledNotification = styled.p`
+export const StyledNotificationCorrect = styled.p`
+  color: green;
+  user-select: none;
+`;
+
+export const StyledNotificationWarning = styled.p`
   color: red;
   user-select: none;
 `;

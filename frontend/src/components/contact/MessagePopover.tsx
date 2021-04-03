@@ -4,7 +4,10 @@ import { useSelector } from 'react-redux';
 import { localizationSelector } from '../../features/localization/localizationSlice';
 import { Locale } from '../../features/localization/locales';
 // Styling
-import { StyledNotification } from './contact-styling';
+import {
+  StyledNotificationCorrect,
+  StyledNotificationWarning,
+} from './contact-styling';
 import { PopoverStyles } from './ContactForm';
 
 export interface MessagePopoverProps {
@@ -16,9 +19,11 @@ export const MessagePopover: FC<MessagePopoverProps> = ({ display }) => {
   const { enterMessage } = localization;
 
   if (display === PopoverStyles.SUCCESS)
-    return <StyledNotification>Checkmark</StyledNotification>;
+    return <StyledNotificationCorrect>✓</StyledNotificationCorrect>;
   if (display === PopoverStyles.FAILURE)
-    return <StyledNotification>{enterMessage}</StyledNotification>;
+    return (
+      <StyledNotificationWarning>{enterMessage}</StyledNotificationWarning>
+    );
   else return null;
 };
 
