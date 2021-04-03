@@ -29,7 +29,7 @@ app.use(
     contentSecurityPolicy: {
       directives: {
         ...helmet.contentSecurityPolicy.getDefaultDirectives(),
-        'connect-src': ["'self'", 'ajax.cloudflare.com'],
+        'connect-src': ["'self'", 'cdnjs.cloudflare.com'],
       },
     },
   })
