@@ -21,7 +21,7 @@
   },
   "scripts": {
     "dev": "tsc -w",
-    "build": "tsc",
+    "build": "cd backend && cd src && tsc",
     "postinstall": "npm run build",
     "heroku-postbuild": "cd frontend && npm install && npm run build",
     "start": "node backend/dist/server.js",
