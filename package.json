@@ -4,7 +4,7 @@
   "description": "My portfolio site",
   "main": "index.js",
   "scripts": {
-    "build": "cd backend && npm install && cd src && tsc",
+    "build": "cd backend && npm install && npm run build",
     "postinstall": "npm run build",
     "heroku-postbuild": "cd frontend && npm install && npm run build",
     "start": "node backend/dist/server.js"
