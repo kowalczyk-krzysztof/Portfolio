@@ -33,8 +33,8 @@ app.use('/api/v1/email', limiter, emailRouter);
 
 const PORT = ((process.env.PORT as unknown) as number) || 5000;
 
+// Serving react SPA
 app.use(express.static(path.join(__dirname, '/../../frontend/build')));
-
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname + '/../../frontend/build/index.html'));
 });
