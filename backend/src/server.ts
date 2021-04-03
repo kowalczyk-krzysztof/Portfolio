@@ -26,12 +26,7 @@ app.use(cors());
 // Set security headers
 app.use(
   helmet({
-    contentSecurityPolicy: {
-      directives: {
-        ...helmet.contentSecurityPolicy.getDefaultDirectives(),
-        'connect-src': ["'self'", 'cdnjs.cloudflare.com'],
-      },
-    },
+    contentSecurityPolicy: false,
   })
 );
 // Set cookie parser
