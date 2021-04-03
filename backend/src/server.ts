@@ -2,7 +2,7 @@ import express, { urlencoded } from 'express';
 import dotenv from 'dotenv';
 import rateLimit from 'express-rate-limit';
 import cors from 'cors';
-import helmet from 'helmet';
+// import helmet from 'helmet';
 import cookieParser from 'cookie-parser';
 import path from 'path';
 // Routers
@@ -24,16 +24,16 @@ const limiter = rateLimit({
 // Enable CORS - this is needed so I can connect with frontend
 app.use(cors());
 // Set security headers
-app.use(helmet());
+// app.use(helmet());
 // Set cookie parser
 app.use(cookieParser());
 
-const letsEncryptReponse = process.env.CERTBOT_RESPONSE;
+// const letsEncryptReponse = process.env.CERTBOT_RESPONSE;
 
-// Return the Let's Encrypt certbot response:
-app.get('/.well-known/acme-challenge/:content', function (req, res) {
-  res.send(letsEncryptReponse);
-});
+// // Return the Let's Encrypt certbot response:
+// app.get('/.well-known/acme-challenge/:content', function (req, res) {
+//   res.send(letsEncryptReponse);
+// });
 
 // Routers
 app.use('/api/v1/email', limiter, emailRouter);
