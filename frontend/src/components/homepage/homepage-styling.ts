@@ -28,6 +28,8 @@ export const HomepageContent = styled.main`
   /* This margin centers the container */
   margin: 0 auto;
   z-index: 0;
+  margin-top: 6.5vh;
+  margin-bottom: 6vh;
 
   user-select: none;
   text-align: center;
@@ -45,8 +47,13 @@ export const HomepageContent = styled.main`
 
   border: 5px dashed #4d96bb;
   border-radius: 25px 50px;
-  padding: calc(18px + 1vh);
+  padding: calc(16px + 1vh);
   line-height: 1;
+
+  h1 {
+    margin-top: 0px;
+  }
+
   p,
   h1,
   h2,
@@ -64,5 +71,9 @@ export const HomepageContent = styled.main`
 
   @media only screen and (min-width: 768px) {
     font-size: calc(24px + 1vh);
+  }
+
+  @media only screen and (max-height: 500px) {
+    font-size: calc(14px + 1vh);
   }
 `;
