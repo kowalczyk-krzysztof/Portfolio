@@ -1,1 +1,1 @@
-My personal portfolio site. Made with React + Redux, styled-components for CSS and Express node.js for backend.
+My portfolio site. Made with React + Redux, styled-components for CSS and Express Node.js for backend.
