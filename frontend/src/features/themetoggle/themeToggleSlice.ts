@@ -5,8 +5,8 @@ import { lightTheme, darkTheme, ThemeNames } from '../../createGlobalStyle';
 // Interface defining what props does a theme have
 export interface ThemeProps {
   name: ThemeNames;
-  body: string;
-  text: string;
+  background: string;
+  color: string;
 }
 
 interface ThemeToggleProps {

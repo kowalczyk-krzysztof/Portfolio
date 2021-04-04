@@ -1,12 +1,20 @@
 import styled from 'styled-components/macro';
+// Variables
+import {
+  menusBackground,
+  menusTextColor,
+  menuLightBlue,
+  lightBackground,
+} from '../../createGlobalStyle';
+
 // Links
 export const StyledContactLink = styled.a`
-  color: #e0e1dd;
+  color: ${menusTextColor};
   margin-right: 5px;
 
   padding-right: 5px;
   :hover {
-    color: #fafafa;
+    color: ${lightBackground};
   }
 `;
 
@@ -17,7 +25,7 @@ export const FooterIconWrapper = styled.div`
 // Copyright
 export const StyledCopyright = styled.div`
   font-size: calc(6px + 1vh);
-  background: #4d96bb;
+  background: ${menuLightBlue};
   width: 100%;
   line-height: 0.1;
 `;
@@ -43,10 +51,10 @@ export const StyledFooter = styled.footer`
   flex-wrap: wrap;
   opacity: 0.9;
 
-  background: #0d1b2a;
+  background: ${menusBackground};
 
   box-shadow: 0px 0px 0px 2px rgba(0, 0, 0, 0.4);
-  color: #e0e1dd;
+  color: ${menusTextColor};
   user-select: none;
 
   @media only screen and (max-width: 280px) {

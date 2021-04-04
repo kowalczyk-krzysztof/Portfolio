@@ -1,5 +1,14 @@
 import styled from 'styled-components/macro';
 import { Link } from 'react-router-dom';
+// Variables
+import {
+  menusBackground,
+  menusTextColor,
+  menuLightBlue,
+  menuLightBlueHover,
+  lightBackground,
+} from '../../createGlobalStyle';
+
 // Link
 export const StyledHomepageLink = styled(Link)`
   cursor: pointer;
@@ -11,16 +20,16 @@ export const StyledHomepageLink = styled(Link)`
   border-radius: 10px;
   text-decoration: none;
   outline: none;
-  color: #e0e1dd;
+  color: ${menusTextColor};
 
-  background: #4d96bb;
+  background: ${menuLightBlue};
 
   :after {
     content: ' >';
   }
 
   :hover {
-    background: #74b9db;
+    background: ${menuLightBlueHover};
   }
 `;
 // Homepage container
@@ -34,8 +43,8 @@ export const HomepageContent = styled.main`
   user-select: none;
   text-align: center;
 
-  color: #e0e1dd;
-  background: #0d1b2a;
+  color: ${menusTextColor};
+  background: ${menusBackground};
   opacity: 0.8;
 
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
@@ -45,7 +54,7 @@ export const HomepageContent = styled.main`
   font-size: calc(16px + 1vh);
   font-weight: 500;
 
-  border: 5px dashed #4d96bb;
+  border: 5px dashed ${menuLightBlue};
   border-radius: 25px 50px;
   padding: calc(16px + 1vh);
   line-height: 1;
@@ -61,7 +70,7 @@ export const HomepageContent = styled.main`
     text-shadow: 1px 1px;
 
     :hover {
-      color: #fafafa;
+      color: ${lightBackground};
     }
   }
 

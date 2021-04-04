@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+// Variables
+import { lightBackground } from '../../createGlobalStyle';
 
 export const StyledEmailNotificaiton = styled.p``;
 
@@ -35,20 +37,20 @@ export const StyledNotificationWarning = styled.p`
 
 export const DefaultButton = styled.button`
   background: blue;
-  color: #fafafa;
+  color: ${lightBackground};
 `;
 
 export const LoadingButton = styled.button`
   background: yellow;
-  color: #fafafa;
+  color: ${lightBackground};
 `;
 
 export const FailedButton = styled.button`
   background: red;
-  color: #fafafa;
+  color: ${lightBackground};
 `;
 
 export const SuccessButton = styled.button`
   background: green;
-  color: #fafafa;
+  color: ${lightBackground};
 `;

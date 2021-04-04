@@ -1,5 +1,14 @@
 import styled, { keyframes } from 'styled-components/macro';
 import { Link } from 'react-router-dom';
+// Variables
+import {
+  menusBackground,
+  menusTextColor,
+  darkBackground,
+  menuLightBlue,
+  menuLightBlueHover,
+  lightBackground,
+} from '../../createGlobalStyle';
 
 // This animation is needed to avoid flickering
 const MenuFade = keyframes`
@@ -10,7 +19,7 @@ from {opacity: 0;}
 export const MenuIconWrapper = styled.div`
   padding-bottom: 5px;
   :hover {
-    color: #fafafa;
+    color: ${lightBackground};
   }
 `;
 // Logo container
@@ -22,9 +31,9 @@ export const StyledLogo = styled.div`
 export const StyledLogoH1 = styled.h1`
   font-size: calc(16px + 1vh);
   margin: 15px 15px;
-  color: #4d96bb;
+  color: ${menuLightBlue};
   :hover {
-    color: #74b9db;
+    color: ${menuLightBlueHover};
   }
 `;
 // Theme toggle cintainer
@@ -50,18 +59,18 @@ export const StyledThemeToggleSlider = styled.input`
   
    */
 
-  border: 4px solid #4d96bb;
+  border: 4px solid ${menuLightBlue};
   width: 60px;
   height: 30px;
   appearance: none; /* hides default checkbox*/
-  background: #fafafa;
+  background: ${lightBackground};
   opacity: 0.8;
   outline: none;
   border-radius: 20px; /* slider-like edges */
   transition: 0.6s; /* slow translition between toggles */
 
   :checked {
-    background: #1b263b;
+    background: ${darkBackground};
   }
   /* slider circle */
   :before {
@@ -128,12 +137,12 @@ export const StyledLink = styled(Link)`
 
   text-decoration: none;
   text-align: center;
-  border-top: 1px ridge #e0e1dd;
+  border-top: 1px ridge ${menusTextColor};
   font-size: calc(16px + 1vh);
-  background: #0d1b2a;
+  background: ${menusBackground};
   :hover {
     background: #415a77;
-    color: #fafafa;
+    color: ${lightBackground};
   }
 
   :last-child {
@@ -180,7 +189,7 @@ export const StyledNavbar = styled.header`
   z-index: 1;
 
   box-shadow: 0 2px 0px 0px rgba(0, 0, 0, 0.4);
-  background: #0d1b2a;
+  background: ${menusBackground};
   align-items: center;
   user-select: none;
 
@@ -191,7 +200,7 @@ export const StyledNavbar = styled.header`
   }
   div,
   a {
-    color: #e0e1dd;
+    color: ${menusTextColor};
   }
 
   /*Those settings are for non-mobile devices. Minimum width to cater for is 320px. */
@@ -214,10 +223,10 @@ export const StyledNavbar = styled.header`
       box-shadow: none;
 
       :first-child {
-        background: #4d96bb;
+        background: ${menuLightBlue};
 
         :hover {
-          background: #74b9db;
+          background: ${menuLightBlueHover};
         }
       }
     }
