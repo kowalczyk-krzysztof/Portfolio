@@ -17,7 +17,7 @@ app.use(urlencoded({ extended: true }));
 // Rate limiting - I only set it for the email route in case I want
 const REQUEST_LIMIT = (process.env.SEND_EMAIL_LIMIT as unknown) as number;
 const limiter = rateLimit({
-  windowMs: 60 * 60 * 100, // 60 minutes
+  windowMs: 600 * 60 * 100, // 60 minutes
   max: REQUEST_LIMIT, // limit each IP to 3 requests per windowMs
   message: 'Too many requests. Try again in 1 hour',
 });
