@@ -27,6 +27,11 @@ import {
 //   faReact,
 // );
 
+// Routes
+export const home = '/';
+export const about = '/about';
+export const contact = '/contact';
+
 const App = (): JSX.Element => {
   // Assigning a theme based on store
   const theme: ThemeProps = useSelector(themeSelector);
@@ -43,9 +48,9 @@ const App = (): JSX.Element => {
           <Navbar />
           <ContentContainer>
             <Switch>
-              <Route exact path="/about" component={About}></Route>
-              <Route exact path="/contact" component={Contact}></Route>
-              <Route path="/" component={Homegapage}></Route>
+              <Route exact path={about} component={About}></Route>
+              <Route exact path={contact} component={Contact}></Route>
+              <Route path={home} component={Homegapage}></Route>
             </Switch>
           </ContentContainer>
           <Footer />

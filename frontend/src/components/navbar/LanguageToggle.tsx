@@ -10,6 +10,10 @@ import { LocaleNames, Locale } from '../../features/localization/locales';
 import { StyledLanguage, StyledLanguageButtons } from './navbar-styling';
 
 const LanguageToggle: FC = (): JSX.Element => {
+  // Flag names
+  const flagENG = 'flag_ENG';
+  const flagPL = 'flag_PL';
+
   const dispatch = useDispatch();
   const localization: Locale = useSelector(localizationSelector);
   // Thanks to currying I can pass a value in onClick
@@ -29,12 +33,19 @@ const LanguageToggle: FC = (): JSX.Element => {
     <StyledLanguage>
       <StyledLanguageButtons onClick={localizationHandler(LocaleNames.ENG)}>
         <img
-          src={`${process.env.PUBLIC_URL}/flag_ENG.png`}
-          alt="flag_ENG"
+          src={`${process.env.PUBLIC_URL}/${flagENG}.png`}
+          alt={flagENG}
+          role="button"
+          aria-label="Switch language to English"
         ></img>
       </StyledLanguageButtons>
       <StyledLanguageButtons onClick={localizationHandler(LocaleNames.PL)}>
-        <img src={`${process.env.PUBLIC_URL}/flag_PL.png`} alt="flag_PL"></img>
+        <img
+          src={`${process.env.PUBLIC_URL}/${flagPL}.png`}
+          alt={flagPL}
+          role="button"
+          aria-label="Switch language to Polish"
+        ></img>
       </StyledLanguageButtons>
     </StyledLanguage>
   );

@@ -4,11 +4,11 @@ import { useSelector } from 'react-redux';
 import { localizationSelector } from '../../features/localization/localizationSlice';
 import { Locale } from '../../features/localization/locales';
 // Styling
-import { StyledEmailNotificaiton } from './contact-styling';
-import { StateStyle } from './ContactForm';
+import { StyledEmailNotification } from './contact-styling';
+import { EmailSendingStyle } from './ContactForm';
 
 export interface EmailSentNotificationProps {
-  isEmailSent: StateStyle;
+  isEmailSent: EmailSendingStyle;
 }
 export const EmailSentNotification: FC<EmailSentNotificationProps> = ({
   isEmailSent,
@@ -17,18 +17,18 @@ export const EmailSentNotification: FC<EmailSentNotificationProps> = ({
   const localization: Locale = useSelector(localizationSelector);
   const { sendEmailFailure, sendEmailSuccess, sendEmailLoading } = localization;
 
-  if (isEmailSent === StateStyle.LOADING)
+  if (isEmailSent === EmailSendingStyle.LOADING)
     return (
-      <StyledEmailNotificaiton>{sendEmailLoading}</StyledEmailNotificaiton>
+      <StyledEmailNotification>{sendEmailLoading}</StyledEmailNotification>
     );
 
-  if (isEmailSent === StateStyle.SUCCESS)
+  if (isEmailSent === EmailSendingStyle.SUCCESS)
     return (
-      <StyledEmailNotificaiton>{sendEmailSuccess}</StyledEmailNotificaiton>
+      <StyledEmailNotification>{sendEmailSuccess}</StyledEmailNotification>
     );
-  if (isEmailSent === StateStyle.FAILURE)
+  if (isEmailSent === EmailSendingStyle.FAILURE)
     return (
-      <StyledEmailNotificaiton>{sendEmailFailure}</StyledEmailNotificaiton>
+      <StyledEmailNotification>{sendEmailFailure}</StyledEmailNotification>
     );
   else return null;
 };

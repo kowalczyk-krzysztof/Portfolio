@@ -26,6 +26,7 @@ export interface Locale {
   sendEmailLoading: string;
   sendEmailSuccess: string;
   sendEmailFailure: string;
+  contactMeText: string;
 }
 
 // English locale
@@ -44,13 +45,14 @@ export const locale_EN: Locale = {
   contactNameField: `Full name`,
   contactEmailField: `E-mail`,
   contactMessageField: 'Your message',
-  inputCharactersLeft: 'Characters left: ',
+  inputCharactersLeft: 'Characters left:  ',
   enterName: 'Please enter your name',
   invalidEmail: 'Invalid e-mail format',
   enterMessage: `Message field can't be empty`,
   sendEmailLoading: `Sending e-mail...`,
   sendEmailSuccess: 'E-mail was sent',
   sendEmailFailure: 'E-mail was not sent - try again later',
+  contactMeText: 'You can also find me on:',
 };
 // Polish locale
 export const locale_PL: Locale = {
@@ -68,11 +70,12 @@ export const locale_PL: Locale = {
   contactNameField: `Imię i nazwisko`,
   contactEmailField: `E-mail`,
   contactMessageField: `Twoja wiadomość`,
-  inputCharactersLeft: `Pozostałe znaki: `,
+  inputCharactersLeft: `Pozostałe znaki:  `,
   enterName: 'Wprowadź swoje imię i nazwisko',
   invalidEmail: 'Niepoprawny format adresu email',
   enterMessage: 'Wiadomość nie może być pusta',
   sendEmailLoading: `Wysyłam e-mail...`,
   sendEmailSuccess: 'E-mail został wysłany',
   sendEmailFailure: 'Nie udało się wysłać e-maila - spróbuj ponownie później',
+  contactMeText: 'Znajdziesz mnie także na:',
 };

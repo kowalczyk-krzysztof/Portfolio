@@ -10,6 +10,8 @@ import {
 import { Locale } from '../../features/localization/locales';
 // Styling
 import { StyledLinks, StyledLink } from './navbar-styling';
+// Variables
+import { home, about, contact } from '../../App';
 
 const LinkList: FC = (): JSX.Element => {
   const dispatch = useDispatch();
@@ -40,13 +42,13 @@ const LinkList: FC = (): JSX.Element => {
 
   return (
     <StyledLinks display={display} ref={ref}>
-      <StyledLink to="/" onClick={closeMenuWhenRedirected}>
+      <StyledLink to={home} onClick={closeMenuWhenRedirected}>
         {navbarHome}
       </StyledLink>
-      <StyledLink to="about" onClick={closeMenuWhenRedirected}>
+      <StyledLink to={about} onClick={closeMenuWhenRedirected}>
         {navbarAbout}
       </StyledLink>
-      <StyledLink to="contact" onClick={closeMenuWhenRedirected}>
+      <StyledLink to={contact} onClick={closeMenuWhenRedirected}>
         {navbarContact}
       </StyledLink>
     </StyledLinks>

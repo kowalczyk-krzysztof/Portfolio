@@ -4,14 +4,23 @@ import { useSelector } from 'react-redux';
 import { localizationSelector } from '../../features/localization/localizationSlice';
 import { Locale } from '../../features/localization/locales';
 // Stylinng
-import { StyledTitle } from './contact-styling';
+import {
+  StyledContactTitle,
+  StyledContactText,
+  StyledContactTitleContainer,
+} from './contact-styling';
 
 export const ContactTitle: FC = () => {
   // Localization
   const localization: Locale = useSelector(localizationSelector);
-  const { contactH1 } = localization;
+  const { contactH1, contactMeText } = localization;
 
-  return <StyledTitle>{contactH1}</StyledTitle>;
+  return (
+    <StyledContactTitleContainer>
+      <StyledContactTitle>{contactH1}</StyledContactTitle>
+      <StyledContactText>{contactMeText}</StyledContactText>
+    </StyledContactTitleContainer>
+  );
 };
 
 export default ContactTitle;
