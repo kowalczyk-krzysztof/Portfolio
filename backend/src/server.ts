@@ -26,7 +26,12 @@ app.use(cors());
 // Set security headers
 app.use(
   helmet({
-    contentSecurityPolicy: false,
+    contentSecurityPolicy: {
+      directives: {
+        ...helmet.contentSecurityPolicy.getDefaultDirectives(),
+        'connect-src': ["'self'", 'https://kowalczyk-portfolio.herokuapp.com'],
+      },
+    },
   })
 );
 // Set cookie parser
