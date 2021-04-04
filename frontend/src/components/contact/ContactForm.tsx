@@ -20,12 +20,13 @@ import {
   StyledFormElement,
   StyledNotificationWarning,
   StyledSubmitButton,
+  StyledButtonContainer,
 } from './contact-styling';
 
 // Warning visibility
 export enum WarningVisibility {
-  SHOW = 'show',
-  HIDDEN = 'hidden',
+  SHOW = 1,
+  HIDDEN = 0,
 }
 // Field border
 enum FieldBorderStyle {
@@ -320,17 +321,19 @@ const ContactForm: FC = (): JSX.Element => {
           {charactersLeft}
         </StyledCharactersLeft>
       </StyledFormElement>
+      <StyledButtonContainer>
+        <StyledSubmitButton
+          type="submit"
+          form={formId}
+          aria-label="Submit form"
+        >
+          {buttonSend}
+        </StyledSubmitButton>
 
-      <StyledSubmitButton
-        type="submit"
-        form={formId}
-        disabled={isButtonDisabled}
-        aria-label="Submit form"
-      >
-        {buttonSend}
-      </StyledSubmitButton>
-
-      <EmailSentNotification isEmailSent={isEmailSent}></EmailSentNotification>
+        <EmailSentNotification
+          isEmailSent={isEmailSent}
+        ></EmailSentNotification>
+      </StyledButtonContainer>
     </StyledForm>
   );
 };

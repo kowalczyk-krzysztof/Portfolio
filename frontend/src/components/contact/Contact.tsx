@@ -3,14 +3,14 @@ import React, { FC } from 'react';
 import ContactForm from './ContactForm';
 import ContactTitle from './ContactTitle';
 // Stylinng
-import { StyledContainer } from './contact-styling';
+import { StyledContactContainer } from './contact-styling';
 
 export const Contact: FC = () => {
   return (
-    <StyledContainer>
+    <StyledContactContainer>
       <ContactTitle />
       <ContactForm />
-    </StyledContainer>
+    </StyledContactContainer>
   );
 };
 
