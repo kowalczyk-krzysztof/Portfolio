@@ -4,7 +4,10 @@ import { useSelector } from 'react-redux';
 import { localizationSelector } from '../../features/localization/localizationSlice';
 import { Locale } from '../../features/localization/locales';
 // Styling
-import { StyledEmailNotification } from './contact-styling';
+import {
+  StyledEmailNotification,
+  StyledDummyContainer,
+} from './contact-styling';
 import { EmailSendingStyle } from './ContactForm';
 
 export interface EmailSentNotificationProps {
@@ -30,7 +33,7 @@ export const EmailSentNotification: FC<EmailSentNotificationProps> = ({
     return (
       <StyledEmailNotification>{sendEmailFailure}</StyledEmailNotification>
     );
-  else return null;
+  else return <StyledDummyContainer />;
 };
 
 export default EmailSentNotification;
