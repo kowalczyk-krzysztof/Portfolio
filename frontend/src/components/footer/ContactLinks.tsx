@@ -12,6 +12,7 @@ import {
   StyledContactList,
   StyledContactLink,
 } from './footer-styling';
+import { iconSize } from '../../createGlobalStyle';
 
 const ContactLinks: FC = (): JSX.Element => {
   const localization: Locale = useSelector(localizationSelector);
@@ -30,21 +31,21 @@ const ContactLinks: FC = (): JSX.Element => {
       <FooterIconWrapper>
         <StyledContactLink href={github}>
           <Github
-            size="24"
+            size={iconSize}
             title="
         GitHub"
           />
         </StyledContactLink>
         <StyledContactLink href={linkedin}>
-          <Linkedin size="24" title="Linkedin"></Linkedin>
+          <Linkedin size={iconSize} title="Linkedin"></Linkedin>
         </StyledContactLink>
 
         <StyledContactLink href={twitter}>
-          <Twitter size="24" title="Twitter"></Twitter>
+          <Twitter size={iconSize} title="Twitter"></Twitter>
         </StyledContactLink>
 
         <StyledContactLink href={`mailto:${myEmail}`}>
-          <Envelope size="24" title="Email Address" />
+          <Envelope size={iconSize} title="Email Address" />
         </StyledContactLink>
       </FooterIconWrapper>
     </StyledContactList>

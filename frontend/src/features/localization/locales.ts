@@ -26,6 +26,7 @@ export interface Locale {
   sendEmailLoading: string;
   sendEmailSuccess: string;
   sendEmailFailure: string;
+  contactMeText: string;
 }
 
 // English locale
@@ -51,6 +52,7 @@ export const locale_EN: Locale = {
   sendEmailLoading: `Sending e-mail...`,
   sendEmailSuccess: 'E-mail was sent',
   sendEmailFailure: 'E-mail was not sent - try again later',
+  contactMeText: 'You can also find me on:',
 };
 // Polish locale
 export const locale_PL: Locale = {
@@ -75,4 +77,5 @@ export const locale_PL: Locale = {
   sendEmailLoading: `Wysyłam e-mail...`,
   sendEmailSuccess: 'E-mail został wysłany',
   sendEmailFailure: 'Nie udało się wysłać e-maila - spróbuj ponownie później',
+  contactMeText: 'Znajdziesz mnie także na:',
 };

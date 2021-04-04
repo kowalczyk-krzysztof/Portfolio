@@ -14,7 +14,12 @@ export const StyledTextArea = styled.textarea``;
 
 export const StyledLabel = styled.label``;
 
-export const StyledTitle = styled.h1``;
+//
+export const StyledContactTitleContainer = styled.div``;
+
+export const StyledContactTitle = styled.h1``;
+
+export const StyledContactText = styled.p``;
 
 export const StyledContainer = styled.main`
   display: flex;

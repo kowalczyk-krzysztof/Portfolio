@@ -21,6 +21,7 @@ export const ThemeToggle: FC = () => {
     <StyledThemeToggle>
       <StyledThemeToggleSlider
         type="checkbox"
+        aria-label="Theme toggle"
         onClick={themeToggler}
       ></StyledThemeToggleSlider>
     </StyledThemeToggle>
