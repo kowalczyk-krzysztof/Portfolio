@@ -16,10 +16,12 @@ app.use(express.json());
 app.use(urlencoded({ extended: true }));
 // Rate limiting - I only set it for the email route in case I want
 const REQUEST_LIMIT = (process.env.SEND_EMAIL_LIMIT as unknown) as number;
+const WINDOWMS = (process.env.WINDOWMS as unknown) as number;
 const limiter = rateLimit({
-  windowMs: 60 * 60 * 1000, // 60 minutes
+  windowMs: WINDOWMS, // 60 minutes
   max: REQUEST_LIMIT, // limit each IP to 3 requests per windowMs
   message: 'Too many requests. Try again in 1 hour',
+  headers: true,
 });
 // Enable CORS - this is needed so I can connect with frontend
 app.use(cors());
