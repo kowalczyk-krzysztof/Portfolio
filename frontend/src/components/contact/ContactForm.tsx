@@ -61,7 +61,7 @@ const ContactForm: FC = (): JSX.Element => {
   // Form id
   const formId: string = 'contact';
   // Text area max rows
-  const maxRows: number = 8;
+  const maxRows: number = 5;
   // Max textarea character length
   const messageMaxLength: number = 256;
 
@@ -140,9 +140,6 @@ const ContactForm: FC = (): JSX.Element => {
   const [charactersLeft, setcharactersLeft] = useState<number>(
     messageMaxLength
   );
-
-  // Button state
-  const [isButtonDisabled, setisButtonDisabled] = useState<boolean>(false);
 
   // Email was sent
   const [isEmailSent, setIsEmailSent] = useState<EmailSendingStyle>(
@@ -223,7 +220,6 @@ const ContactForm: FC = (): JSX.Element => {
     e.preventDefault();
     /* VALIDATING FIELDS 
       name, email and message are states of fields (so e.currentTarget.value from onChange)
-      Althought the warnings are displayed on change, I'm doing those validations here so I can preserve the state on submit if errors happen
     */
 
     // Validating name field
@@ -247,8 +243,8 @@ const ContactForm: FC = (): JSX.Element => {
       emailValidation === true &&
       messageValidation === true
     ) {
-      // Set button style and email notificaiton to loading for when the POST request is processing
-      setisButtonDisabled(true);
+      // Set email notificaiton to loading for when the POST request is processing
+
       setIsEmailSent(EmailSendingStyle.LOADING);
       // Checking if email was sent
       const emailSent = await sendEmail(name, email, message);
