@@ -237,7 +237,7 @@ const ContactForm: FC = (): JSX.Element => {
     if (messageValidation === true) setMessage(message);
     else setMessageWarning(WarningVisibility.SHOW);
 
-    // If all fields are valid then change the button style to loading, reset all fields, try to send e-mail then let user know if e-mail was sent by changing the button style and displaying a notificiations
+    // If all fields are valid then change the button style to loading, reset all fields, try to send email then let user know if email was sent by changing the button style and displaying a notificiations
     if (
       nameValidation === true &&
       emailValidation === true &&
