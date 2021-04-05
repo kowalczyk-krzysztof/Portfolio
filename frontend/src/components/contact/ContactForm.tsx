@@ -275,7 +275,6 @@ const ContactForm: FC = (): JSX.Element => {
           {enterName}
         </StyledNotificationWarning>
       </StyledFormElement>
-
       <StyledFormElement>
         <StyledLabel htmlFor={FieldNames.EMAIL}>
           {contactEmailField}
@@ -293,7 +292,6 @@ const ContactForm: FC = (): JSX.Element => {
           {invalidEmail}
         </StyledNotificationWarning>
       </StyledFormElement>
-
       <StyledFormElement>
         <StyledLabel htmlFor={FieldNames.MESSAGE}>
           {contactMessageField}
@@ -324,7 +322,6 @@ const ContactForm: FC = (): JSX.Element => {
         >
           {buttonSend}
         </StyledSubmitButton>
-
         <EmailSentNotification
           isEmailSent={isEmailSent}
         ></EmailSentNotification>

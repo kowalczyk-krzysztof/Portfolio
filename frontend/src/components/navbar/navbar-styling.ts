@@ -8,6 +8,7 @@ import {
   menuLightBlue,
   menuLightBlueHover,
   lightBackground,
+  homepageFontSize,
 } from '../../createGlobalStyle';
 
 // This animation is needed to avoid flickering
@@ -147,7 +148,7 @@ export const StyledLink = styled(NavLink)`
   text-decoration: none;
   text-align: center;
   border-top: 1px ridge ${menusTextColor};
-  font-size: calc(16px + 1vh);
+  font-size: ${homepageFontSize};
   background: ${menusBackground};
 
   :hover {
@@ -180,7 +181,7 @@ The logic behind this:
 2. On screen width < 576 px all the elements you want to hide are set to display: none and the menu button is displayed
 3. Menu button toggles display betwen none and block. To achieve the column-like look, the display has to be block AND width: 100% and IMPORTANT - flex-wrep: wrap HAS TO BE SET ON THE NAVBAR OTHERWISE ITEMS WON'T GET PUSHED TO NEW LINE
 */
-export const StyledNavbar = styled.header`
+export const StyledNavbar = styled.nav`
   display: flex;
   flex-wrap: wrap;
   width: 100%;

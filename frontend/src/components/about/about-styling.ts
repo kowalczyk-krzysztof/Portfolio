@@ -1,12 +1,6 @@
 import styled from 'styled-components';
 // Variables
-import {
-  lightBackground,
-  menusBackground,
-  menusTextColor,
-  menuLightBlue,
-  menuLightBlueHover,
-} from '../../createGlobalStyle';
+import { menusBackground, menusTextColor } from '../../createGlobalStyle';
 
 // Main container
 export const StyledAboutContainer = styled.main`
