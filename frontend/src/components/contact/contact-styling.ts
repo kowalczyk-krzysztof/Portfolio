@@ -28,6 +28,7 @@ export const StyledNotificationWarning = styled.div<{ visibility: number }>`
   color: red;
   font-weight: 550;
   line-height: 1.2;
+  user-select: none;
 `;
 // Styled button container
 export const StyledButtonContainer = styled.div`
@@ -36,16 +37,20 @@ export const StyledButtonContainer = styled.div`
   flex-direction: column;
 `;
 // Dummy container for email notification
-export const StyledDummyContainer = styled.p`
+export const StyledDummyContainer = styled.div`
   opacity: 0;
+  text-align: center;
   font-size: ${formFontSize};
   line-height: 0.3;
+  user-select: none;
 `;
 
-export const StyledEmailNotification = styled.p`
+export const StyledEmailNotification = styled.div<{ color: string }>`
   font-size: ${formFontSize};
   text-align: center;
   line-height: 0.3;
+  color: ${(props) => props.color};
+  user-select: none;
 `;
 
 export const StyledCharactersLeft = styled.p`
@@ -92,9 +97,9 @@ export const StyledTextArea = styled.textarea<{
   font-size: ${formFontSize};
   border: 1px solid ${(props) => props.border};
   border-radius: 5px;
-  line-height: 1.5;
+  line-height: 1.2;
   font-weight: 400;
-  margin-bottom: 0.6vh;
+  margin-bottom: 0.5vh;
   resize: vertical;
 
   :focus {
