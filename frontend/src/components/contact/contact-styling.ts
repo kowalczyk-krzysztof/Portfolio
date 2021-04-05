@@ -30,7 +30,7 @@ export const StyledNotificationWarning = styled.div<{ visibility: number }>`
   line-height: 1.2;
   user-select: none;
 `;
-// Styled button container
+// Button container
 export const StyledButtonContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -117,9 +117,9 @@ export const StyledLabel = styled.label`
 export const StyledContactTitleContainer = styled.div`
   border-radius: 15px;
   font-size: ${formFontSize};
-  text-shadow: 1px 0px;
+
   padding: 2vh;
-  font-weight: bolder;
+  font-weight: bold;
   margin: 1vh;
   text-align: center;
 `;

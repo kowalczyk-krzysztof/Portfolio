@@ -4,7 +4,6 @@ import { useSelector } from 'react-redux';
 import { localizationSelector } from '../../features/localization/localizationSlice';
 import { Locale } from '../../features/localization/locales';
 // Components
-// import NameWarning from './NameWarning';
 import EmailSentNotification from './EmailSentNotificaiton';
 // Utils
 import { emptyFieldValidator } from '../../utils/emptyFieldValidator';
