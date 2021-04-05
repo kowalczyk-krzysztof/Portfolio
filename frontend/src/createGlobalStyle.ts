@@ -37,12 +37,14 @@ export const lightTheme: ThemeProps = {
   name: ThemeNames.LIGHT,
   background: lightBackground,
   color: darkText,
+  toggle: false,
 };
 // Dark theme settings
 export const darkTheme: ThemeProps = {
   name: ThemeNames.DARK,
   background: darkBackground,
   color: menusTextColor,
+  toggle: true,
 };
 
 /*
