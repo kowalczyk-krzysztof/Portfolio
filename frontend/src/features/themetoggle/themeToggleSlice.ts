@@ -7,7 +7,7 @@ export interface ThemeProps {
   name: ThemeNames;
   background: string;
   color: string;
-  toggle: boolean;
+  toggle: string;
 }
 
 interface ThemeToggleProps {

@@ -29,8 +29,9 @@ export const StyledLogo = styled.div`
 `;
 // Logo text
 export const StyledLogoH1 = styled.h1`
-  font-size: calc(16px + 1vh);
-  margin: 15px 15px;
+  font-size: calc(20px + 1vh);
+  margin: 10px 10px;
+  font-weight: 900;
   color: ${menuLightBlue};
   :hover {
     color: ${menuLightBlueHover};
@@ -171,7 +172,7 @@ export const StyledMenu = styled.div`
 `;
 // Menu button
 export const StyledMenuButton = styled.button`
-  margin-right: 15px;
+  margin-right: 10px;
 `;
 /* Navbar
 The logic behind this:
