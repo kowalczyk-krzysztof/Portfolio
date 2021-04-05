@@ -142,6 +142,7 @@ export const StyledLinks = styled.div<{
 */
 
 export const StyledLink = styled(NavLink)`
+  /* inline components can't have any align properites so this has to be a block*/
   display: block;
   outline: none;
   padding: 15px;
@@ -151,6 +152,11 @@ export const StyledLink = styled(NavLink)`
   border-top: 1px ridge ${menusTextColor};
   font-size: calc(16px + 1vh);
   background: ${menusBackground};
+
+  :hover {
+    background: #415a77;
+    color: ${lightBackground};
+  }
 
   :last-child {
     box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.4);
@@ -163,30 +169,6 @@ export const StyledLink = styled(NavLink)`
     }
   }
 `;
-// /* inline components can't have any align properites so this has to be a block*/
-// display: block;
-// outline: none;
-// padding: 15px;
-
-// text-decoration: none;
-// text-align: center;
-// border-top: 1px ridge ${menusTextColor};
-// font-size: calc(16px + 1vh);
-// background: ${menusBackground};
-
-// &.${activeClassName} {
-//   background: red;
-// }
-
-/* :hover {
-    background: #415a77;
-    color: ${lightBackground};
-  }
-
-  :last-child {
-    box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.4);
-  } */
-
 // Menu button container
 export const StyledMenu = styled.div`
   order: 2;
