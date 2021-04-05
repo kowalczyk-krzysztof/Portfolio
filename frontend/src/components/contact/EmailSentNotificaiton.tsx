@@ -8,6 +8,8 @@ import {
   StyledEmailNotification,
   StyledDummyContainer,
 } from './contact-styling';
+import { menusTextColor } from '../../createGlobalStyle';
+// Components
 import { EmailSendingStyle } from './ContactForm';
 
 export interface EmailSentNotificationProps {
@@ -22,18 +24,24 @@ export const EmailSentNotification: FC<EmailSentNotificationProps> = ({
 
   if (isEmailSent === EmailSendingStyle.LOADING)
     return (
-      <StyledEmailNotification>{sendEmailLoading}</StyledEmailNotification>
+      <StyledEmailNotification color={menusTextColor}>
+        {sendEmailLoading}
+      </StyledEmailNotification>
     );
 
   if (isEmailSent === EmailSendingStyle.SUCCESS)
     return (
-      <StyledEmailNotification>{sendEmailSuccess}</StyledEmailNotification>
+      <StyledEmailNotification color="green">
+        {sendEmailSuccess}
+      </StyledEmailNotification>
     );
   if (isEmailSent === EmailSendingStyle.FAILURE)
     return (
-      <StyledEmailNotification>{sendEmailFailure}</StyledEmailNotification>
+      <StyledEmailNotification color="red">
+        {sendEmailFailure}
+      </StyledEmailNotification>
     );
-  else return <StyledDummyContainer />;
+  else return <StyledDummyContainer>Invisible</StyledDummyContainer>;
 };
 
 export default EmailSentNotification;

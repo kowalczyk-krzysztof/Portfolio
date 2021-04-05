@@ -1,5 +1,5 @@
 import styled, { keyframes } from 'styled-components/macro';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 // Variables
 import {
   menusBackground,
@@ -128,9 +128,20 @@ export const StyledLinks = styled.div<{
   width: 100%;
   animation: ${MenuFade} 250ms ease-in-out both;
 `;
+
 // Links
-export const StyledLink = styled(Link)`
-  /* inline components can't have any align properites so this has to be a block*/
+/*
+  To make links highlight on active you need to give them a class property  
+  activeClassName="active" (can be any name) and then do it like this
+
+  &.${(props) => props.activeClassName} {}
+
+  For home link e.g ("/") you also need to pass exact={true}
+
+
+*/
+
+export const StyledLink = styled(NavLink)`
   display: block;
   outline: none;
   padding: 15px;
@@ -140,15 +151,41 @@ export const StyledLink = styled(Link)`
   border-top: 1px ridge ${menusTextColor};
   font-size: calc(16px + 1vh);
   background: ${menusBackground};
-  :hover {
+
+  :last-child {
+    box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.4);
+  }
+
+  &.${(props) => props.activeClassName} {
+    background: ${menuLightBlue};
+    :hover {
+      background: ${menuLightBlueHover};
+    }
+  }
+`;
+// /* inline components can't have any align properites so this has to be a block*/
+// display: block;
+// outline: none;
+// padding: 15px;
+
+// text-decoration: none;
+// text-align: center;
+// border-top: 1px ridge ${menusTextColor};
+// font-size: calc(16px + 1vh);
+// background: ${menusBackground};
+
+// &.${activeClassName} {
+//   background: red;
+// }
+
+/* :hover {
     background: #415a77;
     color: ${lightBackground};
   }
 
   :last-child {
     box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.4);
-  }
-`;
+  } */
 
 // Menu button container
 export const StyledMenu = styled.div`
@@ -220,15 +257,8 @@ export const StyledNavbar = styled.header`
     ${StyledLink} {
       top: 0;
       border: none;
+
       box-shadow: none;
-
-      :first-child {
-        background: ${menuLightBlue};
-
-        :hover {
-          background: ${menuLightBlueHover};
-        }
-      }
     }
 
     ${StyledLogo} {

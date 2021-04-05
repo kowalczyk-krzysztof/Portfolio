@@ -41,7 +41,7 @@ export const locale_EN: Locale = {
   homePassion: 'WebDev is my passion',
   learnMore: 'Learn More',
   buttonSend: 'Submit >',
-  contactH1: `Let's talk`,
+  contactH1: `Lets talk`,
   contactNameField: `Full name`,
   contactEmailField: `E-mail`,
   contactMessageField: 'Your message',
@@ -51,7 +51,7 @@ export const locale_EN: Locale = {
   enterMessage: `Message field can't be empty`,
   sendEmailLoading: `Sending e-mail...`,
   sendEmailSuccess: 'E-mail was sent',
-  sendEmailFailure: 'E-mail was not sent - try again later',
+  sendEmailFailure: 'E-mail was not sent',
   contactMeText: 'You can also find me on:',
 };
 // Polish locale
@@ -76,6 +76,6 @@ export const locale_PL: Locale = {
   enterMessage: 'Wiadomość nie może być pusta',
   sendEmailLoading: `Wysyłam e-mail...`,
   sendEmailSuccess: 'E-mail został wysłany',
-  sendEmailFailure: 'Nie udało się wysłać e-maila - spróbuj ponownie później',
+  sendEmailFailure: 'Nie udało się wysłać e-maila',
   contactMeText: 'Znajdziesz mnie także na:',
 };

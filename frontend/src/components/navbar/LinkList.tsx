@@ -42,13 +42,26 @@ const LinkList: FC = (): JSX.Element => {
 
   return (
     <StyledLinks display={display} ref={ref}>
-      <StyledLink to={home} onClick={closeMenuWhenRedirected}>
+      <StyledLink
+        to={home}
+        exact={true}
+        activeClassName="active"
+        onClick={closeMenuWhenRedirected}
+      >
         {navbarHome}
       </StyledLink>
-      <StyledLink to={about} onClick={closeMenuWhenRedirected}>
+      <StyledLink
+        to={about}
+        activeClassName="active"
+        onClick={closeMenuWhenRedirected}
+      >
         {navbarAbout}
       </StyledLink>
-      <StyledLink to={contact} onClick={closeMenuWhenRedirected}>
+      <StyledLink
+        to={contact}
+        activeClassName="active"
+        onClick={closeMenuWhenRedirected}
+      >
         {navbarContact}
       </StyledLink>
     </StyledLinks>
