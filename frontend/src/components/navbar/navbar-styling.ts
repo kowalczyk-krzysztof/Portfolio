@@ -68,7 +68,6 @@ export const StyledThemeToggleSlider = styled.input`
   outline: none;
   border-radius: 20px; /* slider-like edges */
   transition: 0.6s; /* slow translition between toggles */
-
   :checked {
     background: ${darkBackground};
   }
@@ -78,17 +77,14 @@ export const StyledThemeToggleSlider = styled.input`
     /* needs to be absolute*/
     position: absolute;
     opacity: 0, 8;
-
     margin: -4px; /*if I set a border then I need to add a margin of equal px to circle */
     width: 30px;
     height: 30px;
     background: #30649b;
-
     border-radius: 50%;
     transform: scale(0.9); /* makes the circle slightly bigger than the rest */
     transition: 0.6s;
   }
-
   :checked:before {
     transform: scale(0.85) translateX(34px); /* this does the sliding process */
   }
