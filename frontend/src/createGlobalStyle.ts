@@ -17,7 +17,7 @@ export const darkText = '#363537';
 export const menuLightBlue = '#4d96bb';
 export const menuLightBlueHover = '#74b9db';
 export const iconSize = '24';
-export const menuIconSize = '34';
+export const menuIconSize = '38';
 
 /*Styled components global ThemeProps explained.
 1. Define an interface that will contain all theme props
@@ -37,14 +37,14 @@ export const lightTheme: ThemeProps = {
   name: ThemeNames.LIGHT,
   background: lightBackground,
   color: darkText,
-  toggle: false,
+  toggle: 'light',
 };
 // Dark theme settings
 export const darkTheme: ThemeProps = {
   name: ThemeNames.DARK,
   background: darkBackground,
   color: menusTextColor,
-  toggle: true,
+  toggle: 'dark',
 };
 
 /*
@@ -90,7 +90,7 @@ export const GlobalStyle = createGlobalStyle<CustomTheme>`
     color: ${({ theme }) => theme.color};
     /* Font settings */
     font-size: 1.125rem;
-    font-family: 'Lato';
+    font-family: 'Quicksand', sans-serif;
     font-weight: 400;
     /* ALL of those settings are needed for footer and navbar to work properly */
     margin: 0;

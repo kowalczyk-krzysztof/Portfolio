@@ -18,8 +18,8 @@ export const StyledContactContainer = styled.main`
 
   display: flex;
   flex-direction: row;
+  justify-content: center;
   flex-wrap: wrap;
-  justify-content: space-evenly;
 `;
 // Invalid input warnings
 export const StyledNotificationWarning = styled.div<{ visibility: number }>`
@@ -44,7 +44,7 @@ export const StyledDummyContainer = styled.div`
   line-height: 0.3;
   user-select: none;
 `;
-
+// Email status
 export const StyledEmailNotification = styled.div<{ color: string }>`
   font-size: ${formFontSize};
   text-align: center;
@@ -52,12 +52,12 @@ export const StyledEmailNotification = styled.div<{ color: string }>`
   color: ${(props) => props.color};
   user-select: none;
 `;
-
+// Characters left counter
 export const StyledCharactersLeft = styled.p`
   margin-top: 5px;
   text-align: center;
 `;
-
+// Form container
 export const StyledForm = styled.form`
   color: ${menusTextColor};
   background: ${menusBackground};
@@ -115,18 +115,26 @@ export const StyledLabel = styled.label`
 
 // Title and text below
 export const StyledContactTitleContainer = styled.div`
+  border-radius: 15px;
   font-size: ${formFontSize};
+
+  opacity: 0.8;
+  padding: 2vh;
+
+  margin: 1vh;
   text-align: center;
 `;
-
-export const StyledContactTitle = styled.h1``;
-
-export const StyledContactText = styled.p``;
-
 // Form section wrapper
 export const StyledFormElement = styled.div`
   display: flex;
   flex-direction: column;
+`;
+// Contact links
+export const StyledContactLinkBig = styled.a`
+  margin-right: 5px;
+  text-decoration: none;
+  padding-right: 5px;
+  color: inherit;
 `;
 
 // Submit button

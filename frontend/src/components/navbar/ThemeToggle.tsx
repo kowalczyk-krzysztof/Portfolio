@@ -21,10 +21,10 @@ export const ThemeToggle: FC = () => {
     if (isChecked === false) dispatch(SET_THEME_LIGHT());
   };
 
-  // This toggle check is needed so everything works properly with redux persist
+  // This toggle check is needed so everything works properly with redux persist - IMPORTANT: has to defaultChecked NOT checked
   return (
     <StyledThemeToggle>
-      {toggle === false ? (
+      {toggle === 'light' ? (
         <StyledThemeToggleSlider
           type="checkbox"
           aria-label="Theme toggle"
@@ -32,7 +32,7 @@ export const ThemeToggle: FC = () => {
         ></StyledThemeToggleSlider>
       ) : (
         <StyledThemeToggleSlider
-          checked
+          defaultChecked
           type="checkbox"
           aria-label="Theme toggle"
           onClick={themeToggler}
