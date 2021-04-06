@@ -173,7 +173,7 @@ export const StyledMenu = styled.div`
 `;
 // Menu button
 export const StyledMenuButton = styled.button`
-  margin-right: 10px;
+  margin-right: 5px;
 `;
 /* Navbar
 The logic behind this:
@@ -246,7 +246,11 @@ export const StyledNavbar = styled.nav`
     }
   }
 
-  @media only screen and (max-width: 280px) {
+  @media only screen and (max-width: 290px) {
+    ${StyledLogo} {
+      flex: 0;
+    }
+
     ${StyledLanguageButtons} {
       padding: 0px;
     }
