@@ -67,7 +67,7 @@ export const StyledForm = styled.form`
 
   border: 5px dashed ${menuLightBlue};
   border-radius: 15px;
-  padding: 3vh;
+  padding: 2vh;
 `;
 
 // Input field
@@ -117,9 +117,10 @@ export const StyledContactTitleContainer = styled.div`
   border-radius: 15px;
   font-size: ${formFontSize};
 
-  padding: 2vh;
+  padding: 1vh;
   font-weight: bold;
-  margin: 1vh;
+  margin: 0.5vh;
+  margin-bottom: 1.5vh;
   text-align: center;
 `;
 // Form section wrapper
