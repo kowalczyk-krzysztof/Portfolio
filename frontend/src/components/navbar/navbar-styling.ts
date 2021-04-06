@@ -246,7 +246,7 @@ export const StyledNavbar = styled.nav`
     }
   }
 
-  @media only screen and (max-width: 290px) {
+  @media only screen and (max-width: 302px) {
     ${StyledLogo} {
       flex: 0;
     }
