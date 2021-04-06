@@ -16,6 +16,11 @@
       "src": "flag_PL.png",
       "type": "image/png",
       "sizes": "32x32"
+    },
+    {
+      "src": "profile_pic.png",
+      "type": "image/png",
+      "sizes": "1332x1332"
     }
   ],
   "start_url": ".",
