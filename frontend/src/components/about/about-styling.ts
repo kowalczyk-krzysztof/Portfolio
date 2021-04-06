@@ -9,7 +9,6 @@ export const StyledAboutContainer = styled.main`
   margin-bottom: 6vh;
   display: flex;
   flex-direction: column;
-  font-weight: 900;
   flex-wrap: wrap;
 `;
 
@@ -37,13 +36,20 @@ export const StyledPicture = styled.img`
 // Text container
 export const StyledTextContainer = styled.div`
   width: 50%;
-  margin-right: 2vh;
-
+  margin-right: 5vh;
+  font-weight: 900;
   font-size: calc(12px + 1vh);
 
   p {
     border: 5px dashed ${menuLightBlue};
-    padding: 1vh;
+    padding: 2vh;
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
+      rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px,
+      rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  }
+
+  p:last-of-type {
+    margin-top: 5vh;
   }
 `;
 // Text + picture container
@@ -59,7 +65,7 @@ export const StyledAboutWrapper = styled.div`
       width: 80%;
       order: 2;
       text-align: center;
-      margin-right: none;
+      margin-right: 0;
       margin-top: 2vh;
     }
 
@@ -76,8 +82,11 @@ export const StyledTechnologyContainer = styled.div`
   text-align: center;
   order: 3;
   padding: 1vh;
+  font-size: calc(16px + 1vh);
+  font-weight: 500;
+  text-shadow: 1px 1px #4d96bb;
 `;
-//
+// Icon wrapper
 export const StyledTechnologyIconWrapper = styled.div`
   display: inline-flex;
   text-align: center;

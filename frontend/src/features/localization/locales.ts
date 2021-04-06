@@ -56,7 +56,7 @@ export const locale_EN: Locale = {
   sendEmailSuccess: 'Email was sent',
   sendEmailFailure: 'Email was not sent',
   contactMeText: 'Send an email or message me on my social media profiles',
-  aboutDescription: `My name is Krzysztof and I'm a full stack developer. When I code, my goal is to create useful and high quality products other people can enjoy. I spend a lot of time on the internet and because of that I know what people want to see. Finding the right balance between user experience and efficiency is a challenge, but I believe I have what it takes to achieve it. Give me problem and I will find a solution.`,
+  aboutDescription: `My name is Krzysztof and I'm a full stack developer. When I code, my goal is to create useful and high quality products other people can enjoy. I spend a lot of time on the internet and because of that I know what people want to see. Finding the right balance between user experience and efficiency is a challenge, but I believe I have what it takes to achieve it. Give me a problem and I will find a solution.`,
   aboutTechnologies: `Technologies I'm familiar with:`,
   aboutHobbies: `In my free time I like to work on improving myself. I believe that staying fit has a huge impact on productivity, so I try to stay in shape. Learning languages is my hobby - knowing a language opens a whole new world and makes you grow as a person. Currently I can speak English and Polish fluently and I'm working on reaching fluency in Japanese.`,
 };

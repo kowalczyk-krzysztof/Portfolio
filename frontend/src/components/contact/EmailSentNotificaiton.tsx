@@ -31,13 +31,13 @@ export const EmailSentNotification: FC<EmailSentNotificationProps> = ({
 
   if (isEmailSent === EmailSendingStyle.SUCCESS)
     return (
-      <StyledEmailNotification color="green">
+      <StyledEmailNotification color="#0F0">
         {sendEmailSuccess}
       </StyledEmailNotification>
     );
   if (isEmailSent === EmailSendingStyle.FAILURE)
     return (
-      <StyledEmailNotification color="red">
+      <StyledEmailNotification color="#f74848">
         {sendEmailFailure}
       </StyledEmailNotification>
     );

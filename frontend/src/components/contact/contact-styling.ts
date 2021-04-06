@@ -13,7 +13,7 @@ import {
 export const StyledNotificationWarning = styled.div<{ visibility: number }>`
   opacity: ${(props) => props.visibility};
   font-size: ${formFontSize};
-  color: red;
+  color: #ff6161;
   font-weight: 550;
   line-height: 1.2;
   user-select: none;
@@ -31,6 +31,7 @@ export const StyledDummyContainer = styled.div`
   font-size: ${formFontSize};
   line-height: 0.3;
   user-select: none;
+  font-weight: 550;
 `;
 // Email status
 export const StyledEmailNotification = styled.div<{ color: string }>`
@@ -39,6 +40,7 @@ export const StyledEmailNotification = styled.div<{ color: string }>`
   line-height: 0.3;
   color: ${(props) => props.color};
   user-select: none;
+  font-weight: 550;
 `;
 // Characters left counter
 export const StyledCharactersLeft = styled.p`
