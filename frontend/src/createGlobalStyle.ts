@@ -20,7 +20,7 @@ export const iconSize = '24';
 export const menuIconSize = '38';
 export const formFontSize = 'calc(10px + 1vh)';
 export const homepageFontSize = 'calc(16px + 1vh)';
-export const aboutPageIconSize = '56';
+export const aboutPageIconSize = '36';
 
 /*Styled components global ThemeProps explained.
 1. Define an interface that will contain all theme props

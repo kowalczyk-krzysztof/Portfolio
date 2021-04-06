@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 // Styling
-import { StyledPictureContainer, StyledPicture } from './about-styling';
+import { StyledPicture, StyledPictureContainer } from './about-styling';
 
 export const Picture: FC = () => {
   const picture = 'profile_pic';
