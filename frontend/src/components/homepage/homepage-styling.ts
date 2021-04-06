@@ -7,6 +7,8 @@ import {
   menuLightBlue,
   menuLightBlueHover,
   lightBackground,
+  homepageFontSize,
+  formFontSize,
 } from '../../createGlobalStyle';
 
 // Link
@@ -14,7 +16,7 @@ export const StyledHomepageLink = styled(Link)`
   cursor: pointer;
   font-size: calc(14px + 1vh);
   box-sizing: border-box;
-  margin: calc(12px + 1vh);
+  margin: ${formFontSize};
   padding: calc(5px + 1vh);
   border: 1px solid rgba(255, 255, 255, 0.5);
   border-radius: 10px;
@@ -51,13 +53,12 @@ export const HomepageContent = styled.main`
     rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
     rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 
-  font-size: calc(16px + 1vh);
+  font-size: ${homepageFontSize};
   font-weight: 500;
 
   border: 5px dashed ${menuLightBlue};
   border-radius: 25px 50px;
-  padding: calc(16px + 1vh);
-  line-height: 1;
+  padding: ${homepageFontSize};
 
   h1 {
     margin-top: 0px;
@@ -67,8 +68,6 @@ export const HomepageContent = styled.main`
   h1,
   h2,
   a {
-    text-shadow: 1px 1px;
-
     :hover {
       color: ${lightBackground};
     }

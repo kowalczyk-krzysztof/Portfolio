@@ -5,6 +5,7 @@ import {
   menusTextColor,
   menuLightBlue,
   lightBackground,
+  formFontSize,
 } from '../../createGlobalStyle';
 
 // Links
@@ -39,7 +40,7 @@ export const StyledContactList = styled.div`
   }
 
   p {
-    font-size: calc(12px + 1vh);
+    font-size: ${formFontSize};
   }
 `;
 // Footer

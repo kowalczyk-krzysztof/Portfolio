@@ -6,9 +6,8 @@ import {
   menusTextColor,
   menuLightBlue,
   menuLightBlueHover,
+  formFontSize,
 } from '../../createGlobalStyle';
-
-const formFontSize = 'calc(12px + 1vh)';
 
 // Main container
 export const StyledContactContainer = styled.main`
@@ -143,7 +142,7 @@ export const StyledSubmitButton = styled.button`
   box-sizing: border-box;
   cursor: pointer;
   outline: none;
-  margin: calc(12px + 1vh);
+  margin: ${formFontSize};
   margin-top: 0;
   padding: ${formFontSize};
 
@@ -152,11 +151,5 @@ export const StyledSubmitButton = styled.button`
 
   :hover {
     background: ${menuLightBlueHover};
-  }
-
-  :disabled {
-    :hover {
-      background: ${menuLightBlue};
-    }
   }
 `;

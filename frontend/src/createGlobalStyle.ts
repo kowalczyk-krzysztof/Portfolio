@@ -18,6 +18,9 @@ export const menuLightBlue = '#4d96bb';
 export const menuLightBlueHover = '#74b9db';
 export const iconSize = '24';
 export const menuIconSize = '38';
+export const formFontSize = 'calc(12px + 1vh)';
+export const homepageFontSize = 'calc(16px + 1vh)';
+export const aboutPageIconSize = '56';
 
 /*Styled components global ThemeProps explained.
 1. Define an interface that will contain all theme props
