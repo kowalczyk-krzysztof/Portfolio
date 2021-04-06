@@ -9,17 +9,6 @@ import {
   formFontSize,
 } from '../../createGlobalStyle';
 
-// Main container
-export const StyledContactContainer = styled.main`
-  z-index: 0;
-  margin-top: 8.5vh;
-  margin-bottom: 6vh;
-
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  flex-wrap: wrap;
-`;
 // Invalid input warnings
 export const StyledNotificationWarning = styled.div<{ visibility: number }>`
   opacity: ${(props) => props.visibility};
@@ -152,5 +141,27 @@ export const StyledSubmitButton = styled.button`
 
   :hover {
     background: ${menuLightBlueHover};
+  }
+`;
+// Main container
+export const StyledContactContainer = styled.main`
+  z-index: 0;
+  margin-top: 8.5vh;
+  margin-bottom: 6vh;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  @media only screen and (min-width: 900px) {
+    ${StyledContactTitleContainer} {
+      margin: 3vh;
+      font-size: calc(14px + 1vh);
+    }
+
+    ${StyledForm} {
+      font-size: calc(14px + 1vh);
+    }
   }
 `;
