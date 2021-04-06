@@ -8,7 +8,7 @@ import path from 'path';
 // Routers
 import emailRouter from './routes/email';
 
-dotenv.config({ path: 'config.env' }); // exporting environment variables
+dotenv.config({ path: 'config.env' }); // importing environment variables
 
 const app = express();
 // Set body parser
@@ -21,7 +21,6 @@ const limiter = rateLimit({
   windowMs: WINDOWMS, // 60 minutes
   max: REQUEST_LIMIT, // limit each IP to 3 requests per windowMs
   message: 'Too many requests. Try again in 1 hour',
-  headers: true,
 });
 // Enable CORS - this is needed so I can connect with frontend
 app.use(cors());
@@ -33,16 +32,16 @@ app.use(
         defaultSrc: ["'self'"],
         blockAllMixedContent: [],
         fontSrc: ["'self'", 'https:', 'data:'],
-        frameAncestors: ["'self'", 'https://accounts.google.com/'],
-        frameSrc: ["'self'", 'https://accounts.google.com/'],
+        frameAncestors: ["'self'"],
+        frameSrc: ["'self'"],
         imgSrc: ["'self'", 'data:'],
         objectSrc: ["'self'", 'blob:'],
         mediaSrc: ["'self'", 'blob:', 'data:'],
-        scriptSrc: ["'self'", 'https://apis.google.com'],
+        scriptSrc: ["'self'"],
         scriptSrcAttr: ["'none'"],
         styleSrc: ["'self'", 'https:', "'unsafe-inline'"],
         upgradeInsecureRequests: [],
-        'connect-src': ["'self'", 'https://kowalczyk-portfolio.herokuapp.com'],
+        'connect-src': ["'self'", `${process.env.MYAPP}`],
       },
     },
   })
@@ -60,7 +59,7 @@ app.use(cookieParser());
 // Routers
 app.use('/api/v1/email', limiter, emailRouter);
 
-const PORT = ((process.env.PORT as unknown) as number) || 5000;
+const PORT = ((process.env.PORT as unknown) as number) || 80;
 
 // Serving react SPA
 app.use(express.static(path.join(__dirname, '/../../frontend/build')));
@@ -73,7 +72,8 @@ app.get('*', (req, res) => {
 app.set('trust proxy', 1);
 
 app.listen(PORT, (): void => {
-  console.log(
-    `Server is up and running @ http://localhost:${PORT} in ${process.env.NODE_ENV} mode`
-  );
+  if (process.env.NODE_ENV === 'development')
+    console.log(
+      `Server is up and running @ http://localhost:${PORT} in ${process.env.NODE_ENV} mode`
+    );
 });
