@@ -26,11 +26,7 @@ export const ContactTitle: FC = () => {
       <h1>{contactH1}</h1>
       <h3>{contactMeText}</h3>
       <StyledContactLinkBig href={github} target="_blank">
-        <GithubSquare
-          size="62"
-          title="
-        GitHub"
-        />
+        <GithubSquare size="62" title="GitHub" />
       </StyledContactLinkBig>
       <StyledContactLinkBig href={linkedin} target="_blank">
         <Linkedin size="54" color="#0077B5" title="Linkedin"></Linkedin>
