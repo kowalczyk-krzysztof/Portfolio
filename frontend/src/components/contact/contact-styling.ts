@@ -69,7 +69,7 @@ export const StyledInput = styled.input<{
 }>`
   outline: none;
   font-size: ${font10px};
-  border: 1px solid ${(props) => props.border};
+  border: 2px solid ${(props) => props.border};
   border-radius: 5px;
   line-height: 1.2;
   font-weight: 400;
@@ -86,7 +86,7 @@ export const StyledTextArea = styled.textarea<{
 }>`
   outline: none;
   font-size: ${font10px};
-  border: 1px solid ${(props) => props.border};
+  border: 2px solid ${(props) => props.border};
   border-radius: 5px;
   line-height: 1.2;
   font-weight: 400;

@@ -13,6 +13,7 @@ const LanguageToggle: FC = (): JSX.Element => {
   // Flag names
   const flagENG: string = 'flag_ENG';
   const flagPL: string = 'flag_PL';
+  const flagJP: string = 'flag_JP';
 
   const dispatch = useDispatch();
   const localization: Locale = useSelector(localizationSelector);
@@ -37,6 +38,14 @@ const LanguageToggle: FC = (): JSX.Element => {
           alt={flagENG}
           role="button"
           aria-label="Switch language to English"
+        ></img>
+      </StyledLanguageButtons>
+      <StyledLanguageButtons onClick={localizationHandler(LocaleNames.JP)}>
+        <img
+          src={`${process.env.PUBLIC_URL}/${flagJP}.png`}
+          alt={flagJP}
+          role="button"
+          aria-label="Switch language to Japanese"
         ></img>
       </StyledLanguageButtons>
       <StyledLanguageButtons onClick={localizationHandler(LocaleNames.PL)}>
