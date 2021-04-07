@@ -11,8 +11,8 @@ import { StyledLanguage, StyledLanguageButtons } from './navbar-styling';
 
 const LanguageToggle: FC = (): JSX.Element => {
   // Flag names
-  const flagENG = 'flag_ENG';
-  const flagPL = 'flag_PL';
+  const flagENG: string = 'flag_ENG';
+  const flagPL: string = 'flag_PL';
 
   const dispatch = useDispatch();
   const localization: Locale = useSelector(localizationSelector);

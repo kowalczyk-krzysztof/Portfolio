@@ -29,15 +29,10 @@ export const ContactTitle: FC = () => {
         <GithubSquare size="62" title="GitHub" />
       </StyledContactLinkBig>
       <StyledContactLinkBig href={linkedin} target="_blank">
-        <Linkedin size="54" color="#0077B5" title="Linkedin"></Linkedin>
+        <Linkedin size="54" color="#0077B5" title="LinkedIn"></Linkedin>
       </StyledContactLinkBig>
       <StyledContactLinkBig href={twitter} target="_blank">
-        <Twitter
-          size="54"
-          color="#1DA1F2"
-          enableBackground="white"
-          title="Twitter"
-        ></Twitter>
+        <Twitter size="54" color="#1DA1F2" title="Twitter"></Twitter>
       </StyledContactLinkBig>
     </StyledContactTitleContainer>
   );

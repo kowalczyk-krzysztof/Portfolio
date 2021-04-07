@@ -148,7 +148,7 @@ const ContactForm: FC = (): JSX.Element => {
   /* UTILS */
 
   // Resetting form fields
-  const resetForm = () => {
+  const resetForm = (): void => {
     setName('');
     setEmail('');
     setMessage('');
@@ -161,7 +161,7 @@ const ContactForm: FC = (): JSX.Element => {
     setMessageShadow(FieldShadowStyle.DEFAULT);
   };
   // Resetting warnings
-  const resetWarnings = () => {
+  const resetWarnings = (): void => {
     setNameWarning(WarningVisibility.HIDDEN);
     setEmailWarning(WarningVisibility.HIDDEN);
     setMessageWarning(WarningVisibility.HIDDEN);
@@ -170,7 +170,9 @@ const ContactForm: FC = (): JSX.Element => {
   /* FORM METHODS */
 
   // On change
-  const onChange = (e: FormEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const onChange = (
+    e: FormEvent<HTMLInputElement | HTMLTextAreaElement>
+  ): void => {
     const targetValue: string = e.currentTarget.value;
     const targetName: string = e.currentTarget.name;
     // Assigning values to respective states
@@ -215,7 +217,7 @@ const ContactForm: FC = (): JSX.Element => {
   };
 
   // On submit
-  const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
+  const onSubmit = async (e: FormEvent<HTMLFormElement>): Promise<void> => {
     e.preventDefault();
     /* VALIDATING FIELDS 
       name, email and message are states of fields (so e.currentTarget.value from onChange)

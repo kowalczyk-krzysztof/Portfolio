@@ -84,7 +84,7 @@ export const locale_PL: Locale = {
   sendEmailSuccess: 'Email został wysłany',
   sendEmailFailure: 'Nie udało się wysłać emaila',
   contactMeText: 'Wyślij email lub napisz do mnie na jednym z moich profili',
-  aboutDescription: `Nazywam się Krzysztof i jestem full stack developerem. Moim celem gdy programuję jest tworzenie użytecznych i wysokiej jakości produktów, które będą sprawiać ludziom radość. Spędzam dużo czasu w internecie i dlatego wiem czego oczekują użytkownicy. Uzyskanie odpowiedniego balansu pomiędzy wydajnością a zadowoleniem użytkownika to duże wyzwanie, jednak wierzę, że wiem jak jemu sprostać. Pokaż mi problem a znajdę rozwiązanie.`,
+  aboutDescription: `Nazywam się Krzysztof i jestem full stack developerem. Moim celem gdy programuję, jest tworzenie użytecznych i wysokiej jakości produktów, które będą sprawiać ludziom radość. Spędzam dużo czasu w internecie i dlatego wiem, czego oczekują użytkownicy. Uzyskanie odpowiedniego balansu pomiędzy wydajnością a zadowoleniem użytkownika to duże wyzwanie, jednak wierzę, że wiem jak jemu sprostać. Pokaż mi problem, a znajdę rozwiązanie.`,
   aboutTechnologies: `Technologie, których używam:`,
   aboutHobbies: `W wolnym czasie lubię pracować nad sobą. Uważam, że zdrowy tryb życia ma ogromny wpływ na produktywność, więc staram się żyć aktywnie. Moim hobby jest uczenie się języków - gdy poznasz obcy język, otwiera się przed tobą zupełnie nowy świat, co poszerza twoje horyzonty. Obecnie posługuje się biegle językiem angielskim i polskim oraz japońskim w stopniu zaawansowanym.`,
 };

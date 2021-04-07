@@ -12,7 +12,7 @@ import {
   StyledContactList,
   StyledContactLink,
 } from './footer-styling';
-import { iconSize } from '../../createGlobalStyle';
+import { smallIcon } from '../../createGlobalStyle';
 
 const ContactLinks: FC = (): JSX.Element => {
   const localization: Locale = useSelector(localizationSelector);
@@ -30,18 +30,18 @@ const ContactLinks: FC = (): JSX.Element => {
       <p>{navbarContact}</p>
       <FooterIconWrapper>
         <StyledContactLink href={github} target="_blank">
-          <Github size={iconSize} title="GitHub" />
+          <Github size={smallIcon} title="GitHub" />
         </StyledContactLink>
         <StyledContactLink href={linkedin} target="_blank">
-          <Linkedin size={iconSize} title="Linkedin"></Linkedin>
+          <Linkedin size={smallIcon} title="LinkedIn"></Linkedin>
         </StyledContactLink>
 
         <StyledContactLink href={twitter} target="_blank">
-          <Twitter size={iconSize} title="Twitter"></Twitter>
+          <Twitter size={smallIcon} title="Twitter"></Twitter>
         </StyledContactLink>
 
         <StyledContactLink href={`mailto:${myEmail}`}>
-          <Envelope size={iconSize} title="Email Address" />
+          <Envelope size={smallIcon} title="Email Address" />
         </StyledContactLink>
       </FooterIconWrapper>
     </StyledContactList>

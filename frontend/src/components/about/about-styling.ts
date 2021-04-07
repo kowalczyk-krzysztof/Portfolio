@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 // Variables
-import { menuLightBlue } from '../../createGlobalStyle';
+import { lightBlue, font12px, font16px } from '../../createGlobalStyle';
 
 // Main container
 export const StyledAboutContainer = styled.main`
@@ -25,7 +25,7 @@ export const StyledPicture = styled.img`
   width: 350px;
   height: 350px;
   border-radius: 25px;
-  border: 5px solid ${menuLightBlue};
+  border: 5px solid ${lightBlue};
   order: 1;
 
   box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 15px,
@@ -38,10 +38,9 @@ export const StyledTextContainer = styled.div`
   width: 50%;
   margin-right: 5vh;
   font-weight: 900;
-  font-size: calc(12px + 1vh);
-
+  font-size: ${font12px};
   p {
-    border: 5px dashed ${menuLightBlue};
+    border: 5px dashed ${lightBlue};
     padding: 2vh;
     box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
       rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px,
@@ -82,7 +81,7 @@ export const StyledTechnologyContainer = styled.div`
   text-align: center;
   order: 3;
   padding: 1vh;
-  font-size: calc(16px + 1vh);
+  font-size: ${font16px};
   font-weight: 500;
   text-shadow: 1px 1px #4d96bb;
 `;

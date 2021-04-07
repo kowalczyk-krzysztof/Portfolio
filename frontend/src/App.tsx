@@ -28,9 +28,9 @@ import {
 // );
 
 // Routes
-export const home = '/';
-export const about = '/about';
-export const contact = '/contact';
+export const home: string = '/';
+export const about: string = '/about';
+export const contact: string = '/contact';
 
 const App = (): JSX.Element => {
   // Assigning a theme based on store
