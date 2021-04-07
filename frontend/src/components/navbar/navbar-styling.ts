@@ -107,7 +107,7 @@ export const StyledLanguageButtons = styled.button`
   }
 
   :last-of-type {
-    margin: 0 10px;
+    margin-right: 10px;
   }
 `;
 /*
@@ -247,17 +247,41 @@ export const StyledNavbar = styled.nav`
     }
   }
 
-  @media only screen and (max-width: 302px) {
+  @media only screen and (max-width: 330px) {
     ${StyledLogo} {
       flex: 0;
     }
 
+    ${StyledLogoH1} {
+      margin: 0px;
+      margin-left: 3px;
+      margin-bottom: 5px;
+      font-size: ${font16px};
+    }
+
     ${StyledLanguageButtons} {
-      padding: 0px;
+      padding-right: 2px;
+      margin-right: 2px;
+      padding-left: 3px;
+      transform: scale(1);
+      margin: 0px;
+      flex: 0;
+
+      :last-of-type {
+        margin-right: 0px;
+      }
     }
 
     ${StyledMenuButton} {
       margin-right: 0px;
+      transform: scale(0.9);
+    }
+
+    ${StyledThemeToggle} {
+      flex: 0;
+      transform: scale(0.9);
+      margin: 0px;
+      padding: 0px;
     }
   }
 `;
