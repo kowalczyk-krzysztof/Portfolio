@@ -3,7 +3,7 @@ import React, { FC } from 'react';
 import { StyledPicture, StyledPictureContainer } from './about-styling';
 
 export const Picture: FC = () => {
-  const picture = 'profile_pic';
+  const picture: string = 'profile_pic';
   return (
     <StyledPictureContainer>
       <StyledPicture

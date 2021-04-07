@@ -13,7 +13,7 @@ import {
   StyledMenu,
   MenuIconWrapper,
 } from './navbar-styling';
-import { menuIconSize } from '../../createGlobalStyle';
+import { bigIcon } from '../../createGlobalStyle';
 import { Bars, Times } from '@styled-icons/fa-solid';
 
 /* How to useRef with TypeScript
@@ -60,11 +60,11 @@ const MenuButton: FC = (): JSX.Element => {
       >
         {display === MenuDisplay.NONE ? (
           <MenuIconWrapper>
-            <Bars size={menuIconSize} title="Open menu" />
+            <Bars size={bigIcon} title="Open menu" />
           </MenuIconWrapper>
         ) : (
           <MenuIconWrapper>
-            <Times size={menuIconSize} title="Close menu" />
+            <Times size={bigIcon} title="Close menu" />
           </MenuIconWrapper>
         )}
       </StyledMenuButton>

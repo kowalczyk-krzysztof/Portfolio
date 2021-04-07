@@ -1,18 +1,19 @@
 import styled from 'styled-components';
 // Variables
 import {
-  lightBackground,
-  menusBackground,
-  menusTextColor,
-  menuLightBlue,
-  menuLightBlueHover,
-  formFontSize,
+  veryLightBlue,
+  darkBlue,
+  lightGray,
+  lightBlue,
+  lightBlueHover,
+  font10px,
+  font14px,
 } from '../../createGlobalStyle';
 
 // Invalid input warnings
 export const StyledNotificationWarning = styled.div<{ visibility: number }>`
   opacity: ${(props) => props.visibility};
-  font-size: ${formFontSize};
+  font-size: ${font10px};
   color: #ff6161;
   font-weight: 550;
   line-height: 1.2;
@@ -28,14 +29,14 @@ export const StyledButtonContainer = styled.div`
 export const StyledDummyContainer = styled.div`
   opacity: 0;
   text-align: center;
-  font-size: ${formFontSize};
+  font-size: ${font10px};
   line-height: 0.3;
   user-select: none;
   font-weight: 550;
 `;
 // Email status
 export const StyledEmailNotification = styled.div<{ color: string }>`
-  font-size: ${formFontSize};
+  font-size: ${font10px};
   text-align: center;
   line-height: 0.3;
   color: ${(props) => props.color};
@@ -49,14 +50,14 @@ export const StyledCharactersLeft = styled.p`
 `;
 // Form container
 export const StyledForm = styled.form`
-  color: ${menusTextColor};
-  background: ${menusBackground};
+  color: ${lightGray};
+  background: ${darkBlue};
   opacity: 0.8;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 55px,
     rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
     rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 
-  border: 5px dashed ${menuLightBlue};
+  border: 5px dashed ${lightBlue};
   border-radius: 15px;
   padding: 2vh;
 `;
@@ -67,7 +68,7 @@ export const StyledInput = styled.input<{
   shadow: string;
 }>`
   outline: none;
-  font-size: ${formFontSize};
+  font-size: ${font10px};
   border: 1px solid ${(props) => props.border};
   border-radius: 5px;
   line-height: 1.2;
@@ -84,7 +85,7 @@ export const StyledTextArea = styled.textarea<{
   shadow: string;
 }>`
   outline: none;
-  font-size: ${formFontSize};
+  font-size: ${font10px};
   border: 1px solid ${(props) => props.border};
   border-radius: 5px;
   line-height: 1.2;
@@ -100,13 +101,13 @@ export const StyledTextArea = styled.textarea<{
 export const StyledLabel = styled.label`
   user-select: none;
   margin-bottom: 10px;
-  font-size: ${formFontSize};
+  font-size: ${font10px};
 `;
 
 // Title and text below
 export const StyledContactTitleContainer = styled.div`
   border-radius: 15px;
-  font-size: ${formFontSize};
+  font-size: ${font10px};
 
   padding: 1vh;
   font-weight: bold;
@@ -129,20 +130,20 @@ export const StyledContactLinkBig = styled.a`
 
 // Submit button
 export const StyledSubmitButton = styled.button`
-  background: ${menuLightBlue};
-  color: ${lightBackground};
+  background: ${lightBlue};
+  color: ${veryLightBlue};
   box-sizing: border-box;
   cursor: pointer;
   outline: none;
-  margin: ${formFontSize};
+  margin: ${font10px};
   margin-top: 0;
-  padding: ${formFontSize};
+  padding: ${font10px};
 
-  font-size: ${formFontSize};
+  font-size: ${font10px};
   border-radius: 10px;
 
   :hover {
-    background: ${menuLightBlueHover};
+    background: ${lightBlueHover};
   }
 `;
 // Main container
@@ -159,11 +160,11 @@ export const StyledContactContainer = styled.main`
   @media only screen and (min-width: 900px) {
     ${StyledContactTitleContainer} {
       margin: 3vh;
-      font-size: calc(14px + 1vh);
+      font-size: ${font14px};
     }
 
     ${StyledForm} {
-      font-size: calc(14px + 1vh);
+      font-size: ${font14px};
     }
   }
 `;

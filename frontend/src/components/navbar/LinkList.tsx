@@ -36,7 +36,7 @@ const LinkList: FC = (): JSX.Element => {
     return document.removeEventListener('mousedown', clickAway);
   };
   // Need this so menu gets closed after redirecting
-  const closeMenuWhenRedirected = () => {
+  const closeMenuWhenRedirected = (): void => {
     if (display === MenuDisplay.BLOCK) dispatch(SET_MENU_DISPLAY_NONE());
   };
 

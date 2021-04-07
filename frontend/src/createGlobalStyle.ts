@@ -9,18 +9,26 @@ import { createGlobalStyle } from 'styled-components';
 
 */
 // Colors
-export const lightBackground = '#d6e9f5';
-export const darkBackground = '#1B263B';
-export const menusBackground = '#0d1b2a';
-export const menusTextColor = '#e0e1dd';
-export const darkText = '#000000';
-export const menuLightBlue = '#4d96bb';
-export const menuLightBlueHover = '#74b9db';
-export const iconSize = '24';
-export const menuIconSize = '38';
-export const formFontSize = 'calc(10px + 1vh)';
-export const homepageFontSize = 'calc(16px + 1vh)';
-export const aboutPageIconSize = '36';
+export const veryLightBlue: string = '#d6e9f5';
+export const veryDarkBlue: string = '#1B263B';
+export const darkBlue: string = '#0d1b2a';
+export const lightGray: string = '#e0e1dd';
+export const black: string = '#000000';
+export const lightBlue: string = '#4d96bb';
+export const lightBlueHover: string = '#74b9db';
+export const lightRed: string = '#f74848';
+export const lightGreen: string = '#0F0';
+// Icons
+export const smallIcon: string = '24';
+export const mediumIcon: string = '36';
+export const bigIcon: string = '38';
+// Font sizes
+export const font10px: string = 'calc(10px + 1vh)';
+export const font12px: string = 'calc(12px + 1vh)';
+export const font14px: string = 'calc(14px + 1vh)';
+export const font16px: string = 'calc(16px + 1vh)';
+export const font20px: string = 'calc(20px + 1vh)';
+export const font24px: string = 'calc(24px + 1vh)';
 
 /*Styled components global ThemeProps explained.
 1. Define an interface that will contain all theme props
@@ -38,15 +46,15 @@ export interface CustomTheme {
 // Light theme settings
 export const lightTheme: ThemeProps = {
   name: ThemeNames.LIGHT,
-  background: lightBackground,
-  color: darkText,
+  background: veryLightBlue,
+  color: black,
   toggle: 'light',
 };
 // Dark theme settings
 export const darkTheme: ThemeProps = {
   name: ThemeNames.DARK,
-  background: darkBackground,
-  color: menusTextColor,
+  background: veryDarkBlue,
+  color: lightGray,
   toggle: 'dark',
 };
 

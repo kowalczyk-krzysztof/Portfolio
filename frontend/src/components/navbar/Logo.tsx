@@ -3,7 +3,7 @@ import React, { FC } from 'react';
 import { StyledLogo, StyledLogoH1 } from './navbar-styling';
 
 export const Logo: FC = () => {
-  const logoText = 'KK';
+  const logoText: string = 'KK';
 
   return (
     <StyledLogo>

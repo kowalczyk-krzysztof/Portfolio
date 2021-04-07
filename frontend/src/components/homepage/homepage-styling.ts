@@ -2,36 +2,38 @@ import styled from 'styled-components/macro';
 import { Link } from 'react-router-dom';
 // Variables
 import {
-  menusBackground,
-  menusTextColor,
-  menuLightBlue,
-  menuLightBlueHover,
-  lightBackground,
-  homepageFontSize,
-  formFontSize,
+  darkBlue,
+  lightGray,
+  lightBlue,
+  lightBlueHover,
+  veryLightBlue,
+  font16px,
+  font10px,
+  font14px,
+  font24px,
 } from '../../createGlobalStyle';
 
 // Link
 export const StyledHomepageLink = styled(Link)`
   cursor: pointer;
-  font-size: calc(14px + 1vh);
+  font-size: ${font14px};
   box-sizing: border-box;
-  margin: ${formFontSize};
+  margin: ${font10px};
   padding: calc(5px + 1vh);
   border: 1px solid rgba(255, 255, 255, 0.5);
   border-radius: 10px;
   text-decoration: none;
   outline: none;
-  color: ${menusTextColor};
+  color: ${lightGray};
 
-  background: ${menuLightBlue};
+  background: ${lightBlue};
 
   :after {
     content: ' >';
   }
 
   :hover {
-    background: ${menuLightBlueHover};
+    background: ${lightBlueHover};
   }
 `;
 // Homepage container
@@ -45,20 +47,20 @@ export const HomepageContent = styled.main`
   user-select: none;
   text-align: center;
 
-  color: ${menusTextColor};
-  background: ${menusBackground};
+  color: ${lightGray};
+  background: ${darkBlue};
   opacity: 0.8;
 
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
     rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
     rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 
-  font-size: ${homepageFontSize};
+  font-size: ${font16px};
   font-weight: 500;
 
-  border: 5px dashed ${menuLightBlue};
+  border: 5px dashed ${lightBlue};
   border-radius: 25px 50px;
-  padding: ${homepageFontSize};
+  padding: ${font16px};
 
   h1 {
     margin-top: 0px;
@@ -69,7 +71,7 @@ export const HomepageContent = styled.main`
   h2,
   a {
     :hover {
-      color: ${lightBackground};
+      color: ${veryLightBlue};
     }
   }
 
@@ -78,10 +80,10 @@ export const HomepageContent = styled.main`
   }
 
   @media only screen and (min-width: 768px) {
-    font-size: calc(24px + 1vh);
+    font-size: ${font24px};
   }
 
   @media only screen and (max-height: 500px) {
-    font-size: calc(14px + 1vh);
+    font-size: ${font14px};
   }
 `;

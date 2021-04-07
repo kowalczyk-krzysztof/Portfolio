@@ -2,13 +2,14 @@ import styled, { keyframes } from 'styled-components/macro';
 import { NavLink } from 'react-router-dom';
 // Variables
 import {
-  menusBackground,
-  menusTextColor,
-  darkBackground,
-  menuLightBlue,
-  menuLightBlueHover,
-  lightBackground,
-  homepageFontSize,
+  darkBlue,
+  lightGray,
+  veryDarkBlue,
+  lightBlue,
+  lightBlueHover,
+  veryLightBlue,
+  font16px,
+  font20px,
 } from '../../createGlobalStyle';
 
 // This animation is needed to avoid flickering
@@ -20,7 +21,7 @@ from {opacity: 0;}
 export const MenuIconWrapper = styled.div`
   padding-bottom: 5px;
   :hover {
-    color: ${lightBackground};
+    color: ${veryLightBlue};
   }
 `;
 // Logo container
@@ -30,12 +31,12 @@ export const StyledLogo = styled.div`
 `;
 // Logo text
 export const StyledLogoH1 = styled.h1`
-  font-size: calc(20px + 1vh);
+  font-size: ${font20px};
   margin: 10px 10px;
   font-weight: 900;
-  color: ${menuLightBlue};
+  color: ${lightBlue};
   :hover {
-    color: ${menuLightBlueHover};
+    color: ${lightBlueHover};
   }
 `;
 // Theme toggle cintainer
@@ -61,17 +62,17 @@ export const StyledThemeToggleSlider = styled.input`
   
    */
 
-  border: 4px solid ${menuLightBlue};
+  border: 4px solid ${lightBlue};
   width: 60px;
   height: 30px;
   appearance: none; /* hides default checkbox*/
-  background: ${lightBackground};
+  background: ${veryLightBlue};
   opacity: 0.8;
   outline: none;
   border-radius: 20px; /* slider-like edges */
   transition: 0.6s; /* slow translition between toggles */
   :checked {
-    background: ${darkBackground};
+    background: ${veryDarkBlue};
   }
   /* slider circle */
   :before {
@@ -147,13 +148,13 @@ export const StyledLink = styled(NavLink)`
 
   text-decoration: none;
   text-align: center;
-  border-top: 1px ridge ${menusTextColor};
-  font-size: ${homepageFontSize};
-  background: ${menusBackground};
+  border-top: 1px ridge ${lightGray};
+  font-size: ${font16px};
+  background: ${darkBlue};
 
   :hover {
     background: #415a77;
-    color: ${lightBackground};
+    color: ${veryLightBlue};
   }
 
   :last-child {
@@ -161,9 +162,9 @@ export const StyledLink = styled(NavLink)`
   }
 
   &.${(props) => props.activeClassName} {
-    background: ${menuLightBlue};
+    background: ${lightBlue};
     :hover {
-      background: ${menuLightBlueHover};
+      background: ${lightBlueHover};
     }
   }
 `;
@@ -206,7 +207,7 @@ export const StyledNavbar = styled.nav`
   z-index: 1;
 
   box-shadow: 0 2px 0px 0px rgba(0, 0, 0, 0.4);
-  background: ${menusBackground};
+  background: ${darkBlue};
   align-items: center;
   user-select: none;
 
@@ -217,7 +218,7 @@ export const StyledNavbar = styled.nav`
   }
   div,
   a {
-    color: ${menusTextColor};
+    color: ${lightGray};
   }
 
   /*Those settings are for non-mobile devices. Minimum width to cater for is 320px. */
