@@ -30,11 +30,7 @@ const ContactLinks: FC = (): JSX.Element => {
       <p>{navbarContact}</p>
       <FooterIconWrapper>
         <StyledContactLink href={github} target="_blank">
-          <Github
-            size={iconSize}
-            title="
-        GitHub"
-          />
+          <Github size={iconSize} title="GitHub" />
         </StyledContactLink>
         <StyledContactLink href={linkedin} target="_blank">
           <Linkedin size={iconSize} title="Linkedin"></Linkedin>
