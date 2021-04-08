@@ -29,10 +29,6 @@ export const StyledHomepageLink = styled(Link)`
 
   background: ${lightBlue};
 
-  :after {
-    content: ' >';
-  }
-
   :hover {
     background: ${lightBlueHover};
   }
@@ -63,8 +59,10 @@ export const HomepageContent = styled.main`
   border-radius: 25px 50px;
   padding: ${font16px};
 
-  h1 {
+  h1,
+  h2 {
     margin-top: 0px;
+    margin-bottom: 0px;
   }
 
   p,
@@ -86,6 +84,10 @@ export const HomepageContent = styled.main`
 
   @media only screen and (max-width: 400px) {
     font-size: ${font12px};
+  }
+
+  @media only screen and (max-width: 330px) {
+    font-size: ${font10px};
   }
 
   @media only screen and (max-height: 500px) {
