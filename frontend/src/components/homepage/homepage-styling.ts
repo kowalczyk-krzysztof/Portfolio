@@ -9,6 +9,7 @@ import {
   veryLightBlue,
   font16px,
   font10px,
+  font12px,
   font14px,
   font24px,
 } from '../../createGlobalStyle';
@@ -41,7 +42,7 @@ export const HomepageContent = styled.main`
   /* This margin centers the container */
   margin: 0 auto;
   z-index: 0;
-  margin-top: 6.5vh;
+  margin-top: calc(20px + 6.5vh);
   margin-bottom: 6vh;
 
   user-select: none;
@@ -81,6 +82,10 @@ export const HomepageContent = styled.main`
 
   @media only screen and (min-width: 768px) {
     font-size: ${font24px};
+  }
+
+  @media only screen and (max-width: 400px) {
+    font-size: ${font12px};
   }
 
   @media only screen and (max-height: 500px) {
