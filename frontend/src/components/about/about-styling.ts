@@ -68,6 +68,10 @@ export const StyledAboutWrapper = styled.div`
       margin-top: 2vh;
     }
 
+    ${StyledPictureContainer} {
+      margin-top: 20px;
+    }
+
     ${StyledPicture} {
       border-radius: 50%;
       width: 255px;

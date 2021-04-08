@@ -149,7 +149,7 @@ export const StyledSubmitButton = styled.button`
 // Main container
 export const StyledContactContainer = styled.main`
   z-index: 0;
-  margin-top: 8.5vh;
+  margin-top: calc(20px + 8.5vh);
   margin-bottom: 6vh;
 
   display: flex;
@@ -165,6 +165,12 @@ export const StyledContactContainer = styled.main`
 
     ${StyledForm} {
       font-size: ${font14px};
+    }
+  }
+
+  @media only screen and (max-height: 450px) and (min-width: 400px) {
+    ${StyledContactTitleContainer} {
+      margin-right: 20px;
     }
   }
 `;
