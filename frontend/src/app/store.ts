@@ -5,8 +5,8 @@ import {
   getDefaultMiddleware,
   combineReducers,
 } from '@reduxjs/toolkit';
-import { persistReducer } from 'redux-persist';
-import storage from 'redux-persist/lib/storage';
+// import { persistReducer } from 'redux-persist';
+// import storage from 'redux-persist/lib/storage';
 import localizationReducer from '../features/localization/localizationSlice';
 import themeToggleReducer from '../features/themetoggle/themeToggleSlice';
 import menuToggleReducer from '../features/menutoggle/menuToggleSlice';
@@ -35,16 +35,16 @@ const rootReducer = combineReducers({
   menuToggle: menuToggleReducer,
 });
 
-// Redux persist config
-const persistConfig = {
-  key: 'root',
-  storage,
-};
-// Redux persist reducer
-const persistedReducer = persistReducer(persistConfig, rootReducer);
+// // Redux persist config
+// const persistConfig = {
+//   key: 'root',
+//   storage,
+// };
+// // Redux persist reducer
+// const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 export const store = configureStore({
-  reducer: persistedReducer,
+  reducer: rootReducer,
   devTools: process.env.NODE_ENV !== 'production',
   middleware: getDefaultMiddleware({
     serializableCheck: { ignoredActions: ['persist/PERSIST'] },
