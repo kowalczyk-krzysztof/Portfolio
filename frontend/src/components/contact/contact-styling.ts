@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 // Variables
 import {
-  veryLightBlue,
   darkBlue,
   lightGray,
   lightBlue,
@@ -131,7 +130,7 @@ export const StyledContactLinkBig = styled.a`
 // Submit button
 export const StyledSubmitButton = styled.button`
   background: ${lightBlue};
-  color: ${veryLightBlue};
+  color: #ffff;
   box-sizing: border-box;
   cursor: pointer;
   outline: none;

@@ -24,14 +24,14 @@ export const ContactTitle: FC = () => {
   return (
     <StyledContactTitleContainer>
       <h1>{contactH1}</h1>
-      <h3>{contactMeText}</h3>
-      <StyledContactLinkBig href={github} target="_blank">
+      <h2>{contactMeText}</h2>
+      <StyledContactLinkBig href={github} target="_blank" rel="noopener">
         <GithubSquare size="62" title="GitHub" />
       </StyledContactLinkBig>
-      <StyledContactLinkBig href={linkedin} target="_blank">
+      <StyledContactLinkBig href={linkedin} target="_blank" rel="noopener">
         <Linkedin size="54" color="#0077B5" title="LinkedIn"></Linkedin>
       </StyledContactLinkBig>
-      <StyledContactLinkBig href={twitter} target="_blank">
+      <StyledContactLinkBig href={twitter} target="_blank" rel="noopener">
         <Twitter size="54" color="#1DA1F2" title="Twitter"></Twitter>
       </StyledContactLinkBig>
     </StyledContactTitleContainer>

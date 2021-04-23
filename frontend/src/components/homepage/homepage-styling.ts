@@ -25,7 +25,7 @@ export const StyledHomepageLink = styled(Link)`
   border-radius: 10px;
   text-decoration: none;
   outline: none;
-  color: ${lightGray};
+  color: #ffff;
 
   background: ${lightBlue};
 
