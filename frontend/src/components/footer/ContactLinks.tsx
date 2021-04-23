@@ -29,14 +29,14 @@ const ContactLinks: FC = (): JSX.Element => {
     <StyledContactList>
       <p>{navbarContact}</p>
       <FooterIconWrapper>
-        <StyledContactLink href={github} target="_blank">
+        <StyledContactLink href={github} target="_blank" rel="noopener">
           <Github size={smallIcon} title="GitHub" />
         </StyledContactLink>
-        <StyledContactLink href={linkedin} target="_blank">
+        <StyledContactLink href={linkedin} target="_blank" rel="noopener">
           <Linkedin size={smallIcon} title="LinkedIn"></Linkedin>
         </StyledContactLink>
 
-        <StyledContactLink href={twitter} target="_blank">
+        <StyledContactLink href={twitter} target="_blank" rel="noopener">
           <Twitter size={smallIcon} title="Twitter"></Twitter>
         </StyledContactLink>
 

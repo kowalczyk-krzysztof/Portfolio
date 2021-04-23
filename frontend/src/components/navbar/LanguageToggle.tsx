@@ -38,6 +38,8 @@ const LanguageToggle: FC = (): JSX.Element => {
           alt={flagENG}
           role="button"
           aria-label="Switch language to English"
+          width="32px"
+          height="32px"
         ></img>
       </StyledLanguageButtons>
       <StyledLanguageButtons onClick={localizationHandler(LocaleNames.JP)}>
@@ -46,6 +48,8 @@ const LanguageToggle: FC = (): JSX.Element => {
           alt={flagJP}
           role="button"
           aria-label="Switch language to Japanese"
+          width="32px"
+          height="32px"
         ></img>
       </StyledLanguageButtons>
       <StyledLanguageButtons onClick={localizationHandler(LocaleNames.PL)}>
@@ -54,6 +58,8 @@ const LanguageToggle: FC = (): JSX.Element => {
           alt={flagPL}
           role="button"
           aria-label="Switch language to Polish"
+          width="32px"
+          height="32px"
         ></img>
       </StyledLanguageButtons>
     </StyledLanguage>
