@@ -12,7 +12,7 @@
   "author": "Krzysztof Kowalczyk",
   "license": "ISC",
   "engines": {
-    "node": "14.15.4"
+    "node": "15.14.0"
   },
   "dependencies": {}
 }
