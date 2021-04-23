@@ -3,6 +3,7 @@ import { ThemeProps } from './features/themetoggle/themeToggleSlice';
 // Styling
 import styled from 'styled-components';
 import { createGlobalStyle } from 'styled-components';
+import '@fontsource/quicksand';
 /* 
 
       Global theme variables 
