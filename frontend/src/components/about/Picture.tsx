@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 // Styling
 import { StyledPicture, StyledPictureContainer } from './about-styling';
 
@@ -13,5 +13,3 @@ export const Picture: FC = () => {
     </StyledPictureContainer>
   );
 };
-
-export default Picture;

@@ -1,10 +1,4 @@
-import React, {
-  FC,
-  useEffect,
-  KeyboardEvent,
-  Dispatch,
-  SetStateAction,
-} from 'react';
+import { FC, useEffect, KeyboardEvent, Dispatch, SetStateAction } from 'react';
 // Components
 import { MenuDisplay } from './Navbar';
 // Styling
@@ -27,7 +21,7 @@ interface MenuButtonProps {
   setDisplay: Dispatch<SetStateAction<MenuDisplay>>;
 }
 
-const MenuButton: FC<MenuButtonProps> = ({
+export const MenuButton: FC<MenuButtonProps> = ({
   display,
   setDisplay,
 }): JSX.Element => {
@@ -76,5 +70,3 @@ const MenuButton: FC<MenuButtonProps> = ({
     </StyledMenu>
   );
 };
-
-export default MenuButton;

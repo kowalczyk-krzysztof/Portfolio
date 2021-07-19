@@ -1,11 +1,11 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 // Components
-import ContactLinks from './ContactLinks';
-import Copyright from './Copyright';
+import { ContactLinks } from './ContactLinks';
+import { Copyright } from './Copyright';
 // Styling
 import { StyledFooter } from './footer-styling';
 
-export const BottomNavbar: FC = (): JSX.Element => {
+export const Footer: FC = (): JSX.Element => {
   return (
     <StyledFooter>
       <ContactLinks />
@@ -13,5 +13,3 @@ export const BottomNavbar: FC = (): JSX.Element => {
     </StyledFooter>
   );
 };
-
-export default BottomNavbar;

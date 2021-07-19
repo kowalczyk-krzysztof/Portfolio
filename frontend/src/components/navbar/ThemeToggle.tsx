@@ -1,37 +1,39 @@
-import React, { FC, MouseEvent } from 'react';
+import { FC, MouseEvent } from 'react';
 // Redux
 import { useDispatch, useSelector } from 'react-redux';
 import {
-  SET_THEME_DARK,
-  SET_THEME_LIGHT,
+  SET_THEME,
   themeSelector,
   ThemeProps,
 } from '../../features/themetoggle/themeToggleSlice';
 // Styling
 import { StyledThemeToggle, StyledThemeToggleSlider } from './navbar-styling';
+import { ThemeNames } from '../../createGlobalStyle';
 
 export const ThemeToggle: FC = () => {
   const theme: ThemeProps = useSelector(themeSelector);
-  const { toggle } = theme;
+  const { name } = theme;
   const dispatch = useDispatch();
 
   const themeToggler = (e: MouseEvent<HTMLInputElement>): void => {
     const isChecked: boolean = e.currentTarget.checked;
-    if (isChecked === true) dispatch(SET_THEME_DARK());
-    if (isChecked === false) dispatch(SET_THEME_LIGHT());
+    if (isChecked === true) dispatch(SET_THEME(ThemeNames.DARK));
+    if (isChecked === false) dispatch(SET_THEME(ThemeNames.LIGHT));
   };
 
   // This toggle check is needed so everything works properly with redux persist - IMPORTANT: has to defaultChecked NOT checked
   return (
     <StyledThemeToggle>
-      {toggle === 'light' ? (
+      {name === ThemeNames.LIGHT ? (
         <StyledThemeToggleSlider
+          data-testid={'themetoggle'}
           type="checkbox"
           aria-label="Theme toggle"
           onClick={themeToggler}
         ></StyledThemeToggleSlider>
       ) : (
         <StyledThemeToggleSlider
+          data-testid={'themetoggle'}
           defaultChecked
           type="checkbox"
           aria-label="Theme toggle"
@@ -41,5 +43,3 @@ export const ThemeToggle: FC = () => {
     </StyledThemeToggle>
   );
 };
-
-export default ThemeToggle;

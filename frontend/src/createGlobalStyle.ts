@@ -49,14 +49,12 @@ export const lightTheme: ThemeProps = {
   name: ThemeNames.LIGHT,
   background: veryLightBlue,
   color: black,
-  toggle: 'light',
 };
 // Dark theme settings
 export const darkTheme: ThemeProps = {
   name: ThemeNames.DARK,
   background: veryDarkBlue,
   color: lightGray,
-  toggle: 'dark',
 };
 
 /*

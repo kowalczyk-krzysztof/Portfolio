@@ -1,4 +1,4 @@
-import React, { FC, MouseEvent } from 'react';
+import { FC, MouseEvent } from 'react';
 // Redux
 import { useDispatch, useSelector } from 'react-redux';
 import {
@@ -9,7 +9,7 @@ import { LocaleNames, Locale } from '../../features/localization/locales';
 // Styling
 import { StyledLanguage, StyledLanguageButtons } from './navbar-styling';
 
-const LanguageToggle: FC = (): JSX.Element => {
+export const LanguageToggle: FC = (): JSX.Element => {
   // Flag names
   const flagENG: string = 'flag_ENG';
   const flagPL: string = 'flag_PL';
@@ -65,5 +65,3 @@ const LanguageToggle: FC = (): JSX.Element => {
     </StyledLanguage>
   );
 };
-
-export default LanguageToggle;

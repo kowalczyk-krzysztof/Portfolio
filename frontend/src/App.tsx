@@ -1,4 +1,3 @@
-import React from 'react';
 // React router
 import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
 // Redux
@@ -8,11 +7,11 @@ import {
   ThemeProps,
 } from './features/themetoggle/themeToggleSlice';
 // Components
-import Navbar from './components/navbar/Navbar';
-import Footer from './components/footer/Footer';
-import About from './components/about/About';
-import Contact from './components/contact/Contact';
-import Homegapage from './components/homepage/Homepage';
+import { Navbar } from './components/navbar/Navbar';
+import { Footer } from './components/footer/Footer';
+import { About } from './components/about/About';
+import { Contact } from './components/contact/Contact';
+import { Homepage } from './components/homepage/Homepage';
 // Styling
 import { ThemeProvider } from 'styled-components';
 import {
@@ -50,7 +49,7 @@ const App = (): JSX.Element => {
             <Switch>
               <Route exact path={about} component={About}></Route>
               <Route exact path={contact} component={Contact}></Route>
-              <Route path={home} component={Homegapage}></Route>
+              <Route path={home} component={Homepage}></Route>
             </Switch>
           </ContentContainer>
           <Footer />

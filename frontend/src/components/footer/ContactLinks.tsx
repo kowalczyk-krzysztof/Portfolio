@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 // Redux
 import { useSelector } from 'react-redux';
 import { localizationSelector } from '../../features/localization/localizationSlice';
@@ -14,7 +14,7 @@ import {
 } from './footer-styling';
 import { smallIcon } from '../../createGlobalStyle';
 
-const ContactLinks: FC = (): JSX.Element => {
+export const ContactLinks: FC = (): JSX.Element => {
   const localization: Locale = useSelector(localizationSelector);
 
   const { navbarContact } = localization;
@@ -52,5 +52,3 @@ const ContactLinks: FC = (): JSX.Element => {
     </StyledContactList>
   );
 };
-
-export default ContactLinks;

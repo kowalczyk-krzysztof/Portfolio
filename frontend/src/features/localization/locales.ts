@@ -34,7 +34,7 @@ export interface Locale {
 }
 
 // English locale
-export const locale_EN: Locale = {
+export const locale_ENG: Locale = {
   name: LocaleNames.ENG,
   navbarHome: 'Home',
   navbarAbout: 'About',
