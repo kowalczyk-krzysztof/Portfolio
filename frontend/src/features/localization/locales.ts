@@ -43,7 +43,7 @@ export const locale_ENG: Locale = {
   homeH2: `I'm Krzysztof`,
   homeDescription: `Full stack developer`,
   homePassion: 'WebDev is my passion',
-  learnMore: 'Learn More',
+  learnMore: 'About Me',
   buttonSend: 'Submit >',
   contactH1: `Lets talk`,
   contactNameField: `Full name`,
