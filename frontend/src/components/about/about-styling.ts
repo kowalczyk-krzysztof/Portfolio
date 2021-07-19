@@ -97,7 +97,9 @@ export const StyledTechnologyContainer = styled.div`
 export const StyledTechnologyWrapper = styled.div`
   border: 5px dashed ${lightBlue};
   padding: 0.5vh 3vh 2vh 3vh;
-
+  box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
+    rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px,
+    rgba(0, 0, 0, 0.09) 0px 32px 16px;
   p {
     width: 100%;
   }
