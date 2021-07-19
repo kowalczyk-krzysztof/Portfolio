@@ -4,6 +4,7 @@ import {
   Action,
   getDefaultMiddleware,
   combineReducers,
+  createStore,
 } from '@reduxjs/toolkit';
 // import { persistReducer } from 'redux-persist';
 // import storage from 'redux-persist/lib/storage';
@@ -47,6 +48,12 @@ export const store = configureStore({
     serializableCheck: { ignoredActions: ['persist/PERSIST'] },
   }),
 });
+
+// For testing
+export const createTestStore = () => {
+  const store = createStore(rootReducer);
+  return store;
+};
 
 export type RootState = ReturnType<typeof store.getState>;
 export type AppThunk<ReturnType = void> = ThunkAction<

@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 // Styling
 import {
   StyledTechnologyIcon,
@@ -33,5 +33,3 @@ export const TechnologyIcons: FC = () => {
     </StyledTechnologyIconWrapper>
   );
 };
-
-export default TechnologyIcons;

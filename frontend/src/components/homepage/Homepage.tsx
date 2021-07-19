@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 // Redux
 import { useSelector } from 'react-redux';
 import { localizationSelector } from '../../features/localization/localizationSlice';
@@ -10,7 +10,7 @@ import {
 // Styling
 import { HomepageContent, StyledHomepageLink } from './homepage-styling';
 
-const Homepage: FC = (): JSX.Element => {
+export const Homepage: FC = (): JSX.Element => {
   const localization: Locale = useSelector(localizationSelector);
   const { homeH1, homeH2, homeDescription, homePassion, learnMore } =
     localization;
@@ -27,5 +27,3 @@ const Homepage: FC = (): JSX.Element => {
     </HomepageContent>
   );
 };
-
-export default Homepage;

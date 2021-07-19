@@ -1,4 +1,4 @@
-import React, { FC, useRef, useEffect, Dispatch, SetStateAction } from 'react';
+import { FC, useRef, useEffect, Dispatch, SetStateAction } from 'react';
 // Redux
 import { useSelector } from 'react-redux';
 import { localizationSelector } from '../../features/localization/localizationSlice';
@@ -15,7 +15,10 @@ export interface LinkListProps {
   setDisplay: Dispatch<SetStateAction<MenuDisplay>>;
 }
 
-const LinkList: FC<LinkListProps> = ({ display, setDisplay }): JSX.Element => {
+export const LinkList: FC<LinkListProps> = ({
+  display,
+  setDisplay,
+}): JSX.Element => {
   const localization: Locale = useSelector(localizationSelector);
   const { navbarAbout, navbarContact, navbarHome } = localization;
 
@@ -67,5 +70,3 @@ const LinkList: FC<LinkListProps> = ({ display, setDisplay }): JSX.Element => {
     </StyledLinks>
   );
 };
-
-export default LinkList;

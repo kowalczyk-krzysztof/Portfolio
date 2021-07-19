@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 // Styling
 import { StyledLogo, StyledLogoH1 } from './navbar-styling';
 
@@ -11,5 +11,3 @@ export const Logo: FC = () => {
     </StyledLogo>
   );
 };
-
-export default Logo;

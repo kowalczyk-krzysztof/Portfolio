@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 // Redux
 import { useSelector } from 'react-redux';
 import { localizationSelector } from '../../features/localization/localizationSlice';
@@ -43,5 +43,3 @@ export const EmailSentNotification: FC<EmailSentNotificationProps> = ({
     );
   else return <StyledDummyContainer>Invisible</StyledDummyContainer>;
 };
-
-export default EmailSentNotification;

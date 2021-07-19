@@ -1,10 +1,10 @@
-import React, { FC, useState } from 'react';
+import { FC, useState } from 'react';
 // Components
-import Logo from './Logo';
-import LinkList from './LinkList';
-import ThemeToggle from './ThemeToggle';
-import LanguageToggle from './LanguageToggle';
-import MenuButton from './MenuButton';
+import { Logo } from './Logo';
+import { LinkList } from './LinkList';
+import { ThemeToggle } from './ThemeToggle';
+import { LanguageToggle } from './LanguageToggle';
+import { MenuButton } from './MenuButton';
 // Styling
 import { StyledNavbar } from './navbar-styling';
 
@@ -13,11 +13,11 @@ export enum MenuDisplay {
   BLOCK = 'block',
 }
 
-const Navbar: FC = (): JSX.Element => {
+export const Navbar: FC = (): JSX.Element => {
   const [display, setDisplay] = useState<MenuDisplay>(MenuDisplay.NONE);
 
   return (
-    <StyledNavbar>
+    <StyledNavbar data-testid={'navbar'}>
       <Logo />
       <LinkList display={display} setDisplay={setDisplay} />
       <ThemeToggle />
@@ -26,5 +26,3 @@ const Navbar: FC = (): JSX.Element => {
     </StyledNavbar>
   );
 };
-
-export default Navbar;

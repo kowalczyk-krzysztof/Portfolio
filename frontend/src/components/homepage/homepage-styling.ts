@@ -2,6 +2,7 @@ import styled from 'styled-components/macro';
 import { Link } from 'react-router-dom';
 // Variables
 import {
+  black,
   lightBlue,
   lightBlueHover,
   font16px,
@@ -18,7 +19,7 @@ export const StyledHomepageLink = styled(Link)`
   box-sizing: border-box;
   margin: ${font10px};
   padding: calc(5px + 1vh);
-  border: 2px solid black;
+  border: 2px solid ${black};
   border-radius: 10px;
   text-decoration: none;
   outline: none;

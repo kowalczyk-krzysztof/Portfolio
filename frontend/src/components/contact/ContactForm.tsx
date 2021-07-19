@@ -1,10 +1,10 @@
-import React, { FC, useState, FormEvent } from 'react';
+import { FC, useState, FormEvent } from 'react';
 // Redux
 import { useSelector } from 'react-redux';
 import { localizationSelector } from '../../features/localization/localizationSlice';
 import { Locale } from '../../features/localization/locales';
 // Components
-import EmailSentNotification from './EmailSentNotificaiton';
+import { EmailSentNotification } from './EmailSentNotificaiton';
 // Utils
 import { emptyFieldValidator } from '../../utils/emptyFieldValidator';
 import { sendEmail } from '../../utils/sendEmail';
@@ -54,7 +54,7 @@ export enum EmailSendingStyle {
   FAILURE = 'FAILURE',
 }
 
-const ContactForm: FC = (): JSX.Element => {
+export const ContactForm: FC = (): JSX.Element => {
   /* FORM SETTINGS */
 
   // Form id
@@ -330,5 +330,3 @@ const ContactForm: FC = (): JSX.Element => {
     </StyledForm>
   );
 };
-
-export default ContactForm;
