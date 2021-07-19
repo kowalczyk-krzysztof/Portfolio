@@ -4,6 +4,7 @@ import App from './App';
 // Redux
 import { store } from './app/store';
 import { Provider } from 'react-redux';
+import * as serviceWorker from './serviceWorker';
 // import { PersistGate } from 'redux-persist/integration/react';
 // import { persistStore, Persistor } from 'redux-persist';
 
@@ -22,3 +23,4 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById('root')
 );
+serviceWorker.register();
