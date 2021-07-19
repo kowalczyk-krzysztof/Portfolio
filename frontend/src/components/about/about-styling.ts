@@ -80,7 +80,7 @@ export const StyledAboutWrapper = styled.div`
   }
 `;
 
-// Text + icons container
+// Text + icons  main container
 export const StyledTechnologyContainer = styled.div`
   text-align: center;
   order: 3;
@@ -88,7 +88,21 @@ export const StyledTechnologyContainer = styled.div`
   font-size: ${font16px};
   font-weight: 500;
   text-shadow: 1px 1px #4d96bb;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 `;
+
+// Text + icons centered container
+export const StyledTechnologyWrapper = styled.div`
+  border: 5px dashed ${lightBlue};
+  padding: 0.5vh 3vh 2vh 3vh;
+
+  p {
+    width: 100%;
+  }
+`;
+
 // Icon wrapper
 export const StyledTechnologyIconWrapper = styled.div`
   display: inline-flex;
