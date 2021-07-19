@@ -136,9 +136,8 @@ const ContactForm: FC = (): JSX.Element => {
     FieldShadowStyle.DEFAULT
   );
   // Display characters left in text area
-  const [charactersLeft, setcharactersLeft] = useState<number>(
-    messageMaxLength
-  );
+  const [charactersLeft, setcharactersLeft] =
+    useState<number>(messageMaxLength);
 
   // Email was sent
   const [isEmailSent, setIsEmailSent] = useState<EmailSendingStyle>(
@@ -284,7 +283,7 @@ const ContactForm: FC = (): JSX.Element => {
         <StyledInput
           shadow={emailShadow}
           border={emailBorder}
-          type="text"
+          type="email"
           onChange={onChange}
           name={FieldNames.EMAIL}
           value={email}

@@ -118,12 +118,26 @@ export const StyledFormElement = styled.div`
   display: flex;
   flex-direction: column;
 `;
+
+// Contact link container
+export const StyledContactLinkContainer = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+// Contact link wrapper
+export const StyledContactLinkWrapper = styled.div`
+  background: #fafafa;
+  border: 2px solid ${lightBlue};
+  padding-right: 2vh;
+  padding-left: 2vh;
+  border-radius: 25px;
+`;
+
 // Contact links
 export const StyledContactLinkBig = styled.a`
   margin-right: 5px;
   text-decoration: none;
   padding-right: 5px;
-  color: inherit;
 `;
 
 // Submit button

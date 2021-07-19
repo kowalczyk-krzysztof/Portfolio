@@ -6,7 +6,7 @@ import { Locale } from '../../features/localization/locales';
 // Styling
 import { Envelope } from '@styled-icons/fa-regular/';
 import { Github } from '@styled-icons/fa-brands';
-import { Linkedin, Twitter } from '@styled-icons/bootstrap';
+import { Linkedin, Twitter, Facebook } from '@styled-icons/bootstrap';
 import {
   FooterIconWrapper,
   StyledContactList,
@@ -23,6 +23,7 @@ const ContactLinks: FC = (): JSX.Element => {
   const myEmail: string = `${process.env.REACT_APP_EMAIL}`;
   const linkedin: string = `${process.env.REACT_APP_LINKEDIN}`;
   const twitter: string = `${process.env.REACT_APP_TWITTER}`;
+  const facebook: string = `${process.env.REACT_APP_FACEBOOK}`;
 
   // Can't use <Link> with external links
   return (
@@ -38,6 +39,10 @@ const ContactLinks: FC = (): JSX.Element => {
 
         <StyledContactLink href={twitter} target="_blank" rel="noopener">
           <Twitter size={smallIcon} title="Twitter"></Twitter>
+        </StyledContactLink>
+
+        <StyledContactLink href={facebook} target="_blank" rel="noopener">
+          <Facebook size={smallIcon} title="Facebook"></Facebook>
         </StyledContactLink>
 
         <StyledContactLink href={`mailto:${myEmail}`}>
