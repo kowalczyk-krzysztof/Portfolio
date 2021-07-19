@@ -13,6 +13,7 @@ import {
   StyledTechnologyContainer,
   StyledTextContainer,
   StyledAboutWrapper,
+  StyledTechnologyWrapper,
 } from './about-styling';
 // Components
 import Picture from './Picture';
@@ -35,8 +36,10 @@ const About: FC = (): JSX.Element => {
         <Picture />
       </StyledAboutWrapper>
       <StyledTechnologyContainer>
-        <p>{aboutTechnologies}</p>
-        <TechnologyIcons />
+        <StyledTechnologyWrapper style={{ background }}>
+          <p>{aboutTechnologies}</p>
+          <TechnologyIcons />
+        </StyledTechnologyWrapper>
       </StyledTechnologyContainer>
     </StyledAboutContainer>
   );

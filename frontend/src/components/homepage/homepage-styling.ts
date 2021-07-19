@@ -46,7 +46,6 @@ export const HomepageContent = styled.main`
 
   color: ${lightGray};
   background: ${darkBlue};
-  opacity: 0.8;
 
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
     rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
@@ -56,7 +55,7 @@ export const HomepageContent = styled.main`
   font-weight: 500;
 
   border: 5px dashed ${lightBlue};
-  border-radius: 25px 50px;
+  border-radius: 20px 25px;
   padding: ${font16px};
 
   h1,
