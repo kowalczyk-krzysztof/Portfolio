@@ -91,5 +91,7 @@ export const HomepageContent = styled.main`
 
   @media only screen and (max-height: 500px) {
     font-size: ${font14px};
+    margin-bottom: 6rem;
+    margin-top: 4rem;
   }
 `;

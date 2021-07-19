@@ -59,6 +59,14 @@ export const StyledAboutWrapper = styled.div`
   flex-wrap: wrap;
   order: 2;
 
+  @media only screen and (max-height: 500px) {
+    ${StyledTextContainer} {
+      p:last-of-type {
+        margin-top: 2rem;
+      }
+    }
+  }
+
   @media only screen and (max-width: 1250px) {
     ${StyledTextContainer} {
       width: 80%;
@@ -82,6 +90,7 @@ export const StyledAboutWrapper = styled.div`
 
 // Text + icons  main container
 export const StyledTechnologyContainer = styled.div`
+  margin-top: 5vh;
   text-align: center;
   order: 3;
   padding: 1vh;
