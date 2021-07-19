@@ -16,6 +16,7 @@ import {
 export const StyledHomepageLink = styled(Link)`
   cursor: pointer;
   font-size: ${font14px};
+  font-weight: 700;
   box-sizing: border-box;
   margin: ${font10px};
   padding: calc(5px + 1vh);
@@ -23,7 +24,7 @@ export const StyledHomepageLink = styled(Link)`
   border-radius: 10px;
   text-decoration: none;
   outline: none;
-  color: #ffff;
+  color: ${black};
 
   background: ${lightBlue};
 
