@@ -15,8 +15,8 @@ const app = express();
 app.use(express.json());
 app.use(urlencoded({ extended: true }));
 // Rate limiting - I only set it for the email route in case I want
-const REQUEST_LIMIT = (process.env.SEND_EMAIL_LIMIT as unknown) as number;
-const WINDOWMS = (process.env.WINDOWMS as unknown) as number;
+const REQUEST_LIMIT = process.env.SEND_EMAIL_LIMIT as unknown as number;
+const WINDOWMS = process.env.WINDOWMS as unknown as number;
 const limiter = rateLimit({
   windowMs: WINDOWMS, // 60 minutes
   max: REQUEST_LIMIT, // limit each IP to 3 requests per windowMs
@@ -59,10 +59,13 @@ app.use(cookieParser());
 // Routers
 app.use('/api/v1/email', limiter, emailRouter);
 
-const PORT = ((process.env.PORT as unknown) as number) || 80;
+const PORT = (process.env.PORT as unknown as number) || 80;
 
 // Serving react SPA
 app.use(express.static(path.join(__dirname, '/../../frontend/build')));
+// app.get('/service-worker.js', (req, res) => {
+//   res.sendFile(path.resolve(__dirname, 'public', 'service-worker.js'));
+// });
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname + '/../../frontend/build/index.html'));
 });
