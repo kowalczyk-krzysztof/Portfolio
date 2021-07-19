@@ -2,6 +2,7 @@ import styled, { keyframes } from 'styled-components/macro';
 import { NavLink } from 'react-router-dom';
 // Variables
 import {
+  black,
   darkBlue,
   lightGray,
   veryDarkBlue,
@@ -162,6 +163,8 @@ export const StyledLink = styled(NavLink)`
   }
 
   &.${(props) => props.activeClassName} {
+    color: ${black};
+    font-weight: 600;
     background: ${lightBlue};
     :hover {
       background: ${lightBlueHover};

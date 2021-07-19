@@ -15,8 +15,8 @@ import {
 // Link
 export const StyledHomepageLink = styled(Link)`
   cursor: pointer;
-  font-size: ${font14px};
-  font-weight: 700;
+  font-size: ${font16px};
+  font-weight: 600;
   box-sizing: border-box;
   margin: ${font10px};
   padding: calc(5px + 1vh);
