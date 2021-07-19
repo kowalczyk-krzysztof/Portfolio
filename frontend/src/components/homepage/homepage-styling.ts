@@ -2,11 +2,8 @@ import styled from 'styled-components/macro';
 import { Link } from 'react-router-dom';
 // Variables
 import {
-  darkBlue,
-  lightGray,
   lightBlue,
   lightBlueHover,
-  veryLightBlue,
   font16px,
   font10px,
   font12px,
@@ -21,7 +18,7 @@ export const StyledHomepageLink = styled(Link)`
   box-sizing: border-box;
   margin: ${font10px};
   padding: calc(5px + 1vh);
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  border: 2px solid black;
   border-radius: 10px;
   text-decoration: none;
   outline: none;
@@ -34,7 +31,10 @@ export const StyledHomepageLink = styled(Link)`
   }
 `;
 // Homepage container
-export const HomepageContent = styled.main`
+export const HomepageContent = styled.main<{
+  background: string;
+  color: string;
+}>`
   /* This margin centers the container */
   margin: 0 auto;
   z-index: 0;
@@ -44,8 +44,8 @@ export const HomepageContent = styled.main`
   user-select: none;
   text-align: center;
 
-  color: ${lightGray};
-  background: ${darkBlue};
+  color: ${(props) => props.color};
+  background: ${(props) => props.background};
 
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
     rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
@@ -55,7 +55,6 @@ export const HomepageContent = styled.main`
   font-weight: 500;
 
   border: 5px dashed ${lightBlue};
-  border-radius: 20px 25px;
   padding: ${font16px};
 
   h1,
@@ -66,11 +65,8 @@ export const HomepageContent = styled.main`
 
   p,
   h1,
-  h2,
-  a {
-    :hover {
-      color: ${veryLightBlue};
-    }
+  h2 {
+    margin: 5px;
   }
 
   p :last-of-type {

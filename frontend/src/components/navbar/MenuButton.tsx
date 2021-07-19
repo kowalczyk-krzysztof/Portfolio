@@ -1,12 +1,12 @@
-import React, { FC, useEffect, KeyboardEvent } from 'react';
-// Redux
-import { useDispatch, useSelector } from 'react-redux';
-import {
-  SET_MENU_DISPLAY_NONE,
-  SET_MENU_DISPLAY_BLOCK,
-  menuToggleSelector,
-  MenuDisplay,
-} from '../../features/menutoggle/menuToggleSlice';
+import React, {
+  FC,
+  useEffect,
+  KeyboardEvent,
+  Dispatch,
+  SetStateAction,
+} from 'react';
+// Components
+import { MenuDisplay } from './Navbar';
 // Styling
 import {
   StyledMenuButton,
@@ -22,10 +22,15 @@ if (inputRef && inputRef.current) {
    console.log(inputRef.current.offsetTop);
 }
 */
-const MenuButton: FC = (): JSX.Element => {
-  const dispatch = useDispatch();
-  const display: MenuDisplay = useSelector(menuToggleSelector);
+interface MenuButtonProps {
+  display: MenuDisplay;
+  setDisplay: Dispatch<SetStateAction<MenuDisplay>>;
+}
 
+const MenuButton: FC<MenuButtonProps> = ({
+  display,
+  setDisplay,
+}): JSX.Element => {
   useEffect(() => {
     if (display === MenuDisplay.BLOCK)
       // Collapse dropdown on scroll, adding onScroll to a component won't work because I need to check the body, not the component itself, so I need to add an event listener
@@ -34,19 +39,19 @@ const MenuButton: FC = (): JSX.Element => {
 
   // Toggling visibility of dropdown menu
   const clickHandler = (): void => {
-    if (display === MenuDisplay.NONE) dispatch(SET_MENU_DISPLAY_BLOCK());
-    else dispatch(SET_MENU_DISPLAY_NONE());
+    if (display === MenuDisplay.NONE) setDisplay(MenuDisplay.BLOCK);
+    else setDisplay(MenuDisplay.NONE);
   };
 
   // I need to return document.removeEventListener('scroll', scrollAway); for all the other closing methods to stop this triggering if menu has been already closed
   const scrollAway = (): void => {
-    dispatch(SET_MENU_DISPLAY_NONE());
+    setDisplay(MenuDisplay.NONE);
   };
 
   // Esc key handler
   const pressEsc = (e: KeyboardEvent<HTMLButtonElement>): void => {
     e.preventDefault(); // has to be done or otherwise space would trigger the button
-    if (e.key === `Escape`) dispatch(SET_MENU_DISPLAY_NONE());
+    if (e.key === `Escape`) setDisplay(MenuDisplay.NONE);
 
     return document.removeEventListener('scroll', scrollAway);
   };

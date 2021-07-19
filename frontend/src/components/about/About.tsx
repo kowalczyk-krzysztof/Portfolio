@@ -7,6 +7,9 @@ import {
   themeSelector,
   ThemeProps,
 } from '../../features/themetoggle/themeToggleSlice';
+// Components
+import Picture from './Picture';
+import TechnologyIcons from './TechnologyIcons';
 // Styling
 import {
   StyledAboutContainer,
@@ -15,9 +18,6 @@ import {
   StyledAboutWrapper,
   StyledTechnologyWrapper,
 } from './about-styling';
-// Components
-import Picture from './Picture';
-import TechnologyIcons from './TechnologyIcons';
 
 const About: FC = (): JSX.Element => {
   const localization: Locale = useSelector(localizationSelector);
@@ -29,14 +29,14 @@ const About: FC = (): JSX.Element => {
   return (
     <StyledAboutContainer>
       <StyledAboutWrapper>
-        <StyledTextContainer>
-          <p style={{ background }}>{aboutDescription}</p>
-          <p style={{ background }}> {aboutHobbies}</p>
+        <StyledTextContainer background={background}>
+          <p>{aboutDescription}</p>
+          <p>{aboutHobbies}</p>
         </StyledTextContainer>
         <Picture />
       </StyledAboutWrapper>
       <StyledTechnologyContainer>
-        <StyledTechnologyWrapper style={{ background }}>
+        <StyledTechnologyWrapper background={background}>
           <p>{aboutTechnologies}</p>
           <TechnologyIcons />
         </StyledTechnologyWrapper>
