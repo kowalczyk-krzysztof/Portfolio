@@ -112,6 +112,11 @@ export const StyledContactTitleContainer = styled.div`
   margin: 0.5vh;
   margin-bottom: 1.5vh;
   text-align: center;
+
+  @media only screen and (max-height: 500px) {
+    margin: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
 `;
 // Form section wrapper
 export const StyledFormElement = styled.div`
@@ -128,9 +133,8 @@ export const StyledContactLinkContainer = styled.div`
 export const StyledContactLinkWrapper = styled.div`
   background: #fafafa;
   border: 2px solid ${lightBlue};
-  padding-right: 2vh;
-  padding-left: 2vh;
   border-radius: 25px;
+  padding: 5px 2vh 5px 2vh;
 `;
 
 // Contact links
