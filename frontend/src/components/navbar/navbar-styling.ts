@@ -61,7 +61,7 @@ export const StyledThemeToggleSlider = styled.input`
     8. Make a :checked:before and do a transform: translateX(the width of box). This will move circle to the other side of the box
   
    */
-
+  cursor: pointer;
   border: 4px solid ${lightBlue};
   width: 60px;
   height: 30px;
@@ -101,7 +101,7 @@ export const StyledLanguage = styled.div`
 // Language toggle buttons
 export const StyledLanguageButtons = styled.button`
   transform: scale(1.2);
-
+  cursor: pointer;
   :hover {
     transform: scale(1.25, 1.25);
   }
@@ -175,6 +175,7 @@ export const StyledMenu = styled.div`
 // Menu button
 export const StyledMenuButton = styled.button`
   margin-right: 5px;
+  cursor: pointer;
 `;
 /* Navbar
 The logic behind this:
