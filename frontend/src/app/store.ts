@@ -9,8 +9,6 @@ import {
 // import storage from 'redux-persist/lib/storage';
 import localizationReducer from '../features/localization/localizationSlice';
 import themeToggleReducer from '../features/themetoggle/themeToggleSlice';
-import menuToggleReducer from '../features/menutoggle/menuToggleSlice';
-
 /*
  * redux-persist is a tool that allow persisting the redux store between page refreshes etc. To make it work, define persistConfig and persistedReducer and pass persistConfig and rootReducer to persistedReducer then use it as default reducer. To stop getting serialization errors, you need to ignore persist action in middleware
  * 
@@ -32,7 +30,6 @@ import menuToggleReducer from '../features/menutoggle/menuToggleSlice';
 const rootReducer = combineReducers({
   localization: localizationReducer,
   themeToggle: themeToggleReducer,
-  menuToggle: menuToggleReducer,
 });
 
 // // Redux persist config

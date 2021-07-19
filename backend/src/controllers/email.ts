@@ -18,9 +18,9 @@ export const sendEmail = async (
   next: NextFunction
 ): Promise<void> => {
   try {
-    const senderEmail = req.body.email;
-    const senderName = req.body.name;
-    const sentMessage = req.body.message;
+    const senderEmail: string = req.body.email;
+    const senderName: string = req.body.name;
+    const sentMessage: string = req.body.message;
 
     // Because sendGrid requires verified sender, I have to send email from myself to myself. That's why "from" isn't senderEmail but my own email instead
     await sgMail.send({

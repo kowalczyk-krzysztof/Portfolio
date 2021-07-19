@@ -15,7 +15,7 @@ interface ThemeToggleProps {
 }
 
 const initialState: ThemeToggleProps = {
-  theme: darkTheme,
+  theme: lightTheme,
 };
 // Slice
 const themeToggleSlice = createSlice({

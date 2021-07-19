@@ -3,14 +3,14 @@ import React, { FC } from 'react';
 import { useSelector } from 'react-redux';
 import { localizationSelector } from '../../features/localization/localizationSlice';
 import { Locale } from '../../features/localization/locales';
+// Components
+import { EmailSendingStyle } from './ContactForm';
 // Styling
 import {
   StyledEmailNotification,
   StyledDummyContainer,
 } from './contact-styling';
 import { lightGray, lightGreen, lightRed } from '../../createGlobalStyle';
-// Components
-import { EmailSendingStyle } from './ContactForm';
 
 export interface EmailSentNotificationProps {
   isEmailSent: EmailSendingStyle;

@@ -34,12 +34,14 @@ export const StyledPicture = styled.img`
 `;
 
 // Text container
-export const StyledTextContainer = styled.div`
+export const StyledTextContainer = styled.div<{ background: string }>`
   width: 50%;
   margin-right: 5vh;
   font-weight: 900;
   font-size: ${font12px};
+
   p {
+    background: ${(props) => props.background};
     border: 5px dashed ${lightBlue};
     padding: 2vh;
     box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
@@ -103,7 +105,8 @@ export const StyledTechnologyContainer = styled.div`
 `;
 
 // Text + icons centered container
-export const StyledTechnologyWrapper = styled.div`
+export const StyledTechnologyWrapper = styled.div<{ background: string }>`
+  background: ${(props) => props.background};
   border: 5px dashed ${lightBlue};
   padding: 0.5vh 3vh 2vh 3vh;
   box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,

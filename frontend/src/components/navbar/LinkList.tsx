@@ -1,22 +1,22 @@
-import React, { FC, useRef, useEffect } from 'react';
+import React, { FC, useRef, useEffect, Dispatch, SetStateAction } from 'react';
 // Redux
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { localizationSelector } from '../../features/localization/localizationSlice';
-import {
-  menuToggleSelector,
-  MenuDisplay,
-  SET_MENU_DISPLAY_NONE,
-} from '../../features/menutoggle/menuToggleSlice';
 import { Locale } from '../../features/localization/locales';
+// Components
+import { MenuDisplay } from './Navbar';
 // Styling
 import { StyledLinks, StyledLink } from './navbar-styling';
 // Variables
 import { home, about, contact } from '../../App';
 
-const LinkList: FC = (): JSX.Element => {
-  const dispatch = useDispatch();
+export interface LinkListProps {
+  display: MenuDisplay;
+  setDisplay: Dispatch<SetStateAction<MenuDisplay>>;
+}
+
+const LinkList: FC<LinkListProps> = ({ display, setDisplay }): JSX.Element => {
   const localization: Locale = useSelector(localizationSelector);
-  const display: MenuDisplay = useSelector(menuToggleSelector);
   const { navbarAbout, navbarContact, navbarHome } = localization;
 
   /* My previous method of closing menu on clicking away had a big drawback - rapid clicking links wouldn't work. 
@@ -31,13 +31,13 @@ const LinkList: FC = (): JSX.Element => {
   const clickAway = (e: MouseEvent): void => {
     if (display === MenuDisplay.NONE) return;
     if (ref.current && !ref.current.contains(e.target as Node))
-      dispatch(SET_MENU_DISPLAY_NONE());
+      setDisplay(MenuDisplay.NONE);
 
     return document.removeEventListener('mousedown', clickAway);
   };
   // Need this so menu gets closed after redirecting
   const closeMenuWhenRedirected = (): void => {
-    if (display === MenuDisplay.BLOCK) dispatch(SET_MENU_DISPLAY_NONE());
+    if (display === MenuDisplay.BLOCK) setDisplay(MenuDisplay.NONE);
   };
 
   return (
