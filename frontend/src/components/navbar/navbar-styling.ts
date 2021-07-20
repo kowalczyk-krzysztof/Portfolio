@@ -68,8 +68,7 @@ export const StyledThemeToggleSlider = styled.input`
   height: 30px;
   appearance: none; /* hides default checkbox*/
   background: ${veryLightBlue};
-  opacity: 0.8;
-  outline: none;
+  opacity: 0.9;
   border-radius: 20px; /* slider-like edges */
   transition: 0.6s; /* slow translition between toggles */
   :checked {
@@ -143,7 +142,6 @@ export const StyledLinks = styled.div<{
 export const StyledLink = styled(NavLink)`
   /* inline components can't have any align properites so this has to be a block*/
   display: block;
-  outline: none;
   padding: 15px;
   text-decoration: none;
   text-align: center;
@@ -210,7 +208,6 @@ export const StyledNavbar = styled.nav`
   button {
     background: none;
     border: none;
-    outline: none;
   }
   div,
   a {

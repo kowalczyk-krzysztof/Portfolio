@@ -59,11 +59,11 @@ export const MenuButton: FC<MenuButtonProps> = ({
       >
         {display === MenuDisplay.NONE ? (
           <MenuIconWrapper>
-            <Bars size={bigIcon} title="Open menu" />
+            <Bars size={bigIcon} title="Open menu" aria-label="Open menu" />
           </MenuIconWrapper>
         ) : (
           <MenuIconWrapper>
-            <Times size={bigIcon} title="Close menu" />
+            <Times size={bigIcon} title="Close menu" aria-label="Close menu" />
           </MenuIconWrapper>
         )}
       </StyledMenuButton>

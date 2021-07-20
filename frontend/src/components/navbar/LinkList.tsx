@@ -50,6 +50,7 @@ export const LinkList: FC<LinkListProps> = ({
         exact={true}
         activeClassName="active"
         onClick={closeMenuWhenRedirected}
+        aria-label={home}
       >
         {navbarHome}
       </StyledLink>
@@ -57,6 +58,7 @@ export const LinkList: FC<LinkListProps> = ({
         to={about}
         activeClassName="active"
         onClick={closeMenuWhenRedirected}
+        aria-label={about}
       >
         {navbarAbout}
       </StyledLink>
@@ -64,6 +66,7 @@ export const LinkList: FC<LinkListProps> = ({
         to={contact}
         activeClassName="active"
         onClick={closeMenuWhenRedirected}
+        aria-label={contact}
       >
         {navbarContact}
       </StyledLink>

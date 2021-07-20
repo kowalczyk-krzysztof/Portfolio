@@ -106,7 +106,6 @@ export const StyledLabel = styled.label`
 export const StyledContactTitleContainer = styled.div`
   border-radius: 15px;
   font-size: ${font10px};
-
   padding: 1vh;
   font-weight: bold;
   margin: 0.5vh;
@@ -128,6 +127,7 @@ export const StyledFormElement = styled.div`
 export const StyledContactLinkContainer = styled.div`
   display: flex;
   justify-content: center;
+  margin-bottom: 1rem;
 `;
 // Contact link wrapper
 export const StyledContactLinkWrapper = styled.div`
@@ -150,14 +150,11 @@ export const StyledSubmitButton = styled.button`
   color: #ffff;
   box-sizing: border-box;
   cursor: pointer;
-  outline: none;
   margin: ${font10px};
   margin-top: 0;
   padding: ${font10px};
-
   font-size: ${font10px};
   border-radius: 10px;
-
   :hover {
     background: ${lightBlueHover};
   }
@@ -165,9 +162,8 @@ export const StyledSubmitButton = styled.button`
 // Main container
 export const StyledContactContainer = styled.main`
   z-index: 0;
-  margin-top: calc(20px + 8.5vh);
+  margin-top: 2vh;
   margin-bottom: 6vh;
-
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -182,6 +178,10 @@ export const StyledContactContainer = styled.main`
     ${StyledForm} {
       font-size: ${font14px};
     }
+  }
+
+  @media only screen and (min-width: 1250px) {
+    margin-top: calc(20px + 8.5vh);
   }
 
   @media only screen and (max-height: 450px) and (min-width: 400px) {
