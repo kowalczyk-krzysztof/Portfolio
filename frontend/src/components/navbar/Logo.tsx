@@ -6,7 +6,7 @@ export const Logo: FC = () => {
   const logoText: string = 'KK';
 
   return (
-    <StyledLogo>
+    <StyledLogo data-testid={'logo'}>
       <StyledLogoH1>{logoText}</StyledLogoH1>
     </StyledLogo>
   );
