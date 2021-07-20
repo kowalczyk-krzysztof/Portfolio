@@ -8,7 +8,7 @@ export const Picture: FC = () => {
     <StyledPictureContainer>
       <StyledPicture
         alt="Profile"
-        src={`${process.env.PUBLIC_URL}/${picture}.png`}
+        src={`${process.env.PUBLIC_URL}/${picture}.jpg`}
       ></StyledPicture>
     </StyledPictureContainer>
   );
