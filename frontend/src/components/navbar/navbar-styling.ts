@@ -140,28 +140,23 @@ export const StyledLinks = styled.div<{
 
 
 */
-
 export const StyledLink = styled(NavLink)`
   /* inline components can't have any align properites so this has to be a block*/
   display: block;
   outline: none;
   padding: 15px;
-
   text-decoration: none;
   text-align: center;
   border-top: 1px ridge ${lightGray};
   font-size: ${font16px};
   background: ${darkBlue};
-
   :hover {
     background: #415a77;
     color: ${veryLightBlue};
   }
-
   :last-child {
     box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.4);
   }
-
   &.${(props) => props.activeClassName} {
     color: ${black};
     font-weight: 600;
@@ -191,7 +186,6 @@ export const StyledNavbar = styled.nav`
   flex-wrap: wrap;
   width: 100%;
   justify-content: space-between;
-
   /* After thinking about it, I decided to make the navbar not sticky because there won't be much scrolling done */
 
   /*
@@ -209,12 +203,10 @@ export const StyledNavbar = styled.nav`
   width: 100%; */
   position: absolute;
   z-index: 1;
-
   box-shadow: 0 2px 0px 0px rgba(0, 0, 0, 0.4);
   background: ${darkBlue};
   align-items: center;
   user-select: none;
-
   button {
     background: none;
     border: none;
@@ -230,7 +222,6 @@ export const StyledNavbar = styled.nav`
     ${StyledMenuButton} {
       display: none;
     }
-
     ${StyledLinks} {
       display: inline-flex;
       order: 1;
@@ -238,19 +229,15 @@ export const StyledNavbar = styled.nav`
       position: static;
       animation: none;
     }
-
     ${StyledLink} {
       top: 0;
       border: none;
-
       box-shadow: none;
     }
-
     ${StyledLogo} {
       flex: 0;
     }
   }
-
   @media only screen and (max-width: 330px) {
     ${StyledLogo} {
       flex: 0;
@@ -270,7 +257,6 @@ export const StyledNavbar = styled.nav`
       transform: scale(1);
       margin: 0px;
       flex: 0;
-
       :last-of-type {
         margin-right: 0px;
       }

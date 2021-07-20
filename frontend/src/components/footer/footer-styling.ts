@@ -1,6 +1,7 @@
 import styled from 'styled-components/macro';
 // Variables
 import {
+  black,
   darkBlue,
   lightGray,
   lightBlue,
@@ -12,7 +13,6 @@ import {
 export const StyledContactLink = styled.a`
   color: ${lightGray};
   margin-right: 5px;
-
   padding-right: 5px;
   :hover {
     color: ${veryLightBlue};
@@ -25,6 +25,7 @@ export const FooterIconWrapper = styled.div`
 `;
 // Copyright
 export const StyledCopyright = styled.div`
+  color: ${black};
   font-size: calc(6px + 1vh);
   background: ${lightBlue};
   width: 100%;
@@ -34,13 +35,11 @@ export const StyledCopyright = styled.div`
 export const StyledContactList = styled.div`
   display: inline;
   line-height: 0.1;
-
-  p :after {
-    content: ':';
-  }
-
   p {
     font-size: ${font10px};
+    :after {
+      content: ':';
+    }
   }
 `;
 // Footer
@@ -51,13 +50,10 @@ export const StyledFooter = styled.footer`
   justify-content: center;
   flex-wrap: wrap;
   opacity: 0.9;
-
   background: ${darkBlue};
-
   box-shadow: 0px 0px 0px 2px rgba(0, 0, 0, 0.4);
   color: ${lightGray};
   user-select: none;
-
   @media only screen and (max-width: 280px) {
     ${StyledContactList} {
       padding: 0px;
