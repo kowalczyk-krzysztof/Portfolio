@@ -102,6 +102,7 @@ export const GlobalStyle = createGlobalStyle<CustomTheme>`
     /* Font settings */
     font-size: 1.125rem;
     font-family: 'Quicksand', sans-serif;
+    font-display: swap;
     font-weight: 400;
     /* ALL of those settings are needed for footer and navbar to work properly */
     margin: 0;
