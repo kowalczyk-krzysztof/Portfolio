@@ -123,6 +123,7 @@ export const StyledLinks = styled.div<{
   display: string;
 }>`
   display: ${(props) => props.display};
+
   order: 3;
   width: 100%;
   animation: ${MenuFade} 250ms ease-in-out both;
@@ -164,6 +165,21 @@ export const StyledLink = styled(NavLink)`
     }
   }
 `;
+
+// Link list at width > 768
+export const StyledFlexLinkList = styled.div`
+  display: inline-flex;
+  order: 1;
+  flex: 1;
+
+  animation: none;
+  ${StyledLink} {
+    top: 0;
+    border: none;
+    box-shadow: none;
+  }
+`;
+
 // Menu button container
 export const StyledMenu = styled.div`
   order: 2;
@@ -216,21 +232,6 @@ export const StyledNavbar = styled.nav`
 
   /*Those settings are for non-mobile devices. Minimum width to cater for is 320px. */
   @media only screen and (min-width: 768px) {
-    ${StyledMenuButton} {
-      display: none;
-    }
-    ${StyledLinks} {
-      display: inline-flex;
-      order: 1;
-      flex: 1;
-      position: static;
-      animation: none;
-    }
-    ${StyledLink} {
-      top: 0;
-      border: none;
-      box-shadow: none;
-    }
     ${StyledLogo} {
       flex: 0;
     }

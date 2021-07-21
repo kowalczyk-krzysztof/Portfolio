@@ -29,6 +29,7 @@ export const LinkList: FC<LinkListProps> = ({
   useEffect(() => {
     document.addEventListener('mousedown', clickAway);
   });
+  // Ref is for handling the dropdown collapsing
   const ref = useRef<HTMLDivElement>(null);
 
   const clickAway = (e: MouseEvent): void => {
@@ -44,12 +45,11 @@ export const LinkList: FC<LinkListProps> = ({
   };
 
   return (
-    <StyledLinks display={display} ref={ref}>
+    <StyledLinks display={display} ref={ref} data-testid={'linklist'}>
       <StyledLink
         to={home}
         exact={true}
         activeClassName="active"
-        onClick={closeMenuWhenRedirected}
         aria-label={home}
       >
         {navbarHome}

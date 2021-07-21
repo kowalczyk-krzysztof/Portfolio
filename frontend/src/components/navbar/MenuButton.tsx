@@ -1,4 +1,11 @@
-import { FC, useEffect, KeyboardEvent, Dispatch, SetStateAction } from 'react';
+import {
+  FC,
+  useEffect,
+  KeyboardEvent,
+  Dispatch,
+  SetStateAction,
+  useState,
+} from 'react';
 // Components
 import { MenuDisplay } from './Navbar';
 // Styling
@@ -24,11 +31,20 @@ interface MenuButtonProps {
 export const MenuButton: FC<MenuButtonProps> = ({
   display,
   setDisplay,
-}): JSX.Element => {
+}): JSX.Element | null => {
+  const [width, setWidth] = useState(window.innerWidth);
+
   useEffect(() => {
     if (display === MenuDisplay.BLOCK)
       // Collapse dropdown on scroll, adding onScroll to a component won't work because I need to check the body, not the component itself, so I need to add an event listener
       return document.addEventListener('scroll', scrollAway, { once: true });
+    const handleResizeWindow = () => setWidth(window.innerWidth);
+
+    // Rendering logic
+    window.addEventListener('resize', handleResizeWindow);
+    return () => {
+      window.removeEventListener('resize', handleResizeWindow);
+    };
   });
 
   // Toggling visibility of dropdown menu
@@ -45,28 +61,43 @@ export const MenuButton: FC<MenuButtonProps> = ({
   // Esc key handler
   const pressEsc = (e: KeyboardEvent<HTMLButtonElement>): void => {
     e.preventDefault(); // has to be done or otherwise space would trigger the button
-    if (e.key === `Escape`) setDisplay(MenuDisplay.NONE);
+    if (e.key === `Escape`) {
+      setDisplay(MenuDisplay.NONE);
+    }
 
     return document.removeEventListener('scroll', scrollAway);
   };
 
   // Both of those icons need to be same size otherwise there will be weird clipping
-  return (
-    <StyledMenu>
-      <StyledMenuButton
-        onClick={clickHandler}
-        onKeyDown={(e: KeyboardEvent<HTMLButtonElement>) => pressEsc(e)}
-      >
-        {display === MenuDisplay.NONE ? (
-          <MenuIconWrapper>
-            <Bars size={bigIcon} title="Open menu" aria-label="Open menu" />
-          </MenuIconWrapper>
-        ) : (
-          <MenuIconWrapper>
-            <Times size={bigIcon} title="Close menu" aria-label="Close menu" />
-          </MenuIconWrapper>
-        )}
-      </StyledMenuButton>
-    </StyledMenu>
-  );
+  if (width < 768)
+    return (
+      <StyledMenu>
+        <StyledMenuButton
+          onClick={clickHandler}
+          onKeyDown={(e: KeyboardEvent<HTMLButtonElement>) => pressEsc(e)}
+          data-testid={'menubutton'}
+        >
+          {display === MenuDisplay.NONE ? (
+            <MenuIconWrapper>
+              <Bars
+                size={bigIcon}
+                title="Open menu"
+                aria-label="Open menu"
+                data-testid={'openmenu'}
+              />
+            </MenuIconWrapper>
+          ) : (
+            <MenuIconWrapper>
+              <Times
+                size={bigIcon}
+                title="Close menu"
+                aria-label="Close menu"
+                data-testid={'closemenu'}
+              />
+            </MenuIconWrapper>
+          )}
+        </StyledMenuButton>
+      </StyledMenu>
+    );
+  else return null;
 };
