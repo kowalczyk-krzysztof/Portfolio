@@ -50,6 +50,7 @@ export const LinkList: FC<LinkListProps> = ({
         to={home}
         exact={true}
         activeClassName="active"
+        onClick={closeMenuWhenRedirected}
         aria-label={home}
       >
         {navbarHome}
