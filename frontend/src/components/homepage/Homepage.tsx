@@ -18,12 +18,18 @@ export const Homepage: FC = (): JSX.Element => {
   const { background, color } = theme;
 
   return (
-    <HomepageContent background={background} color={color}>
-      <h1>{homeH1}</h1>
+    <HomepageContent
+      background={background}
+      color={color}
+      data-testid={'homepage'}
+    >
+      <h1 data-testid={'homepageh1'}>{homeH1}</h1>
       <h2> {homeH2}</h2>
       <p>{homeDescription}</p>
       <p> {homePassion}</p>
-      <StyledHomepageLink to="/about">{learnMore}</StyledHomepageLink>
+      <StyledHomepageLink to="/about" data-testid={'homepagelinktoabout'}>
+        {learnMore}
+      </StyledHomepageLink>
     </HomepageContent>
   );
 };
