@@ -11,10 +11,10 @@ beforeEach(() => {
 });
 
 describe('testing navbar', () => {
-  test('theme navbar rendering properly', () => {
+  test('navbar rendering properly', () => {
     const { queryByTestId } = render(
       <Provider store={store}>
-        <MemoryRouter>
+        <MemoryRouter initialEntries={['/']}>
           <Navbar />
         </MemoryRouter>
       </Provider>
