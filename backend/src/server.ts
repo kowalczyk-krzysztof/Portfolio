@@ -71,7 +71,7 @@ app.get('*', (req, res) => {
 // app.set('trust proxy', 1);
 app.set('trust proxy', 1);
 
-app.listen(PORT, (): void => {
+export const server = app.listen(PORT, (): void => {
   if (process.env.NODE_ENV === 'development')
     console.log(
       `Server is up and running @ http://localhost:${PORT} in ${process.env.NODE_ENV} mode`

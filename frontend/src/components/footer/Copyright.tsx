@@ -7,8 +7,8 @@ export const Copyright: FC = () => {
   const myName: string = `${process.env.REACT_APP_REAL_NAME}`;
 
   return (
-    <StyledCopyright>
-      <p>
+    <StyledCopyright data-testid={'copyright'}>
+      <p data-testid={'copyrighttext'}>
         © {yearNow} {myName}
       </p>
     </StyledCopyright>

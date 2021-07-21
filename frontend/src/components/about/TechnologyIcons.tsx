@@ -11,7 +11,7 @@ import { mediumIcon } from '../../createGlobalStyle';
 
 export const TechnologyIcons: FC = () => {
   return (
-    <StyledTechnologyIconWrapper>
+    <StyledTechnologyIconWrapper data-testid={'abouticons'}>
       <StyledTechnologyIcon>
         <ReactLogo size={mediumIcon} color="#61DBFB" title="React" />
       </StyledTechnologyIcon>

@@ -25,8 +25,8 @@ export const ContactTitle: FC = () => {
   const facebook: string = `${process.env.REACT_APP_FACEBOOK}`;
 
   return (
-    <StyledContactTitleContainer>
-      <h1>{contactH1}</h1>
+    <StyledContactTitleContainer data-testid={'contacttitle'}>
+      <h1 data-testid={'contacttitletext'}>{contactH1}</h1>
       <h2>{contactMeText}</h2>
       <StyledContactLinkContainer>
         <StyledContactLinkWrapper>

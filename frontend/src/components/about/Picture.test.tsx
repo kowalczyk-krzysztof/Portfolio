@@ -2,7 +2,7 @@ import { render } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { createTestStore } from '../../app/store';
-import { Navbar } from './Navbar';
+import { Picture } from './Picture';
 
 let store = createTestStore();
 
@@ -10,15 +10,15 @@ beforeEach(() => {
   store = createTestStore();
 });
 
-describe('testing navbar', () => {
-  test('navbar rendering properly', () => {
+describe('testing picture', () => {
+  test('picture rendering properly', () => {
     const { queryByTestId } = render(
       <Provider store={store}>
         <MemoryRouter>
-          <Navbar />
+          <Picture />
         </MemoryRouter>
       </Provider>
     );
-    expect(queryByTestId('navbar')).toBeInTheDocument();
+    expect(queryByTestId('aboutpicture')).toBeInTheDocument();
   });
 });

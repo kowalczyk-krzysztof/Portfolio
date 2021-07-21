@@ -29,7 +29,7 @@ describe('testing link list', () => {
     });
     const { queryByTestId } = render(
       <Provider store={store}>
-        <MemoryRouter initialEntries={['/']}>
+        <MemoryRouter>
           <FlexLinkList />
         </MemoryRouter>
       </Provider>
@@ -47,7 +47,7 @@ describe('testing link list', () => {
     });
     const { queryByTestId } = render(
       <Provider store={store}>
-        <MemoryRouter initialEntries={['/']}>
+        <MemoryRouter>
           <FlexLinkList />
         </MemoryRouter>
       </Provider>

@@ -27,8 +27,8 @@ export const ContactLinks: FC = (): JSX.Element => {
 
   // Can't use <Link> with external links
   return (
-    <StyledContactList>
-      <p>{navbarContact}</p>
+    <StyledContactList data-testid={'footercontact'}>
+      <p data-testid={'footercontacttext'}>{navbarContact}</p>
       <FooterIconWrapper>
         <StyledContactLink href={github} target="_blank" rel="noopener">
           <Github size={smallIcon} title="GitHub" />

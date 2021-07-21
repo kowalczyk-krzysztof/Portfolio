@@ -30,7 +30,7 @@ describe('testing link list', () => {
     });
     const { queryByTestId } = render(
       <Provider store={store}>
-        <MemoryRouter initialEntries={['/']}>
+        <MemoryRouter>
           <LinkList display={MenuDisplay.NONE} setDisplay={jest.fn()} />
         </MemoryRouter>
       </Provider>
@@ -47,7 +47,7 @@ describe('testing link list', () => {
     });
     const { queryByTestId } = render(
       <Provider store={store}>
-        <MemoryRouter initialEntries={['/']}>
+        <MemoryRouter>
           <LinkList display={MenuDisplay.BLOCK} setDisplay={jest.fn()} />
         </MemoryRouter>
       </Provider>
@@ -65,7 +65,7 @@ describe('testing link list', () => {
     });
     const { queryByTestId } = render(
       <Provider store={store}>
-        <MemoryRouter initialEntries={['/']}>
+        <MemoryRouter>
           <LinkList display={MenuDisplay.BLOCK} setDisplay={jest.fn()} />
         </MemoryRouter>
       </Provider>
