@@ -26,7 +26,7 @@ describe('testing homepage', () => {
   test('homepage rendering properly', () => {
     const { queryByTestId } = render(
       <Provider store={store}>
-        <MemoryRouter initialEntries={['/']}>
+        <MemoryRouter>
           <Homepage />
         </MemoryRouter>
       </Provider>
@@ -37,7 +37,7 @@ describe('testing homepage', () => {
     let state: ThemeProps = store.getState().themeToggle.theme;
     const { queryByTestId } = render(
       <Provider store={store}>
-        <MemoryRouter initialEntries={['/']}>
+        <MemoryRouter>
           <Homepage />
         </MemoryRouter>
       </Provider>
@@ -54,7 +54,7 @@ describe('testing homepage', () => {
     let state: Locale = store.getState().localization.locale;
     const { queryByTestId } = render(
       <Provider store={store}>
-        <MemoryRouter initialEntries={['/']}>
+        <MemoryRouter>
           <Homepage />
         </MemoryRouter>
       </Provider>

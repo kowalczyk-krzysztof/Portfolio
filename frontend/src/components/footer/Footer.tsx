@@ -7,7 +7,7 @@ import { StyledFooter } from './footer-styling';
 
 export const Footer: FC = (): JSX.Element => {
   return (
-    <StyledFooter>
+    <StyledFooter data-testid={'footer'}>
       <ContactLinks />
       <Copyright />
     </StyledFooter>

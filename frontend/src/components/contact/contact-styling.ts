@@ -24,15 +24,6 @@ export const StyledButtonContainer = styled.div`
   flex-wrap: wrap;
   flex-direction: column;
 `;
-// Dummy container for email notification
-export const StyledDummyContainer = styled.div`
-  opacity: 0;
-  text-align: center;
-  font-size: ${font10px};
-  line-height: 0.3;
-  user-select: none;
-  font-weight: 550;
-`;
 // Email status
 export const StyledEmailNotification = styled.div<{ color: string }>`
   font-size: ${font10px};

@@ -27,10 +27,10 @@ export const About: FC = (): JSX.Element => {
   const { background } = theme;
 
   return (
-    <StyledAboutContainer>
+    <StyledAboutContainer data-testid={'about'}>
       <StyledAboutWrapper>
         <StyledTextContainer background={background}>
-          <p>{aboutDescription}</p>
+          <p data-testid={'aboutdescription'}>{aboutDescription}</p>
           <p>{aboutHobbies}</p>
         </StyledTextContainer>
         <Picture />

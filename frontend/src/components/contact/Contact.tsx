@@ -7,7 +7,7 @@ import { StyledContactContainer } from './contact-styling';
 
 export const Contact: FC = () => {
   return (
-    <StyledContactContainer>
+    <StyledContactContainer data-testid={'contact'}>
       <ContactTitle />
       <ContactForm />
     </StyledContactContainer>

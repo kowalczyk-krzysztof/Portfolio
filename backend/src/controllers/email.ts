@@ -29,7 +29,7 @@ export const sendEmail = async (
       subject: `Portfolio website contact from: ${senderName}`,
       text: `${senderEmail} has sent this message: ${sentMessage}`,
     });
-    res.status(200).json({
+    res.status(201).json({
       status: 'Sucess',
     });
   } catch (err) {

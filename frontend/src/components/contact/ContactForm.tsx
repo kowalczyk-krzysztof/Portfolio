@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import { localizationSelector } from '../../features/localization/localizationSlice';
 import { Locale } from '../../features/localization/locales';
 // Components
-import { EmailSentNotification } from './EmailSentNotificaiton';
+import { EmailSentNotification } from './EmailSentNotification';
 // Utils
 import { sendEmail } from '../../utils/sendEmail';
 import { regexCheck } from '../../utils/regexEmail';
@@ -47,7 +47,6 @@ enum FieldNames {
 }
 // Button styles
 export enum EmailSendingStyle {
-  DEFAULT = 'DEFAULT',
   LOADING = 'LOADING',
   SUCCESS = 'SUCCESS',
   FAILURE = 'FAILURE',
@@ -139,8 +138,8 @@ export const ContactForm: FC = (): JSX.Element => {
     useState<number>(messageMaxLength);
 
   // Email was sent
-  const [isEmailSent, setIsEmailSent] = useState<EmailSendingStyle>(
-    EmailSendingStyle.DEFAULT
+  const [isEmailSent, setIsEmailSent] = useState<EmailSendingStyle | string>(
+    ''
   );
 
   /* UTILS */
@@ -241,7 +240,7 @@ export const ContactForm: FC = (): JSX.Element => {
       setIsEmailSent(EmailSendingStyle.LOADING);
       // Checking if email was sent
       const res = await sendEmail(name, email, message);
-      if (res?.status === 200) {
+      if (res?.status === 201) {
         setIsEmailSent(EmailSendingStyle.SUCCESS);
         // Resetting form state and hiding notifications
         resetForm();
@@ -253,7 +252,7 @@ export const ContactForm: FC = (): JSX.Element => {
   };
 
   return (
-    <StyledForm onSubmit={onSubmit} id={formId}>
+    <StyledForm onSubmit={onSubmit} id={formId} data-testid={'contactform'}>
       <StyledFormElement>
         <StyledLabel htmlFor={FieldNames.NAME}>{contactNameField}</StyledLabel>
         <StyledInput
@@ -264,6 +263,7 @@ export const ContactForm: FC = (): JSX.Element => {
           name={FieldNames.NAME}
           value={name}
           placeholder={contactNameField}
+          data-testid={'contactformname'}
         ></StyledInput>
         <StyledNotificationWarning visibility={nameWarning}>
           {enterName}
@@ -281,6 +281,7 @@ export const ContactForm: FC = (): JSX.Element => {
           name={FieldNames.EMAIL}
           value={email}
           placeholder={contactEmailField}
+          data-testid={'contactformemail'}
         ></StyledInput>
         <StyledNotificationWarning visibility={emailWarning}>
           {invalidEmail}
@@ -299,6 +300,7 @@ export const ContactForm: FC = (): JSX.Element => {
           name={FieldNames.MESSAGE}
           value={message}
           placeholder={contactMessageField}
+          data-testid={'contactformemessage'}
         ></StyledTextArea>
         <StyledNotificationWarning visibility={messageWarning}>
           {enterMessage}
