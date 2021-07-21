@@ -6,7 +6,6 @@ import { Locale } from '../../features/localization/locales';
 // Components
 import { EmailSentNotification } from './EmailSentNotificaiton';
 // Utils
-import { emptyFieldValidator } from '../../utils/emptyFieldValidator';
 import { sendEmail } from '../../utils/sendEmail';
 import { regexCheck } from '../../utils/regexEmail';
 // Styling
@@ -223,8 +222,7 @@ export const ContactForm: FC = (): JSX.Element => {
     */
 
     // Validating name field
-    const nameValidation = emptyFieldValidator(name);
-    if (nameValidation === true) setName(name);
+    if (name !== '') setName(name);
     else setNameWarning(WarningVisibility.SHOW);
 
     // Valdiating email field
@@ -233,29 +231,24 @@ export const ContactForm: FC = (): JSX.Element => {
     else setEmailWarning(WarningVisibility.SHOW);
 
     // Validating message field
-    const messageValidation = emptyFieldValidator(message);
-    if (messageValidation === true) setMessage(message);
+    if (message !== '') setMessage(message);
     else setMessageWarning(WarningVisibility.SHOW);
 
     // If all fields are valid then change the button style to loading, reset all fields, try to send email then let user know if email was sent by changing the button style and displaying a notificiations
-    if (
-      nameValidation === true &&
-      emailValidation === true &&
-      messageValidation === true
-    ) {
+    if (name !== '' && emailValidation === true && message !== '') {
       // Set email notificaiton to loading for when the POST request is processing
 
       setIsEmailSent(EmailSendingStyle.LOADING);
       // Checking if email was sent
-      const emailSent = await sendEmail(name, email, message);
-      if (emailSent === true) {
+      const res = await sendEmail(name, email, message);
+      if (res?.status === 200) {
         setIsEmailSent(EmailSendingStyle.SUCCESS);
+        // Resetting form state and hiding notifications
+        resetForm();
+        resetWarnings();
       } else {
         setIsEmailSent(EmailSendingStyle.FAILURE);
       }
-      // Resetting form state and hiding notifications
-      resetForm();
-      resetWarnings();
     }
   };
 

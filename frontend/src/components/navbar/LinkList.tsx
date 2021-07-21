@@ -52,6 +52,7 @@ export const LinkList: FC<LinkListProps> = ({
         activeClassName="active"
         onClick={closeMenuWhenRedirected}
         aria-label={home}
+        data-testid={'homelink'}
       >
         {navbarHome}
       </StyledLink>

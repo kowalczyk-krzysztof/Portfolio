@@ -19,6 +19,7 @@ export const FlexLinkList: FC = (): JSX.Element => {
         exact={true}
         activeClassName="active"
         aria-label={home}
+        data-testid={'flexhomelink'}
       >
         {navbarHome}
       </StyledLink>
