@@ -7,6 +7,7 @@ import {
 import { ReactLogo, NodeJs } from '@styled-icons/fa-brands';
 import { Redux } from '@styled-icons/boxicons-logos';
 import { Typescript, Mongodb, Postgresql } from '@styled-icons/simple-icons';
+import { Docker } from '@styled-icons/simple-icons';
 import { mediumIcon } from '../../createGlobalStyle';
 
 export const TechnologyIcons: FC = () => {
@@ -20,6 +21,9 @@ export const TechnologyIcons: FC = () => {
       </StyledTechnologyIcon>
       <StyledTechnologyIcon>
         <NodeJs size={mediumIcon} color="#3c873a" title="NodeJs" />
+      </StyledTechnologyIcon>
+      <StyledTechnologyIcon>
+        <Docker size={mediumIcon} color="#0db7ed" title="Docker" />
       </StyledTechnologyIcon>
       <StyledTechnologyIcon>
         <Typescript size={mediumIcon} color="#007acc" title="TypeScript" />

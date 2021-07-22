@@ -1,6 +1,6 @@
 <h1>My portfolio website</h1>
 
-Made with React, Redux, styled-components (CSS in JS) for CSS and Express Node.js for backend.
+Made with React, Redux, styled-components (CSS in JS).
 
 <h2>Notes about Redux usage:</h2>
 
