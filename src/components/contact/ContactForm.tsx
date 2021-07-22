@@ -20,6 +20,7 @@ import {
   StyledSubmitButton,
   StyledButtonContainer,
 } from './contact-styling';
+import { EmailJSResponseStatus } from 'emailjs-com';
 
 // Warning visibility
 export enum WarningVisibility {
@@ -239,8 +240,8 @@ export const ContactForm: FC = (): JSX.Element => {
 
       setIsEmailSent(EmailSendingStyle.LOADING);
       // Checking if email was sent
-      const res = await sendEmail(name, email, message);
-      if (res?.status === 201) {
+      const res: EmailJSResponseStatus = await sendEmail(name, email, message);
+      if (res?.status === 200) {
         setIsEmailSent(EmailSendingStyle.SUCCESS);
         // Resetting form state and hiding notifications
         resetForm();
