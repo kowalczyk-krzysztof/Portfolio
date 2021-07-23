@@ -1,4 +1,5 @@
 import { FC, useState, FormEvent } from 'react';
+import emailjs, { EmailJSResponseStatus } from 'emailjs-com';
 // Redux
 import { useSelector } from 'react-redux';
 import { localizationSelector } from '../../features/localization/localizationSlice';
@@ -6,7 +7,6 @@ import { Locale } from '../../features/localization/locales';
 // Components
 import { EmailSentNotification } from './EmailSentNotification';
 // Utils
-import { sendEmail } from '../../utils/sendEmail';
 import { regexCheck } from '../../utils/regexEmail';
 // Styling
 import {
@@ -20,7 +20,6 @@ import {
   StyledSubmitButton,
   StyledButtonContainer,
 } from './contact-styling';
-import { EmailJSResponseStatus } from 'emailjs-com';
 
 // Warning visibility
 export enum WarningVisibility {
@@ -52,6 +51,11 @@ export enum EmailSendingStyle {
   SUCCESS = 'SUCCESS',
   FAILURE = 'FAILURE',
 }
+
+// Emailjs settings
+const serviceID: string = `${process.env.REACT_APP_EMAILJS_SERVICEID}`;
+const templateID: string = `${process.env.REACT_APP_EMAILJS_TEMPLATEID}`;
+const userID: string = `${process.env.REACT_APP_EMAILJS_USERID}`;
 
 export const ContactForm: FC = (): JSX.Element => {
   /* FORM SETTINGS */
@@ -240,7 +244,12 @@ export const ContactForm: FC = (): JSX.Element => {
 
       setIsEmailSent(EmailSendingStyle.LOADING);
       // Checking if email was sent
-      const res: EmailJSResponseStatus = await sendEmail(name, email, message);
+      const res: EmailJSResponseStatus = await emailjs.send(
+        serviceID,
+        templateID,
+        { name, email, message },
+        userID
+      );
       if (res?.status === 200) {
         setIsEmailSent(EmailSendingStyle.SUCCESS);
         // Resetting form state and hiding notifications
