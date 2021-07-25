@@ -1,9 +1,12 @@
+// Testing libraries
 import userEvent from '@testing-library/user-event';
-import { createTestStore } from '../../app/store';
 import { render } from '@testing-library/react';
+// Redux
 import { Provider } from 'react-redux';
-import { ThemeToggle } from './ThemeToggle';
+import { createTestStore } from '../../app/store';
 import { ThemeProps } from '../../features/themetoggle/themeToggleSlice';
+// Components
+import { ThemeToggle } from './ThemeToggle';
 import { darkTheme, lightTheme } from '../../createGlobalStyle';
 
 let store = createTestStore();

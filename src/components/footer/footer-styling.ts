@@ -44,6 +44,7 @@ export const StyledContactList = styled.div`
 `;
 // Footer
 export const StyledFooter = styled.footer`
+  grid-area: footer;
   display: flex;
   text-align: center;
   flex-direction: row;

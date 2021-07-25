@@ -1,7 +1,11 @@
+// Testing libraries
 import { render, screen } from '@testing-library/react';
+// React router
 import { MemoryRouter } from 'react-router-dom';
+// Redux
 import { Provider } from 'react-redux';
 import { createTestStore } from '../../app/store';
+// Components
 import { Copyright } from './Copyright';
 
 let store = createTestStore();

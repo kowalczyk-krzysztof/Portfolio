@@ -1,9 +1,13 @@
+// Testing libraries
 import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+// React router
 import { MemoryRouter } from 'react-router-dom';
+// Redux
 import { Provider } from 'react-redux';
 import { createTestStore } from '../../app/store';
+// Components
 import { ContactForm } from './ContactForm';
-import userEvent from '@testing-library/user-event';
 
 let store = createTestStore();
 

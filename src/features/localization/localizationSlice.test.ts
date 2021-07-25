@@ -1,3 +1,4 @@
+// Redux
 import { createTestStore } from '../../app/store';
 import { SET_LOCALE, Localization } from './localizationSlice';
 import { locale_ENG, locale_PL, LocaleNames, locale_JP } from './locales';

@@ -1,6 +1,9 @@
-import { createTestStore } from '../../app/store';
+// Testing libraries
 import { render } from '@testing-library/react';
+// Redux
+import { createTestStore } from '../../app/store';
 import { Provider } from 'react-redux';
+// Components
 import { LanguageToggle } from './LanguageToggle';
 
 let store = createTestStore();
