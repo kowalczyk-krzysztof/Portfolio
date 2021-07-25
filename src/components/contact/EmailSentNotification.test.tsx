@@ -1,7 +1,11 @@
+// Testing libraries
 import { render } from '@testing-library/react';
+// React router
 import { MemoryRouter } from 'react-router-dom';
+// Redux
 import { Provider } from 'react-redux';
 import { createTestStore } from '../../app/store';
+// Components
 import { EmailSentNotification } from './EmailSentNotification';
 import { EmailSendingStyle } from './ContactForm';
 

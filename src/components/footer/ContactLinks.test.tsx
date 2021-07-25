@@ -1,8 +1,10 @@
+// Testing libraries
 import { render, screen } from '@testing-library/react';
+// React router
 import { MemoryRouter } from 'react-router-dom';
+// Redux
 import { Provider } from 'react-redux';
 import { createTestStore } from '../../app/store';
-import { ContactLinks } from './ContactLinks';
 import { SET_LOCALE } from '../../features/localization/localizationSlice';
 import {
   Locale,
@@ -10,6 +12,8 @@ import {
   locale_ENG,
   locale_JP,
 } from '../../features/localization/locales';
+// Components
+import { ContactLinks } from './ContactLinks';
 
 let store = createTestStore();
 

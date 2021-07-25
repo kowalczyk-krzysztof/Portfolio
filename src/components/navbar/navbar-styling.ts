@@ -116,7 +116,7 @@ You need to pass an interface with an object to the component.
 Example: 
 
 const foo = styled.div<{bar: any}>`
- color: black;
+color: black;
 `*/
 // Links container
 export const StyledLinks = styled.div<{
@@ -131,14 +131,12 @@ export const StyledLinks = styled.div<{
 
 // Links
 /*
-  To make links highlight on active you need to give them a class property  
-  activeClassName="active" (can be any name) and then do it like this
+To make links highlight on active you need to give them a class property  
+activeClassName="active" (can be any name) and then do it like this
 
-  &.${(props) => props.activeClassName} {}
+&.${(props) => props.activeClassName} {}
 
-  For home link e.g ("/") you also need to pass exact={true}
-
-
+For home link e.g ("/") you also need to pass exact={true}
 */
 export const StyledLink = styled(NavLink)`
   /* inline components can't have any align properites so this has to be a block*/
@@ -196,28 +194,13 @@ The logic behind this:
 3. Menu button toggles display betwen none and block. To achieve the column-like look, the display has to be block AND width: 100% and IMPORTANT - flex-wrep: wrap HAS TO BE SET ON THE NAVBAR OTHERWISE ITEMS WON'T GET PUSHED TO NEW LINE
 */
 export const StyledNavbar = styled.nav`
+  grid-area: navbar;
+  position: absolute;
   display: flex;
   flex-wrap: wrap;
   width: 100%;
   justify-content: space-between;
-  /* After thinking about it, I decided to make the navbar not sticky because there won't be much scrolling done */
-
-  /*
-          NON-STICKY NAVBAR DROPDOWN DON'T PUSH PAGE DOWN
-          1. Set the navbar position to abosolute
-          2. Set content container padding to match the navbar
-  */
-
-  /*
-  STICKY NAVBAR SETTINGS
-  
-  Position has to be fixed or sticky to stick to the top. Top: 0 is also needed. Since I don't want dropdown to push down the content, it has to be fixed and I need to add padding-top to body so it doesn't cut main content*/
-  /* position: fixed;
-  top: 0;
-  width: 100%; */
-  position: absolute;
   z-index: 1;
-  box-shadow: 0 2px 0px 0px rgba(0, 0, 0, 0.4);
   background: ${darkBlue};
   align-items: center;
   user-select: none;
@@ -234,6 +217,9 @@ export const StyledNavbar = styled.nav`
   @media only screen and (min-width: 768px) {
     ${StyledLogo} {
       flex: 0;
+    }
+    ${StyledMenu} {
+      display: none;
     }
   }
   @media only screen and (max-width: 330px) {

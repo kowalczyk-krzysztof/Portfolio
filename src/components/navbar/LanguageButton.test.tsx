@@ -1,8 +1,9 @@
-import userEvent from '@testing-library/user-event';
-import { createTestStore } from '../../app/store';
+// Testing libraries
 import { render } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+// Redux
+import { createTestStore } from '../../app/store';
 import { Provider } from 'react-redux';
-import { LanguageButton } from './LanguageButton';
 import { FlagNames, AriaLables } from './LanguageToggle';
 import {
   locale_ENG,
@@ -10,6 +11,8 @@ import {
   LocaleNames,
   locale_JP,
 } from '../../features/localization/locales';
+// Components
+import { LanguageButton } from './LanguageButton';
 
 let store = createTestStore();
 

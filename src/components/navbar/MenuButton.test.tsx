@@ -1,6 +1,9 @@
-import { createTestStore } from '../../app/store';
+// Testing libraries
 import { render } from '@testing-library/react';
+// Redux
 import { Provider } from 'react-redux';
+import { createTestStore } from '../../app/store';
+// Components
 import { MenuButton } from './MenuButton';
 import { MenuDisplay } from './Navbar';
 
