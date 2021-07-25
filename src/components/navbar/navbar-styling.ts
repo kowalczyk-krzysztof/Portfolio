@@ -27,8 +27,13 @@ export const MenuIconWrapper = styled.div`
 `;
 // Logo container
 export const StyledLogo = styled.div`
+  display: flex;
+  justify-content: flex-start;
   order: 1;
   flex: 1;
+  :hover {
+    color: ${lightBlueHover};
+  }
 `;
 // Logo text
 export const StyledLogoH1 = styled.h1`
@@ -36,9 +41,6 @@ export const StyledLogoH1 = styled.h1`
   margin: 10px 10px;
   font-weight: 900;
   color: ${lightBlue};
-  :hover {
-    color: ${lightBlueHover};
-  }
 `;
 // Theme toggle cintainer
 export const StyledThemeToggle = styled.div`
@@ -223,17 +225,6 @@ export const StyledNavbar = styled.nav`
     }
   }
   @media only screen and (max-width: 330px) {
-    ${StyledLogo} {
-      flex: 0;
-    }
-
-    ${StyledLogoH1} {
-      margin: 0px;
-      margin-left: 3px;
-      margin-bottom: 5px;
-      font-size: ${font16px};
-    }
-
     ${StyledLanguageButtons} {
       padding-right: 2px;
       margin-right: 2px;
