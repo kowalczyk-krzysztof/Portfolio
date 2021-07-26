@@ -3,7 +3,6 @@ import { ThemeProps } from './features/themetoggle/themeToggleSlice';
 // Styling
 import styled from 'styled-components';
 import { createGlobalStyle } from 'styled-components';
-import '@fontsource/quicksand';
 /* 
 
       Global theme variables 
@@ -100,7 +99,6 @@ html, body {
     /* Font settings */
     font-size: 1.125rem;
     font-family: 'Quicksand', sans-serif;
-    font-display: swap;
     font-weight: 400;
     margin: 0;
     padding: 0;
