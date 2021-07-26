@@ -180,7 +180,7 @@ export const ContactForm: FC = (): JSX.Element => {
     // Assigning values to respective states
     if (targetName === FieldNames.NAME) {
       setName(targetValue);
-      if (targetValue === '') {
+      if (!targetValue) {
         setNameWarning(WarningVisibility.SHOW);
         setNameBorder(FieldBorderStyle.FAILURE);
         setNameShadow(FieldShadowStyle.FAILURE);
@@ -206,7 +206,7 @@ export const ContactForm: FC = (): JSX.Element => {
       // IMPORTANT: Make sure im doing the math for characters left on e.currentTarget.value, NOT state
       setcharactersLeft(messageMaxLength - targetValue.length);
       setMessage(targetValue);
-      if (targetValue === '') {
+      if (!targetValue) {
         setMessageWarning(WarningVisibility.SHOW);
         setMessageBorder(FieldBorderStyle.FAILURE);
         setMessageShadow(FieldShadowStyle.FAILURE);
@@ -226,7 +226,7 @@ export const ContactForm: FC = (): JSX.Element => {
     */
 
     // Validating name field
-    if (name !== '') setName(name);
+    if (name) setName(name);
     else setNameWarning(WarningVisibility.SHOW);
 
     // Valdiating email field
@@ -235,11 +235,11 @@ export const ContactForm: FC = (): JSX.Element => {
     else setEmailWarning(WarningVisibility.SHOW);
 
     // Validating message field
-    if (message !== '') setMessage(message);
+    if (message) setMessage(message);
     else setMessageWarning(WarningVisibility.SHOW);
 
     // If all fields are valid then change the button style to loading, reset all fields, try to send email then let user know if email was sent by changing the button style and displaying a notificiations
-    if (name !== '' && emailValidation === true && message !== '') {
+    if (name && emailValidation && message) {
       // Set email notificaiton to loading for when the POST request is processing
 
       setIsEmailSent(EmailSendingStyle.LOADING);
