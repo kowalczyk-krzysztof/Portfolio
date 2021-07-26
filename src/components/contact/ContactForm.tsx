@@ -192,7 +192,7 @@ export const ContactForm: FC = (): JSX.Element => {
     }
     if (targetName === FieldNames.EMAIL) {
       setEmail(targetValue);
-      if (regexCheck(targetValue) === false) {
+      if (!regexCheck(targetValue)) {
         setEmailWarning(WarningVisibility.SHOW);
         setEmailBorder(FieldBorderStyle.FAILURE);
         setEmailShadow(FieldShadowStyle.FAILURE);
@@ -231,7 +231,7 @@ export const ContactForm: FC = (): JSX.Element => {
 
     // Valdiating email field
     const emailValidation = regexCheck(email);
-    if (emailValidation === true) setEmail(email);
+    if (emailValidation) setEmail(email);
     else setEmailWarning(WarningVisibility.SHOW);
 
     // Validating message field

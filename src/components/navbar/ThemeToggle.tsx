@@ -17,8 +17,8 @@ export const ThemeToggle: FC = () => {
 
   const themeToggler = (e: MouseEvent<HTMLInputElement>): void => {
     const isChecked: boolean = e.currentTarget.checked;
-    if (isChecked === true) dispatch(SET_THEME(ThemeNames.DARK));
-    if (isChecked === false) dispatch(SET_THEME(ThemeNames.LIGHT));
+    if (isChecked) dispatch(SET_THEME(ThemeNames.DARK));
+    if (!isChecked) dispatch(SET_THEME(ThemeNames.LIGHT));
   };
 
   // This toggle check is needed so everything works properly with redux persist - IMPORTANT: has to defaultChecked NOT checked
