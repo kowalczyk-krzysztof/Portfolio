@@ -95,6 +95,13 @@ export const StyledLanguageButtons = styled.button`
   :hover {
     transform: scale(0.9, 0.9);
   }
+
+  @media only screen and (max-width: 400px) {
+    img {
+      width: 32px;
+      height: 32px;
+    }
+  }
 `;
 
 // Links
