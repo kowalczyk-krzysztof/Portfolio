@@ -2,11 +2,7 @@ import { FC, useEffect, KeyboardEvent, Dispatch, SetStateAction } from 'react';
 // Components
 import { MenuDisplay } from './Navbar';
 // Styling
-import {
-  StyledMenuButton,
-  StyledMenu,
-  MenuIconWrapper,
-} from './navbar-styling';
+import { StyledMenu, MenuIconWrapper } from './navbar-styling';
 import { bigIcon } from '../../createGlobalStyle';
 import { Bars, Times } from '@styled-icons/fa-solid';
 
@@ -54,7 +50,7 @@ export const MenuButton: FC<MenuButtonProps> = ({
 
   return (
     <StyledMenu>
-      <StyledMenuButton
+      <button
         onClick={clickHandler}
         onKeyDown={(e: KeyboardEvent<HTMLButtonElement>) => pressEsc(e)}
         data-testid={'menubutton'}
@@ -78,7 +74,7 @@ export const MenuButton: FC<MenuButtonProps> = ({
             />
           </MenuIconWrapper>
         )}
-      </StyledMenuButton>
+      </button>
     </StyledMenu>
   );
 };

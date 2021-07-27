@@ -33,21 +33,16 @@ export const StyledPicture = styled.img`
 // Text container
 export const StyledTextContainer = styled.div<{ background: string }>`
   width: 50%;
-  margin-right: 5vh;
   font-weight: 900;
   font-size: ${font1_25rem};
-
+  margin-right: 2rem;
   p {
     background: ${(props) => props.background};
     border: 5px dashed ${lightBlue};
-    padding: 2vh;
+    padding: 1rem;
     box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
       rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px,
       rgba(0, 0, 0, 0.09) 0px 32px 16px;
-  }
-
-  p:last-of-type {
-    margin-top: 5vh;
   }
 `;
 // Text + picture container
@@ -72,7 +67,6 @@ export const StyledAboutWrapper = styled.div`
       order: 2;
       text-align: center;
       margin-right: 0;
-      margin-top: 2vh;
     }
 
     ${StyledPictureContainer} {
@@ -92,7 +86,6 @@ export const StyledTechnologyContainer = styled.div`
   margin-top: 5vh;
   text-align: center;
   order: 3;
-  padding: 1vh;
   font-size: ${font1_25rem};
   text-shadow: 1px 1px #4d96bb;
   display: flex;
@@ -104,7 +97,8 @@ export const StyledTechnologyContainer = styled.div`
 export const StyledTechnologyWrapper = styled.div<{ background: string }>`
   background: ${(props) => props.background};
   border: 5px dashed ${lightBlue};
-  padding: 0.5vh 3vh 2vh 3vh;
+  padding: 1rem;
+  margin-bottom: 1rem;
   box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
     rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px,
     rgba(0, 0, 0, 0.09) 0px 32px 16px;
@@ -113,7 +107,6 @@ export const StyledTechnologyWrapper = styled.div<{ background: string }>`
 // Icon wrapper
 export const StyledTechnologyIconWrapper = styled.div`
   display: inline-flex;
-  text-align: center;
 `;
 
 // Icon container

@@ -19,7 +19,6 @@ from {opacity: 0;}
 `;
 // Icons
 export const MenuIconWrapper = styled.div`
-  padding-bottom: 5px;
   :hover {
     color: ${veryLightBlue};
   }
@@ -38,7 +37,6 @@ export const StyledLogo = styled.div`
 export const StyledThemeToggle = styled.div`
   order: 1;
   display: inline-flex;
-  margin-right: 5px;
 `;
 // Theme toggle slider
 export const StyledThemeToggleSlider = styled.input`
@@ -96,9 +94,6 @@ export const StyledLanguage = styled.div`
 export const StyledLanguageButtons = styled.button`
   :hover {
     transform: scale(1.1, 1.1);
-  }
-  :last-of-type {
-    margin-right: 10px;
   }
 `;
 
@@ -160,10 +155,6 @@ export const StyledFlexLinkList = styled.div`
 // Menu button container
 export const StyledMenu = styled.div`
   order: 2;
-`;
-// Menu button
-export const StyledMenuButton = styled.button`
-  margin-right: 5px;
 `;
 // Navbar
 export const StyledNavbar = styled.nav`

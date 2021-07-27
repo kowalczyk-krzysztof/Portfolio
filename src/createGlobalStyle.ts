@@ -59,7 +59,7 @@ export const darkTheme: ThemeProps = {
 // Styles
 export const MainContainer = styled.div`
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 100%;
   grid-template-rows: auto 1fr auto;
   grid-template-areas: 'navbar' 'content' 'footer';
   height: 100vh;
