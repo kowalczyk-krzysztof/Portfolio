@@ -1,13 +1,12 @@
 import styled from 'styled-components';
 // Variables
-import { lightBlue, font12px, font16px } from '../../createGlobalStyle';
+import { lightBlue, font1_25rem } from '../../createGlobalStyle';
 
 // Main container
 export const StyledAboutContainer = styled.main`
   z-index: 0;
-  margin-top: 6.5vh;
-  margin-bottom: 6vh;
   display: flex;
+  margin-bottom: 1rem;
   flex-direction: column;
   flex-wrap: wrap;
 `;
@@ -16,7 +15,6 @@ export const StyledAboutContainer = styled.main`
 export const StyledPictureContainer = styled.div`
   order: 1;
   display: flex;
-
   align-items: center;
   flex-wrap: nowrap;
 `;
@@ -27,7 +25,6 @@ export const StyledPicture = styled.img`
   border-radius: 25px;
   border: 5px solid ${lightBlue};
   order: 1;
-
   box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 15px,
     rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
     rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
@@ -38,7 +35,7 @@ export const StyledTextContainer = styled.div<{ background: string }>`
   width: 50%;
   margin-right: 5vh;
   font-weight: 900;
-  font-size: ${font12px};
+  font-size: ${font1_25rem};
 
   p {
     background: ${(props) => props.background};
@@ -96,12 +93,12 @@ export const StyledTechnologyContainer = styled.div`
   text-align: center;
   order: 3;
   padding: 1vh;
-  font-size: ${font16px};
-  font-weight: 500;
+  font-size: ${font1_25rem};
   text-shadow: 1px 1px #4d96bb;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  font-weight: 900;
 `;
 
 // Text + icons centered container
@@ -112,9 +109,6 @@ export const StyledTechnologyWrapper = styled.div<{ background: string }>`
   box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
     rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px,
     rgba(0, 0, 0, 0.09) 0px 32px 16px;
-  p {
-    width: 100%;
-  }
 `;
 
 // Icon wrapper

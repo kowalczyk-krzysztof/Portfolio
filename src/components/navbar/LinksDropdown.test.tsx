@@ -17,7 +17,7 @@ import {
 } from '../../features/localization/locales';
 // Components
 import { MenuDisplay } from './Navbar';
-import { LinkList } from './LinkList';
+import { LinksDropdown } from './LinksDropdown';
 
 let store = createTestStore();
 
@@ -36,7 +36,7 @@ describe('testing link list', () => {
     const { queryByTestId } = render(
       <Provider store={store}>
         <MemoryRouter>
-          <LinkList display={MenuDisplay.NONE} setDisplay={jest.fn()} />
+          <LinksDropdown display={MenuDisplay.NONE} setDisplay={jest.fn()} />
         </MemoryRouter>
       </Provider>
     );
@@ -53,7 +53,7 @@ describe('testing link list', () => {
     const { queryByTestId } = render(
       <Provider store={store}>
         <MemoryRouter>
-          <LinkList display={MenuDisplay.BLOCK} setDisplay={jest.fn()} />
+          <LinksDropdown display={MenuDisplay.BLOCK} setDisplay={jest.fn()} />
         </MemoryRouter>
       </Provider>
     );
@@ -71,7 +71,7 @@ describe('testing link list', () => {
     const { queryByTestId } = render(
       <Provider store={store}>
         <MemoryRouter>
-          <LinkList display={MenuDisplay.BLOCK} setDisplay={jest.fn()} />
+          <LinksDropdown display={MenuDisplay.BLOCK} setDisplay={jest.fn()} />
         </MemoryRouter>
       </Provider>
     );

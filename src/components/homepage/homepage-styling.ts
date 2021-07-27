@@ -5,20 +5,20 @@ import {
   black,
   lightBlue,
   lightBlueHover,
-  font16px,
-  font10px,
-  font12px,
-  font14px,
-  font24px,
+  font1_75rem,
+  font1rem,
+  font1_25rem,
+  font1_5rem,
+  font2_25rem,
 } from '../../createGlobalStyle';
 
 // Link
 export const StyledHomepageLink = styled(Link)`
   cursor: pointer;
-  font-size: ${font16px};
+  font-size: ${font1_75rem};
   font-weight: 600;
   box-sizing: border-box;
-  margin: ${font10px};
+  margin: ${font1rem};
   padding: calc(5px + 1vh);
   border: 2px solid ${black};
   border-radius: 10px;
@@ -36,6 +36,7 @@ export const HomepageContent = styled.main<{
   color: string;
 }>`
   /* This margin centers the container */
+  grid-area: pagecontent;
   margin: 0 auto;
   z-index: 0;
   margin-top: calc(20px + 6.5vh);
@@ -47,10 +48,10 @@ export const HomepageContent = styled.main<{
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
     rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
     rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-  font-size: ${font16px};
+  font-size: ${font1_75rem};
   font-weight: 500;
   border: 5px dashed ${lightBlue};
-  padding: ${font16px};
+  padding: ${font1_75rem};
   p,
   h1,
   h2 {
@@ -60,16 +61,16 @@ export const HomepageContent = styled.main<{
     margin-bottom: calc(30px + 1vh);
   }
   @media only screen and (min-width: 768px) {
-    font-size: ${font24px};
+    font-size: ${font2_25rem};
   }
   @media only screen and (max-width: 400px) {
-    font-size: ${font12px};
+    font-size: ${font1_25rem};
   }
   @media only screen and (max-width: 330px) {
-    font-size: ${font10px};
+    font-size: ${font1rem};
   }
   @media only screen and (max-height: 500px) {
-    font-size: ${font14px};
+    font-size: ${font1_5rem};
     margin-bottom: 6rem;
     margin-top: 4rem;
   }

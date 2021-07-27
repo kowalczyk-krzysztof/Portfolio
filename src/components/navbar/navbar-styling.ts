@@ -9,8 +9,7 @@ import {
   lightBlue,
   lightBlueHover,
   veryLightBlue,
-  font16px,
-  font20px,
+  font1_5rem,
 } from '../../createGlobalStyle';
 
 // This animation is needed to avoid flickering
@@ -35,17 +34,10 @@ export const StyledLogo = styled.div`
     color: ${lightBlueHover};
   }
 `;
-// Logo text
-export const StyledLogoH1 = styled.h1`
-  font-size: ${font20px};
-  margin: 10px 10px;
-  font-weight: 900;
-  color: ${lightBlue};
-`;
 // Theme toggle cintainer
 export const StyledThemeToggle = styled.div`
   order: 1;
-  display: block;
+  display: inline-flex;
   margin-right: 5px;
 `;
 // Theme toggle slider
@@ -102,33 +94,12 @@ export const StyledLanguage = styled.div`
 `;
 // Language toggle buttons
 export const StyledLanguageButtons = styled.button`
-  transform: scale(1.2);
-  cursor: pointer;
   :hover {
-    transform: scale(1.25, 1.25);
+    transform: scale(1.1, 1.1);
   }
-
   :last-of-type {
     margin-right: 10px;
   }
-`;
-/*
-Props with custom names in styled-components:
-You need to pass an interface with an object to the component.
-Example: 
-
-const foo = styled.div<{bar: any}>`
-color: black;
-`*/
-// Links container
-export const StyledLinks = styled.div<{
-  display: string;
-}>`
-  display: ${(props) => props.display};
-
-  order: 3;
-  width: 100%;
-  animation: ${MenuFade} 250ms ease-in-out both;
 `;
 
 // Links
@@ -147,14 +118,11 @@ export const StyledLink = styled(NavLink)`
   text-decoration: none;
   text-align: center;
   border-top: 1px ridge ${lightGray};
-  font-size: ${font16px};
+  font-size: ${font1_5rem};
   background: ${darkBlue};
   :hover {
     background: #415a77;
     color: ${veryLightBlue};
-  }
-  :last-child {
-    box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.4);
   }
   &.${(props) => props.activeClassName} {
     color: ${black};
@@ -165,18 +133,27 @@ export const StyledLink = styled(NavLink)`
     }
   }
 `;
+// Links container - max height has to be 0 for dropdown onClickAway to work properly
+export const StyledLinksDropdown = styled.div<{
+  display: string;
+}>`
+  grid-area: content;
+  z-index: 1;
+  display: ${(props) => props.display};
+  animation: ${MenuFade} 250ms ease-in-out both;
+  max-height: 0;
+  a {
+    color: white;
+  }
+`;
 
 // Link list at width > 768
 export const StyledFlexLinkList = styled.div`
-  display: inline-flex;
+  display: none;
   order: 1;
   flex: 1;
-
-  animation: none;
   ${StyledLink} {
-    top: 0;
     border: none;
-    box-shadow: none;
   }
 `;
 
@@ -187,35 +164,25 @@ export const StyledMenu = styled.div`
 // Menu button
 export const StyledMenuButton = styled.button`
   margin-right: 5px;
-  cursor: pointer;
 `;
-/* Navbar
-The logic behind this:
-1. On screen width >= 576x this is just a regular flex container with display row - the menu button is hidden (display: none)
-2. On screen width < 576 px all the elements you want to hide are set to display: none and the menu button is displayed
-3. Menu button toggles display betwen none and block. To achieve the column-like look, the display has to be block AND width: 100% and IMPORTANT - flex-wrep: wrap HAS TO BE SET ON THE NAVBAR OTHERWISE ITEMS WON'T GET PUSHED TO NEW LINE
-*/
+// Navbar
 export const StyledNavbar = styled.nav`
   grid-area: navbar;
-  position: absolute;
   display: flex;
-  flex-wrap: wrap;
-  width: 100%;
   justify-content: space-between;
-  z-index: 1;
   background: ${darkBlue};
   align-items: center;
   user-select: none;
   button {
-    background: none;
+    background: ${darkBlue};
     border: none;
+    cursor: pointer;
   }
   div,
   a {
     color: ${lightGray};
   }
 
-  /*Those settings are for non-mobile devices. Minimum width to cater for is 320px. */
   @media only screen and (min-width: 768px) {
     ${StyledLogo} {
       flex: 0;
@@ -223,30 +190,9 @@ export const StyledNavbar = styled.nav`
     ${StyledMenu} {
       display: none;
     }
-  }
-  @media only screen and (max-width: 330px) {
-    ${StyledLanguageButtons} {
-      padding-right: 2px;
-      margin-right: 2px;
-      padding-left: 3px;
-      transform: scale(1);
-      margin: 0px;
-      flex: 0;
-      :last-of-type {
-        margin-right: 0px;
-      }
-    }
 
-    ${StyledMenuButton} {
-      margin-right: 0px;
-      transform: scale(0.9);
-    }
-
-    ${StyledThemeToggle} {
-      flex: 0;
-      transform: scale(0.9);
-      margin: 0px;
-      padding: 0px;
+    ${StyledFlexLinkList} {
+      display: inline-flex;
     }
   }
 `;

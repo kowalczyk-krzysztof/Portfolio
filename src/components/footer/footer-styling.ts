@@ -6,7 +6,7 @@ import {
   lightGray,
   lightBlue,
   veryLightBlue,
-  font10px,
+  font1rem,
 } from '../../createGlobalStyle';
 
 // Links
@@ -28,7 +28,6 @@ export const StyledCopyright = styled.div`
   color: ${black};
   font-size: calc(6px + 1vh);
   background: ${lightBlue};
-  width: 100%;
   line-height: 0.1;
 `;
 // Social media links
@@ -36,7 +35,7 @@ export const StyledContactList = styled.div`
   display: inline;
   line-height: 0.1;
   p {
-    font-size: ${font10px};
+    font-size: ${font1rem};
     :after {
       content: ':';
     }
@@ -47,9 +46,7 @@ export const StyledFooter = styled.footer`
   grid-area: footer;
   display: flex;
   text-align: center;
-  flex-direction: row;
-  justify-content: center;
-  flex-wrap: wrap;
+  flex-direction: column;
   opacity: 0.9;
   background: ${darkBlue};
   box-shadow: 0px 0px 0px 2px rgba(0, 0, 0, 0.4);
