@@ -15,8 +15,6 @@ export const StyledNotificationWarning = styled.div<{ visibility: number }>`
   opacity: ${(props) => props.visibility};
   font-size: ${font1rem};
   color: #ff6161;
-  font-weight: 550;
-  line-height: 1.2;
   user-select: none;
 `;
 // Button container
@@ -30,7 +28,6 @@ export const StyledEmailNotification = styled.div<{ color: string }>`
   text-align: center;
   color: ${(props) => props.color};
   user-select: none;
-  font-weight: 550;
 `;
 // Characters left counter
 export const StyledCharactersLeft = styled.p`
@@ -55,13 +52,7 @@ export const StyledInput = styled.input<{
   border: string;
   shadow: string;
 }>`
-  outline: none;
-  font-size: ${font1_25rem};
   border: 2px solid ${(props) => props.border};
-  border-radius: 5px;
-  line-height: 1.2;
-  font-weight: 400;
-  margin-bottom: 0.5rem;
   :focus {
     box-shadow: 0 0 0 3px ${(props) => props.shadow};
   }
@@ -71,15 +62,7 @@ export const StyledTextArea = styled.textarea<{
   border: string;
   shadow: string;
 }>`
-  outline: none;
-  font-size: ${font1_25rem};
   border: 2px solid ${(props) => props.border};
-  border-radius: 5px;
-  line-height: 1.2;
-  font-weight: 400;
-  margin-bottom: 0.5rem;
-  resize: vertical;
-
   :focus {
     box-shadow: 0 0 0 3px ${(props) => props.shadow};
   }
@@ -88,7 +71,6 @@ export const StyledTextArea = styled.textarea<{
 export const StyledLabel = styled.label`
   user-select: none;
   margin-bottom: 10px;
-  font-size: ${font1_25rem};
 `;
 
 // Title and text below
@@ -101,6 +83,16 @@ export const StyledContactTitleContainer = styled.div`
 export const StyledFormElement = styled.div`
   display: flex;
   flex-direction: column;
+
+  input,
+  textarea {
+    outline: none;
+    font-size: ${font1_25rem};
+    border-radius: 5px;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+    resize: vertical;
+  }
 `;
 
 // Contact link container
@@ -141,10 +133,10 @@ export const StyledContactContainer = styled.main`
   z-index: 0;
   margin-bottom: 2rem;
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-
+  font-weight: 550;
+  ${font1_25rem}
   @media only screen and (min-width: 900px) {
     ${StyledContactTitleContainer} {
       font-size: ${font1_25rem};

@@ -36,11 +36,10 @@ export const HomepageContent = styled.main<{
   color: string;
 }>`
   /* This margin centers the container */
-  grid-area: pagecontent;
   margin: 0 auto;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
   z-index: 0;
-  margin-top: calc(20px + 6.5vh);
-  margin-bottom: 6vh;
   user-select: none;
   text-align: center;
   color: ${(props) => props.color};
@@ -71,7 +70,5 @@ export const HomepageContent = styled.main<{
   }
   @media only screen and (max-height: 500px) {
     font-size: ${font1_5rem};
-    margin-bottom: 6rem;
-    margin-top: 4rem;
   }
 `;
