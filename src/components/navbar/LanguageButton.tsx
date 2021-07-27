@@ -45,6 +45,8 @@ export const LanguageButton: FC<LanguageButtonProps> = ({
         alt={flagName}
         role="button"
         aria-label={aria}
+        width="40px"
+        height="40px"
       ></img>
     </StyledLanguageButtons>
   );

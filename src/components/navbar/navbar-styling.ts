@@ -31,8 +31,6 @@ export const StyledLogo = styled.div`
   order: 1;
   flex: 1;
   img {
-    width: 50px;
-    height: 50px;
     :hover {
       transform: scale(0.9, 0.9);
     }
@@ -96,11 +94,6 @@ export const StyledLanguage = styled.div`
 `;
 // Language toggle buttons
 export const StyledLanguageButtons = styled.button`
-  img {
-    width: 40px;
-    height: 40px;
-  }
-
   :hover {
     transform: scale(0.9, 0.9);
   }
