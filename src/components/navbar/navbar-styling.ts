@@ -2,6 +2,7 @@ import styled, { keyframes } from 'styled-components/macro';
 import { NavLink } from 'react-router-dom';
 // Variables
 import {
+  white,
   black,
   darkBlue,
   lightGray,
@@ -29,8 +30,12 @@ export const StyledLogo = styled.div`
   justify-content: flex-start;
   order: 1;
   flex: 1;
-  :hover {
-    color: ${lightBlueHover};
+  img {
+    width: 50px;
+    height: 50px;
+    :hover {
+      transform: scale(0.9, 0.9);
+    }
   }
 `;
 // Theme toggle cintainer
@@ -60,9 +65,9 @@ export const StyledThemeToggleSlider = styled.input`
   height: 30px;
   appearance: none; /* hides default checkbox*/
   background: ${veryLightBlue};
-  opacity: 0.9;
   border-radius: 20px; /* slider-like edges */
   transition: 0.6s; /* slow translition between toggles */
+
   :checked {
     background: ${veryDarkBlue};
   }
@@ -71,7 +76,6 @@ export const StyledThemeToggleSlider = styled.input`
     content: ''; /* needs to be empty */
     /* needs to be absolute*/
     position: absolute;
-    opacity: 0, 8;
     margin: -4px; /*if I set a border then I need to add a margin of equal px to circle */
     width: 30px;
     height: 30px;
@@ -92,6 +96,11 @@ export const StyledLanguage = styled.div`
 `;
 // Language toggle buttons
 export const StyledLanguageButtons = styled.button`
+  img {
+    width: 40px;
+    height: 40px;
+  }
+
   :hover {
     transform: scale(0.9, 0.9);
   }
@@ -145,7 +154,7 @@ export const StyledLinksDropdown = styled.div<{
   animation: ${MenuFade} 250ms ease-in-out both;
   max-height: 0;
   a {
-    color: white;
+    color: ${white};
   }
 `;
 
@@ -162,6 +171,11 @@ export const StyledFlexLinkList = styled.div`
 // Menu button container
 export const StyledMenu = styled.div`
   order: 2;
+  button {
+    :hover {
+      transform: scale(0.9, 0.9);
+    }
+  }
 `;
 // Navbar
 export const StyledNavbar = styled.nav`

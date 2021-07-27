@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 // Variables
 import {
+  white,
   darkBlue,
   lightGray,
   lightBlue,
@@ -56,6 +57,9 @@ export const StyledInput = styled.input<{
   :focus {
     box-shadow: 0 0 0 3px ${(props) => props.shadow};
   }
+  :hover {
+    box-shadow: 0 0 0 3px ${(props) => props.shadow};
+  }
 `;
 // Text area
 export const StyledTextArea = styled.textarea<{
@@ -64,6 +68,9 @@ export const StyledTextArea = styled.textarea<{
 }>`
   border: 2px solid ${(props) => props.border};
   :focus {
+    box-shadow: 0 0 0 3px ${(props) => props.shadow};
+  }
+  :hover {
     box-shadow: 0 0 0 3px ${(props) => props.shadow};
   }
 `;
@@ -105,15 +112,19 @@ export const StyledContactLinkContainer = styled.div`
 export const StyledContactLinkWrapper = styled.div`
   display: flex;
   align-items: center;
-  background: #fafafa;
+  background: ${white};
   border: 2px solid ${lightBlue};
   border-radius: 25px;
 `;
 
-// Contact links
+// Contact links - to style styled-icons, give them a class
 export const StyledContactLinkBig = styled.a`
-  text-decoration: none;
   padding: 5px;
+  .contacticons {
+    :hover {
+      transform: scale(0.9, 0.9);
+    }
+  }
 `;
 
 // Submit button

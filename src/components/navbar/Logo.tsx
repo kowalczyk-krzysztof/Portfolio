@@ -10,8 +10,6 @@ export const Logo: FC = () => {
         alt="logo"
         role="button"
         aria-label="logo"
-        width="50px"
-        height="50px"
       ></img>
     </StyledLogo>
   );
