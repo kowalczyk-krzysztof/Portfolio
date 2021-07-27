@@ -14,7 +14,7 @@ beforeEach(() => {
 });
 
 describe('testing menu toggle buttons', () => {
-  test('testing menu button rendering at < 768 width', () => {
+  test('testing menu button rendering', () => {
     // This is done because window.innerWidth property is readonly
     Object.defineProperty(window, 'innerWidth', {
       writable: true,
@@ -28,21 +28,6 @@ describe('testing menu toggle buttons', () => {
     );
     expect(window.innerWidth).toEqual(767);
     expect(queryByTestId('menubutton')).toBeInTheDocument();
-  });
-  test('testing menu button not rendering at > 768 width', () => {
-    // This is done because window.innerWidth property is readonly
-    Object.defineProperty(window, 'innerWidth', {
-      writable: true,
-      configurable: true,
-      value: 769,
-    });
-    const { queryByTestId } = render(
-      <Provider store={store}>
-        <MenuButton display={MenuDisplay.NONE} setDisplay={jest.fn()} />
-      </Provider>
-    );
-    expect(window.innerWidth).toEqual(769);
-    expect(queryByTestId('menubutton')).toBeNull();
   });
   test(`testing Bars component - queryByTestId('openmenu') rendering correctly `, () => {
     // This is done because window.innerWidth property is readonly

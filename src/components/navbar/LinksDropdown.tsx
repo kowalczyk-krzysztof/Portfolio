@@ -6,16 +6,16 @@ import { Locale } from '../../features/localization/locales';
 // Components
 import { MenuDisplay } from './Navbar';
 // Styling
-import { StyledLinks, StyledLink } from './navbar-styling';
+import { StyledLinksDropdown, StyledLink } from './navbar-styling';
 // Variables
 import { home, about, contact } from '../../App';
 
-export interface LinkListProps {
+export interface LinksDropdownProps {
   display: MenuDisplay;
   setDisplay: Dispatch<SetStateAction<MenuDisplay>>;
 }
 
-export const LinkList: FC<LinkListProps> = ({
+export const LinksDropdown: FC<LinksDropdownProps> = ({
   display,
   setDisplay,
 }): JSX.Element => {
@@ -36,7 +36,6 @@ export const LinkList: FC<LinkListProps> = ({
     if (display === MenuDisplay.NONE) return;
     if (ref.current && !ref.current.contains(e.target as Node))
       setDisplay(MenuDisplay.NONE);
-
     return document.removeEventListener('mousedown', clickAway);
   };
   // Need this so menu gets closed after redirecting
@@ -45,7 +44,7 @@ export const LinkList: FC<LinkListProps> = ({
   };
 
   return (
-    <StyledLinks display={display} ref={ref} data-testid={'linklist'}>
+    <StyledLinksDropdown display={display} ref={ref} data-testid={'linklist'}>
       <StyledLink
         to={home}
         exact={true}
@@ -72,6 +71,6 @@ export const LinkList: FC<LinkListProps> = ({
       >
         {navbarContact}
       </StyledLink>
-    </StyledLinks>
+    </StyledLinksDropdown>
   );
 };

@@ -13,7 +13,7 @@ import { Bars, Times } from '@styled-icons/fa-solid';
 /* How to useRef with TypeScript
 const inputRef = useRef<HTMLDivElement>(null);
 if (inputRef && inputRef.current) {
-   console.log(inputRef.current.offsetTop);
+console.log(inputRef.current.offsetTop);
 }
 */
 interface MenuButtonProps {
@@ -51,8 +51,6 @@ export const MenuButton: FC<MenuButtonProps> = ({
 
     return document.removeEventListener('scroll', scrollAway);
   };
-
-  // Both of those icons need to be same size otherwise there will be weird clipping
 
   return (
     <StyledMenu>
