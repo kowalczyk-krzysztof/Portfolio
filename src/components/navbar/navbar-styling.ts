@@ -93,7 +93,7 @@ export const StyledLanguage = styled.div`
 // Language toggle buttons
 export const StyledLanguageButtons = styled.button`
   :hover {
-    transform: scale(1.1, 1.1);
+    transform: scale(0.9, 0.9);
   }
 `;
 
