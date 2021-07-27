@@ -10,7 +10,6 @@ import {
   StyledContactLinkContainer,
   StyledContactLinkWrapper,
 } from './contact-styling';
-
 import { Linkedin, Twitter, Facebook } from '@styled-icons/bootstrap';
 import { GithubSquare } from '@styled-icons/fa-brands';
 
@@ -31,16 +30,36 @@ export const ContactTitle: FC = () => {
       <StyledContactLinkContainer>
         <StyledContactLinkWrapper>
           <StyledContactLinkBig href={github} target="_blank" rel="noopener">
-            <GithubSquare size="62" color="#211f1f" title="GitHub" />
+            <GithubSquare
+              size="62"
+              color="#211f1f"
+              title="GitHub"
+              className="contacticons"
+            />
           </StyledContactLinkBig>
           <StyledContactLinkBig href={linkedin} target="_blank" rel="noopener">
-            <Linkedin size="54" color="#0077B5" title="LinkedIn"></Linkedin>
+            <Linkedin
+              size="54"
+              color="#0077B5"
+              title="LinkedIn"
+              className="contacticons"
+            ></Linkedin>
           </StyledContactLinkBig>
           <StyledContactLinkBig href={twitter} target="_blank" rel="noopener">
-            <Twitter size="54" color="#1DA1F2" title="Twitter"></Twitter>
+            <Twitter
+              size="54"
+              color="#1DA1F2"
+              title="Twitter"
+              className="contacticons"
+            ></Twitter>
           </StyledContactLinkBig>
           <StyledContactLinkBig href={facebook} target="_blank" rel="noopener">
-            <Facebook size="54" color="#4267B2" title="Facebook"></Facebook>
+            <Facebook
+              size="54"
+              color="#4267B2"
+              title="Facebook"
+              className="contacticons"
+            ></Facebook>
           </StyledContactLinkBig>
         </StyledContactLinkWrapper>
       </StyledContactLinkContainer>

@@ -14,10 +14,12 @@ export const veryDarkBlue: string = '#1B263B';
 export const darkBlue: string = '#0d1b2a';
 export const lightGray: string = '#e0e1dd';
 export const black: string = '#000000';
+export const white: string = '#fafafa';
 export const lightBlue: string = '#4d96bb';
 export const lightBlueHover: string = '#74b9db';
 export const lightRed: string = '#f74848';
 export const lightGreen: string = '#0F0';
+
 // Icons
 export const smallIcon: string = '24';
 export const mediumIcon: string = '36';
