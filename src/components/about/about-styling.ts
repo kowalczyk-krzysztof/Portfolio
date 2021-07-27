@@ -98,7 +98,6 @@ export const StyledTechnologyContainer = styled.div`
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  font-weight: 900;
 `;
 
 // Text + icons centered container
