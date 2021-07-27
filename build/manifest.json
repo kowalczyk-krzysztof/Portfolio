@@ -1,6 +1,9 @@
 {
   "short_name": "Krzysztof",
   "name": "Krzysztof Kowalczyk - portfolio",
+  "description": "Krzysztof Kowalczyk - full stack developer making modern and responsive web applications",
+  "lang": "en-GB",
+  "orientation": "portrait-primary",
   "icons": [
     {
       "src": "manifest-icon-192.png",
