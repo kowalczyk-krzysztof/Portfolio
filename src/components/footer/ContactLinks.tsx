@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, Fragment } from 'react';
 // Redux
 import { useSelector } from 'react-redux';
 import { localizationSelector } from '../../features/localization/localizationSlice';
@@ -7,11 +7,7 @@ import { Locale } from '../../features/localization/locales';
 import { Envelope } from '@styled-icons/fa-regular/';
 import { Github } from '@styled-icons/fa-brands';
 import { Linkedin, Twitter, Facebook } from '@styled-icons/bootstrap';
-import {
-  FooterIconWrapper,
-  StyledContactList,
-  StyledContactLink,
-} from './footer-styling';
+import { FooterIconWrapper, StyledContactLink } from './footer-styling';
 import { smallIcon } from '../../createGlobalStyle';
 
 export const ContactLinks: FC = (): JSX.Element => {
@@ -27,9 +23,9 @@ export const ContactLinks: FC = (): JSX.Element => {
 
   // Can't use <Link> with external links
   return (
-    <StyledContactList data-testid={'footercontact'}>
-      <p data-testid={'footercontacttext'}>{navbarContact}</p>
-      <FooterIconWrapper>
+    <Fragment>
+      <p data-testid={'footercontacttext'}>{navbarContact}:</p>
+      <FooterIconWrapper data-testid={'footercontact'}>
         <StyledContactLink href={github} target="_blank" rel="noopener">
           <Github size={smallIcon} title="GitHub" />
         </StyledContactLink>
@@ -49,6 +45,6 @@ export const ContactLinks: FC = (): JSX.Element => {
           <Envelope size={smallIcon} title="Email Address" />
         </StyledContactLink>
       </FooterIconWrapper>
-    </StyledContactList>
+    </Fragment>
   );
 };

@@ -14,16 +14,13 @@ import {
 
 // Link
 export const StyledHomepageLink = styled(Link)`
+  align-self: center;
   cursor: pointer;
-  font-size: ${font1_75rem};
-  font-weight: 600;
-  box-sizing: border-box;
-  margin: ${font1rem};
-  padding: calc(5px + 1vh);
+  margin-top: 1rem;
+  padding: 1rem;
   border: 2px solid ${black};
   border-radius: 10px;
   text-decoration: none;
-  outline: none;
   color: ${black};
   background: ${lightBlue};
   :hover {
@@ -35,10 +32,11 @@ export const HomepageContent = styled.main<{
   background: string;
   color: string;
 }>`
-  /* This margin centers the container */
-  margin: 0 auto;
-  margin-top: 5rem;
-  margin-bottom: 5rem;
+  /* Align-self centers the container */
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  margin: 2rem;
   z-index: 0;
   user-select: none;
   text-align: center;
@@ -51,13 +49,12 @@ export const HomepageContent = styled.main<{
   font-weight: 500;
   border: 5px dashed ${lightBlue};
   padding: ${font1_75rem};
-  p,
   h1,
   h2 {
     margin: 5px;
   }
   p :last-of-type {
-    margin-bottom: calc(30px + 1vh);
+    margin-bottom: 2rem;
   }
   @media only screen and (min-width: 768px) {
     font-size: ${font2_25rem};

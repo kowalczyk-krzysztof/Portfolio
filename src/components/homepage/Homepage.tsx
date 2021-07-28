@@ -25,8 +25,8 @@ export const Homepage: FC = (): JSX.Element => {
     >
       <h1 data-testid={'homepageh1'}>{homeH1}</h1>
       <h2> {homeH2}</h2>
-      <p>{homeDescription}</p>
-      <p> {homePassion}</p>
+      <span>{homeDescription}</span>
+      <span> {homePassion}</span>
       <StyledHomepageLink to="/about" data-testid={'homepagelinktoabout'}>
         {learnMore}
       </StyledHomepageLink>
