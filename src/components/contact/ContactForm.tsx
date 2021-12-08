@@ -50,16 +50,13 @@ enum FieldNames {
   MESSAGE = 'message',
 }
 
-type WarningState = {
-  [key in FieldNames]: WarningVisibility;
-};
+type ContactStateOption =
+  | WarningVisibility
+  | FieldBorderStyle
+  | FieldShadowStyle;
 
-type BorderState = {
-  [key in FieldNames]: FieldBorderStyle;
-};
-
-type ShadowState = {
-  [key in FieldNames]: FieldShadowStyle;
+type FieldState<T extends ContactStateOption> = {
+  [key in FieldNames]: T;
 };
 
 // Emailjs settings
@@ -87,19 +84,19 @@ export const ContactForm: FC = (): JSX.Element => {
     buttonSend,
   } = localization;
 
-  const [warnings, setWarnings] = useState<WarningState>({
+  const [warnings, setWarnings] = useState<FieldState<WarningVisibility>>({
     [FieldNames.NAME]: WarningVisibility.HIDDEN,
     [FieldNames.EMAIL]: WarningVisibility.HIDDEN,
     [FieldNames.MESSAGE]: WarningVisibility.HIDDEN,
   });
 
-  const [borders, setBorders] = useState<BorderState>({
+  const [borders, setBorders] = useState<FieldState<FieldBorderStyle>>({
     [FieldNames.NAME]: FieldBorderStyle.DEFAULT,
     [FieldNames.EMAIL]: FieldBorderStyle.DEFAULT,
     [FieldNames.MESSAGE]: FieldBorderStyle.DEFAULT,
   });
 
-  const [shadows, setShadows] = useState<ShadowState>({
+  const [shadows, setShadows] = useState<FieldState<FieldShadowStyle>>({
     [FieldNames.NAME]: FieldShadowStyle.DEFAULT,
     [FieldNames.EMAIL]: FieldShadowStyle.DEFAULT,
     [FieldNames.MESSAGE]: FieldShadowStyle.DEFAULT,
@@ -143,17 +140,18 @@ export const ContactForm: FC = (): JSX.Element => {
   };
 
   const valueCheck = (fieldName: FieldNames, value: string | boolean): void => {
-    let warningValue: WarningVisibility = WarningVisibility.HIDDEN;
-    let borderValue: FieldBorderStyle = FieldBorderStyle.SUCCESS;
-    let shadowsValue: FieldShadowStyle = FieldShadowStyle.SUCCESS;
-    if (!value) {
-      warningValue = WarningVisibility.SHOW;
-      borderValue = FieldBorderStyle.FAILURE;
-      shadowsValue = FieldShadowStyle.FAILURE;
-    }
-    setWarnings({ ...warnings, [fieldName]: warningValue });
-    setBorders({ ...borders, [fieldName]: borderValue });
-    setShadows({ ...shadows, [fieldName]: shadowsValue });
+    setWarnings({
+      ...warnings,
+      [fieldName]: value ? WarningVisibility.HIDDEN : WarningVisibility.SHOW,
+    });
+    setBorders({
+      ...borders,
+      [fieldName]: value ? FieldBorderStyle.SUCCESS : FieldBorderStyle.FAILURE,
+    });
+    setShadows({
+      ...shadows,
+      [fieldName]: value ? FieldShadowStyle.SUCCESS : FieldShadowStyle.FAILURE,
+    });
   };
 
   const onChange = (
