@@ -20,8 +20,8 @@ export const StyledPictureContainer = styled.div`
 `;
 // Picture
 export const StyledPicture = styled.img`
-  width: 350px;
-  height: 350px;
+  width: 21.875rem;
+  height: 21.875rem;
   border-radius: 25px;
   border: 5px solid ${lightBlue};
   order: 1;
@@ -31,7 +31,7 @@ export const StyledPicture = styled.img`
 `;
 
 // Text container
-export const StyledTextContainer = styled.div<{ background: string }>`
+export const StyledTextContainer = styled.figcaption<{ background: string }>`
   width: 50%;
   font-weight: 900;
   font-size: ${font1_25rem};
@@ -39,14 +39,14 @@ export const StyledTextContainer = styled.div<{ background: string }>`
   p {
     background: ${(props) => props.background};
     border: 5px dashed ${lightBlue};
-    padding: 1rem;
+    padding: 1.5rem;
     box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
       rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px,
       rgba(0, 0, 0, 0.09) 0px 32px 16px;
   }
 `;
 // Text + picture container
-export const StyledAboutWrapper = styled.div`
+export const StyledAboutWrapper = styled.figure`
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -75,8 +75,8 @@ export const StyledAboutWrapper = styled.div`
 
     ${StyledPicture} {
       border-radius: 50%;
-      width: 255px;
-      height: 255px;
+      width: 15.938rem;
+      height: 15.938rem;
     }
   }
 `;
@@ -102,6 +102,7 @@ export const StyledTechnologyWrapper = styled.div<{ background: string }>`
   box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
     rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px,
     rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  width: 20rem;
 `;
 
 // Icon wrapper
