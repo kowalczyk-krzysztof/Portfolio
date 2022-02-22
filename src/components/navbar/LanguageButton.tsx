@@ -1,28 +1,22 @@
 import { FC, MouseEvent } from 'react';
-// Redux
 import { useDispatch, useSelector } from 'react-redux';
 import {
   localizationSelector,
   SET_LOCALE,
 } from '../../features/localization/localizationSlice';
 import { LocaleNames, Locale } from '../../features/localization/locales';
-// Styling
 import { StyledLanguageButtons } from './navbar-styling';
 
-interface LanguageButtonProps {
-  localeName: LocaleNames;
-  flagName: string;
-  aria: string;
-}
+type Props = {
+  readonly localeName: LocaleNames;
+  readonly flagName: string;
+  readonly aria: string;
+};
 
-export const LanguageButton: FC<LanguageButtonProps> = ({
-  localeName,
-  flagName,
-  aria,
-}): JSX.Element => {
+export const LanguageButton: FC<Props> = ({ localeName, flagName, aria }) => {
   const dispatch = useDispatch();
   const localization: Locale = useSelector(localizationSelector);
-  // Thanks to currying I can pass a value in onClick
+
   const localizationHandler =
     (language: LocaleNames) =>
     (e: MouseEvent<HTMLButtonElement>): void => {

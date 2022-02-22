@@ -1,24 +1,17 @@
 import { FC, useRef, useEffect, Dispatch, SetStateAction } from 'react';
-// Redux
 import { useSelector } from 'react-redux';
 import { localizationSelector } from '../../features/localization/localizationSlice';
 import { Locale } from '../../features/localization/locales';
-// Components
 import { MenuDisplay } from './Navbar';
-// Styling
 import { StyledLinksDropdown, StyledLink } from './navbar-styling';
-// Variables
 import { home, about, contact } from '../../App';
 
-export interface LinksDropdownProps {
-  display: MenuDisplay;
-  setDisplay: Dispatch<SetStateAction<MenuDisplay>>;
-}
+type Props = {
+  readonly display: MenuDisplay;
+  readonly setDisplay: Dispatch<SetStateAction<MenuDisplay>>;
+};
 
-export const LinksDropdown: FC<LinksDropdownProps> = ({
-  display,
-  setDisplay,
-}): JSX.Element => {
+export const LinksDropdown: FC<Props> = ({ display, setDisplay }) => {
   const localization: Locale = useSelector(localizationSelector);
   const { navbarAbout, navbarContact, navbarHome } = localization;
 

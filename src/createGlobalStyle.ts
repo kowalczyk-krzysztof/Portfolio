@@ -38,20 +38,18 @@ export interface CustomTheme {
   theme: ThemeProps;
 }
 
-// Light theme settings
 export const lightTheme: ThemeProps = {
   name: ThemeNames.LIGHT,
   background: veryLightBlue,
   color: black,
 };
-// Dark theme settings
+
 export const darkTheme: ThemeProps = {
   name: ThemeNames.DARK,
   background: veryDarkBlue,
   color: lightGray,
 };
 
-// Styles
 export const MainContainer = styled.div`
   display: grid;
   grid-template-columns: 100%;

@@ -1,5 +1,4 @@
 import { FC } from 'react';
-// Redux
 import { useSelector } from 'react-redux';
 import { localizationSelector } from '../../features/localization/localizationSlice';
 import { Locale } from '../../features/localization/locales';
@@ -7,10 +6,9 @@ import {
   themeSelector,
   ThemeProps,
 } from '../../features/themetoggle/themeToggleSlice';
-// Components
+
 import { Picture } from './Picture';
 import { TechnologyIcons } from './TechnologyIcons';
-// Styling
 import {
   StyledAboutContainer,
   StyledTechnologyContainer,
@@ -19,7 +17,7 @@ import {
   StyledTechnologyWrapper,
 } from './about-styling';
 
-export const About: FC = (): JSX.Element => {
+export const About: FC = () => {
   const localization: Locale = useSelector(localizationSelector);
   const { aboutDescription, aboutTechnologies, aboutHobbies } = localization;
 

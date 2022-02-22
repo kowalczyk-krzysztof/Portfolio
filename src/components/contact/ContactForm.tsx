@@ -1,14 +1,10 @@
 import { FC, useState, FormEvent } from 'react';
 import emailjs, { EmailJSResponseStatus } from 'emailjs-com';
-// Redux
 import { useSelector } from 'react-redux';
 import { localizationSelector } from '../../features/localization/localizationSlice';
 import { Locale } from '../../features/localization/locales';
-// Components
 import { EmailSentNotification } from './EmailSentNotification';
-// Utils
 import { regexCheck } from '../../utils/regexEmail';
-// Styling
 import {
   StyledLabel,
   StyledTextArea,
@@ -59,18 +55,14 @@ type FieldState<T extends ContactStateOption> = {
   [key in FieldNames]: T;
 };
 
-// Emailjs settings
-const serviceID: string = `${process.env.REACT_APP_EMAILJS_SERVICEID}`;
-const templateID: string = `${process.env.REACT_APP_EMAILJS_TEMPLATEID}`;
-const userID: string = `${process.env.REACT_APP_EMAILJS_USERID}`;
+const serviceID = `${process.env.REACT_APP_EMAILJS_SERVICEID}`;
+const templateID = `${process.env.REACT_APP_EMAILJS_TEMPLATEID}`;
+const userID = `${process.env.REACT_APP_EMAILJS_USERID}`;
 
-export const ContactForm: FC = (): JSX.Element => {
-  // Form id
-  const formId: string = 'contact';
-  // Text area max rows
-  const maxRows: number = 5;
-  // Max textarea character length
-  const messageMaxLength: number = 256;
+export const ContactForm: FC = () => {
+  const formId = 'contact';
+  const maxRows = 5;
+  const messageMaxLength = 256;
 
   const localization: Locale = useSelector(localizationSelector);
   const {
@@ -157,8 +149,8 @@ export const ContactForm: FC = (): JSX.Element => {
   const onChange = (
     e: FormEvent<HTMLInputElement | HTMLTextAreaElement>
   ): void => {
-    const targetValue: string = e.currentTarget.value;
-    const targetName: string = e.currentTarget.name;
+    const targetValue = e.currentTarget.value;
+    const targetName = e.currentTarget.name;
 
     if (targetName === FieldNames.NAME) {
       setName(targetValue);

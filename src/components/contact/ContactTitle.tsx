@@ -1,27 +1,23 @@
 import { FC } from 'react';
-// Redux
 import { useSelector } from 'react-redux';
 import { localizationSelector } from '../../features/localization/localizationSlice';
 import { Locale } from '../../features/localization/locales';
-// Stylinng
 import {
   StyledContactTitleContainer,
   StyledContactLinkBig,
   StyledContactLinkContainer,
   StyledContactLinkWrapper,
 } from './contact-styling';
-import { Linkedin, Twitter, Facebook } from '@styled-icons/bootstrap';
+import { Linkedin, Facebook } from '@styled-icons/bootstrap';
 import { GithubSquare } from '@styled-icons/fa-brands';
 
 export const ContactTitle: FC = () => {
-  // Localization
   const localization: Locale = useSelector(localizationSelector);
   const { contactH1, contactMeText } = localization;
 
-  const github: string = `${process.env.REACT_APP_GITHUB}`;
-  const linkedin: string = `${process.env.REACT_APP_LINKEDIN}`;
-  const twitter: string = `${process.env.REACT_APP_TWITTER}`;
-  const facebook: string = `${process.env.REACT_APP_FACEBOOK}`;
+  const github = `${process.env.REACT_APP_GITHUB}`;
+  const linkedin = `${process.env.REACT_APP_LINKEDIN}`;
+  const facebook = `${process.env.REACT_APP_FACEBOOK}`;
 
   return (
     <StyledContactTitleContainer data-testid={'contacttitle'}>
@@ -44,14 +40,6 @@ export const ContactTitle: FC = () => {
               title="LinkedIn"
               className="contacticons"
             ></Linkedin>
-          </StyledContactLinkBig>
-          <StyledContactLinkBig href={twitter} target="_blank" rel="noopener">
-            <Twitter
-              size="54"
-              color="#1DA1F2"
-              title="Twitter"
-              className="contacticons"
-            ></Twitter>
           </StyledContactLinkBig>
           <StyledContactLinkBig href={facebook} target="_blank" rel="noopener">
             <Facebook

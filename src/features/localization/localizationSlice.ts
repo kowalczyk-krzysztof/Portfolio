@@ -7,7 +7,6 @@ import {
   LocaleNames,
   locale_JP,
 } from './locales';
-// Interface for locale properties
 
 export interface Localization {
   locale: Locale;
@@ -16,7 +15,7 @@ export interface Localization {
 const initialState: Localization = {
   locale: locale_ENG,
 };
-// Slice
+
 const localizationSlice = createSlice({
   name: `localization`,
   initialState,
@@ -28,9 +27,9 @@ const localizationSlice = createSlice({
     },
   },
 });
-// Selectors
+
 export const localizationSelector = (state: RootState) =>
   state.localization.locale;
-// Actions and reducer
+
 export const { SET_LOCALE } = localizationSlice.actions;
 export default localizationSlice.reducer;

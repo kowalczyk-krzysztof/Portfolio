@@ -1,12 +1,10 @@
 import { FC, MouseEvent } from 'react';
-// Redux
 import { useDispatch, useSelector } from 'react-redux';
 import {
   SET_THEME,
   themeSelector,
   ThemeProps,
 } from '../../features/themetoggle/themeToggleSlice';
-// Styling
 import { StyledThemeToggle, StyledThemeToggleSlider } from './navbar-styling';
 import { ThemeNames } from '../../createGlobalStyle';
 

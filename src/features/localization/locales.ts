@@ -95,7 +95,7 @@ export const locale_JP: Locale = {
   navbarHome: 'ホーム',
   navbarAbout: '私について',
   navbarContact: 'お問い合わせ',
-  homeH1: 'はじめまして！',
+  homeH1: 'はじめまして!',
   homeH2: `Krzysztofです`,
   homeDescription: `フルスタック開発者`,
   homePassion: 'Web開発は私の情熱です',

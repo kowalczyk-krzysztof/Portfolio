@@ -1,9 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from '../../app/store';
-// Themes
 import { lightTheme, darkTheme, ThemeNames } from '../../createGlobalStyle';
-// Interface defining what props does a theme have
-
 export interface ThemeProps {
   name: ThemeNames;
   background: string;
@@ -17,7 +14,7 @@ interface ThemeToggleProps {
 export const initialState: ThemeToggleProps = {
   theme: lightTheme,
 };
-// Slice
+
 const themeToggleSlice = createSlice({
   name: `themeToggle`,
   initialState,
@@ -28,8 +25,8 @@ const themeToggleSlice = createSlice({
     },
   },
 });
-// Selectors
+
 export const themeSelector = (state: RootState) => state.themeToggle.theme;
-// Actions and reducer
+
 export const { SET_THEME } = themeToggleSlice.actions;
 export default themeToggleSlice.reducer;

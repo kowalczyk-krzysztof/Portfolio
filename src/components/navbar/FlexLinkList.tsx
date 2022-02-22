@@ -1,14 +1,11 @@
 import { FC } from 'react';
-// Redux
 import { useSelector } from 'react-redux';
 import { localizationSelector } from '../../features/localization/localizationSlice';
 import { Locale } from '../../features/localization/locales';
-// Styling
 import { StyledFlexLinkList, StyledLink } from './navbar-styling';
-// Variables
 import { home, about, contact } from '../../App';
 
-export const FlexLinkList: FC = (): JSX.Element => {
+export const FlexLinkList: FC = () => {
   const localization: Locale = useSelector(localizationSelector);
   const { navbarAbout, navbarContact, navbarHome } = localization;
 
