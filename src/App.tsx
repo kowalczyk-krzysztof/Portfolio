@@ -6,9 +6,8 @@ import {
 } from './features/themetoggle/themeToggleSlice';
 import { Navbar } from './components/navbar/Navbar';
 import { Footer } from './components/footer/Footer';
-import { About } from './components/about/About';
+import { Home } from './components/home/Home';
 import { Contact } from './components/contact/Contact';
-import { Homepage } from './components/homepage/Homepage';
 
 import { ThemeProvider } from 'styled-components';
 import {
@@ -18,7 +17,6 @@ import {
 } from './createGlobalStyle';
 
 export const home = '/';
-export const about = '/about';
 export const contact = '/contact';
 
 const App = () => {
@@ -31,9 +29,8 @@ const App = () => {
           <Navbar />
           <ContentContainer>
             <Switch>
-              <Route exact path={about} component={About}></Route>
               <Route exact path={contact} component={Contact}></Route>
-              <Route path={home} component={Homepage}></Route>
+              <Route path={home} component={Home}></Route>
             </Switch>
           </ContentContainer>
           <Footer />

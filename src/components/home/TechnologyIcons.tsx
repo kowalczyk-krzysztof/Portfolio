@@ -2,14 +2,14 @@ import { FC } from 'react';
 import {
   StyledTechnologyIcon,
   StyledTechnologyIconWrapper,
-} from './about-styling';
+} from './home-styling';
 import { ReactLogo, NodeJs } from '@styled-icons/fa-brands';
 import { Redux } from '@styled-icons/boxicons-logos';
 import { Typescript } from '@styled-icons/simple-icons';
 import { mediumIcon } from '../../createGlobalStyle';
 
 export const TechnologyIcons: FC = () => (
-  <StyledTechnologyIconWrapper data-testid={'abouticons'}>
+  <StyledTechnologyIconWrapper data-testid={'homeicons'}>
     <StyledTechnologyIcon>
       <ReactLogo size={mediumIcon} color="#61DBFB" title="React" />
     </StyledTechnologyIcon>

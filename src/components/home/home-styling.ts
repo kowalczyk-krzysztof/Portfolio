@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { lightBlue, font1_25rem } from '../../createGlobalStyle';
 
-export const StyledAboutContainer = styled.main`
+export const StyledHomeContainer = styled.main`
   z-index: 0;
   display: flex;
   margin-bottom: 1rem;
@@ -41,7 +41,7 @@ export const StyledTextContainer = styled.figcaption<{ background: string }>`
   }
 `;
 
-export const StyledAboutWrapper = styled.figure`
+export const StyledHomeWrapper = styled.figure`
   display: flex;
   flex-direction: row;
   justify-content: center;

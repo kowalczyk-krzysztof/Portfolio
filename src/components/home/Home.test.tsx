@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { createTestStore } from '../../app/store';
-import { About } from './About';
+import { Home } from './Home';
 import { darkTheme, lightTheme, ThemeNames } from '../../createGlobalStyle';
 import {
   SET_THEME,
@@ -22,48 +22,48 @@ beforeEach(() => {
   store = createTestStore();
 });
 
-describe('testing about main container', () => {
-  test('about main container rendering properly', () => {
+describe('testing home main container', () => {
+  test('home main container rendering properly', () => {
     const { queryByTestId } = render(
       <Provider store={store}>
         <MemoryRouter>
-          <About />
+          <Home />
         </MemoryRouter>
       </Provider>
     );
-    expect(queryByTestId('about')).toBeInTheDocument();
+    expect(queryByTestId('home')).toBeInTheDocument();
   });
-  test('about main container having correct theme', () => {
+  test('home main container having correct theme', () => {
     let state: ThemeProps = store.getState().themeToggle.theme;
     const { queryByTestId } = render(
       <Provider store={store}>
         <MemoryRouter>
-          <About />
+          <Home />
         </MemoryRouter>
       </Provider>
     );
-    expect(queryByTestId('about')).toBeInTheDocument();
+    expect(queryByTestId('home')).toBeInTheDocument();
     expect(state).toEqual(lightTheme);
     const description: HTMLElement | null =
-      screen.queryByTestId('aboutdescription');
+      screen.queryByTestId('homedescription');
     expect(description).toHaveStyle('background: #d6e9f5');
     store.dispatch(SET_THEME(ThemeNames.DARK));
     state = store.getState().themeToggle.theme;
     expect(state).toEqual(darkTheme);
     expect(description).toHaveStyle('background: #1B263B');
   });
-  test('about main container having correct text', () => {
+  test('home main container having correct text', () => {
     let state: Locale = store.getState().localization.locale;
     const { queryByTestId } = render(
       <Provider store={store}>
         <MemoryRouter>
-          <About />
+          <Home />
         </MemoryRouter>
       </Provider>
     );
     const description: HTMLElement | null =
-      screen.queryByTestId('aboutdescription');
-    expect(queryByTestId('about')).toBeInTheDocument();
+      screen.queryByTestId('homedescription');
+    expect(queryByTestId('home')).toBeInTheDocument();
     expect(state).toEqual(locale_ENG);
     expect(description).toHaveTextContent(
       `My name is Krzysztof and I'm a full stack developer. When I code, my goal is to create useful and high quality products other people can enjoy. I spend a lot of time on the internet and because of that I know what people want to see. Finding the right balance between user experience and efficiency is a challenge, but I believe I have what it takes to achieve it. Give me a problem and I will find a solution.`

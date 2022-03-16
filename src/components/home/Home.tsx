@@ -10,35 +10,35 @@ import {
 import { Picture } from './Picture';
 import { TechnologyIcons } from './TechnologyIcons';
 import {
-  StyledAboutContainer,
+  StyledHomeContainer,
   StyledTechnologyContainer,
   StyledTextContainer,
-  StyledAboutWrapper,
+  StyledHomeWrapper,
   StyledTechnologyWrapper,
-} from './about-styling';
+} from './home-styling';
 
-export const About: FC = () => {
+export const Home: FC = () => {
   const localization: Locale = useSelector(localizationSelector);
-  const { aboutDescription, aboutTechnologies, aboutHobbies } = localization;
+  const { homeDescription, homeTechnologies, homeHobbies } = localization;
 
   const theme: ThemeProps = useSelector(themeSelector);
   const { background } = theme;
 
   return (
-    <StyledAboutContainer data-testid={'about'}>
-      <StyledAboutWrapper>
+    <StyledHomeContainer data-testid={'home'}>
+      <StyledHomeWrapper>
         <StyledTextContainer background={background}>
-          <p data-testid={'aboutdescription'}>{aboutDescription}</p>
-          <p>{aboutHobbies}</p>
+          <p data-testid={'homedescription'}>{homeDescription}</p>
+          <p>{homeHobbies}</p>
         </StyledTextContainer>
         <Picture />
-      </StyledAboutWrapper>
+      </StyledHomeWrapper>
       <StyledTechnologyContainer>
         <StyledTechnologyWrapper background={background}>
-          <p>{aboutTechnologies}</p>
+          <p>{homeTechnologies}</p>
           <TechnologyIcons />
         </StyledTechnologyWrapper>
       </StyledTechnologyContainer>
-    </StyledAboutContainer>
+    </StyledHomeContainer>
   );
 };

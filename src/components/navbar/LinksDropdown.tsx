@@ -4,7 +4,7 @@ import { localizationSelector } from '../../features/localization/localizationSl
 import { Locale } from '../../features/localization/locales';
 import { MenuDisplay } from './Navbar';
 import { StyledLinksDropdown, StyledLink } from './navbar-styling';
-import { home, about, contact } from '../../App';
+import { home, contact } from '../../App';
 
 type Props = {
   readonly display: MenuDisplay;
@@ -13,7 +13,7 @@ type Props = {
 
 export const LinksDropdown: FC<Props> = ({ display, setDisplay }) => {
   const localization: Locale = useSelector(localizationSelector);
-  const { navbarAbout, navbarContact, navbarHome } = localization;
+  const { navbarContact, navbarHome } = localization;
 
   /* My previous method of closing menu on clicking away had a big drawback - rapid clicking links wouldn't work. 
     So now I add a reference to the dropdown menu container and an event listener to document. If ref.current doesn't contain the component then close the menu.
@@ -47,14 +47,6 @@ export const LinksDropdown: FC<Props> = ({ display, setDisplay }) => {
         data-testid={'homelink'}
       >
         {navbarHome}
-      </StyledLink>
-      <StyledLink
-        to={about}
-        activeClassName="active"
-        onClick={closeMenuWhenRedirected}
-        aria-label={about}
-      >
-        {navbarAbout}
       </StyledLink>
       <StyledLink
         to={contact}

@@ -3,11 +3,11 @@ import { useSelector } from 'react-redux';
 import { localizationSelector } from '../../features/localization/localizationSlice';
 import { Locale } from '../../features/localization/locales';
 import { StyledFlexLinkList, StyledLink } from './navbar-styling';
-import { home, about, contact } from '../../App';
+import { home, contact } from '../../App';
 
 export const FlexLinkList: FC = () => {
   const localization: Locale = useSelector(localizationSelector);
-  const { navbarAbout, navbarContact, navbarHome } = localization;
+  const { navbarContact, navbarHome } = localization;
 
   return (
     <StyledFlexLinkList data-testid={'flexlinklist'}>
@@ -19,9 +19,6 @@ export const FlexLinkList: FC = () => {
         data-testid={'flexhomelink'}
       >
         {navbarHome}
-      </StyledLink>
-      <StyledLink to={about} activeClassName="active" aria-label={about}>
-        {navbarAbout}
       </StyledLink>
       <StyledLink to={contact} activeClassName="active" aria-label={contact}>
         {navbarContact}
