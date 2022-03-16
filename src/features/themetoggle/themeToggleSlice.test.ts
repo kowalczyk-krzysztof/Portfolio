@@ -1,4 +1,3 @@
-// Redux
 import { createTestStore } from '../../app/store';
 import { ThemeNames, darkTheme, lightTheme } from '../../createGlobalStyle';
 import { SET_THEME, ThemeProps } from './themeToggleSlice';

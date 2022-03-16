@@ -1,8 +1,5 @@
-// Testing libraries
 import { render, screen } from '@testing-library/react';
-// React router
 import { MemoryRouter } from 'react-router-dom';
-// Redux
 import { Provider } from 'react-redux';
 import { createTestStore } from '../../app/store';
 import { darkTheme, lightTheme, ThemeNames } from '../../createGlobalStyle';
@@ -17,7 +14,6 @@ import {
   locale_ENG,
   locale_JP,
 } from '../../features/localization/locales';
-// Components
 import { Homepage } from './Homepage';
 
 let store = createTestStore();

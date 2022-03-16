@@ -16,21 +16,20 @@ export const MenuButton: FC<Props> = ({ display, setDisplay }) => {
       return document.addEventListener('scroll', scrollAway, { once: true });
   });
 
-  const clickHandler = (): void => {
+  const clickHandler = () => {
     if (display === MenuDisplay.NONE) setDisplay(MenuDisplay.BLOCK);
     else setDisplay(MenuDisplay.NONE);
   };
 
-  const scrollAway = (): void => {
+  const scrollAway = () => {
     setDisplay(MenuDisplay.NONE);
   };
 
-  const pressEsc = (e: KeyboardEvent<HTMLButtonElement>): void => {
+  const pressEsc = (e: KeyboardEvent<HTMLButtonElement>) => {
     e.preventDefault(); // has to be done or otherwise space would trigger the button
     if (e.key === `Escape`) {
       setDisplay(MenuDisplay.NONE);
     }
-
     return document.removeEventListener('scroll', scrollAway);
   };
 

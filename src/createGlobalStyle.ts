@@ -2,7 +2,6 @@ import { ThemeProps } from './features/themetoggle/themeToggleSlice';
 import styled from 'styled-components';
 import { createGlobalStyle } from 'styled-components';
 
-// Colors
 export const veryLightBlue: string = '#d6e9f5';
 export const veryDarkBlue: string = '#1B263B';
 export const darkBlue: string = '#0d1b2a';
@@ -13,11 +12,11 @@ export const lightBlue: string = '#4d96bb';
 export const lightBlueHover: string = '#74b9db';
 export const lightRed: string = '#f74848';
 export const lightGreen: string = '#0F0';
-// Icons
+
 export const smallIcon: string = '24';
 export const mediumIcon: string = '36';
 export const bigIcon: string = '38';
-// Fonts
+
 export const font1rem: string = '1rem';
 export const font1_25rem: string = '1.25rem';
 export const font1_5rem: string = '1.5rem';
@@ -25,18 +24,13 @@ export const font1_75rem: string = '1.75rem';
 export const font2rem: string = '2rem';
 export const font2_25rem: string = '2.25rem';
 
-/*Styled components global ThemeProps explained.
-1. Define an interface that will contain all theme props
-2. Define an interface CustomTheme with property "theme" that will be of type "ThemeProps" and use it in createGlobalStyle<CustomTheme>
-3. Wrap <App/> in <ThemeProvider and add a listener to store (or state) so you can toggle themes
-*/
 export enum ThemeNames {
   DARK = 'DARK',
   LIGHT = 'LIGHT',
 }
-export interface CustomTheme {
+export type CustomTheme = {
   theme: ThemeProps;
-}
+};
 
 export const lightTheme: ThemeProps = {
   name: ThemeNames.LIGHT,

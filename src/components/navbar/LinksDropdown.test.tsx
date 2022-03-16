@@ -1,10 +1,6 @@
 import { createTestStore } from '../../app/store';
-
-// Testing libraries
 import { render, screen } from '@testing-library/react';
-// React router
 import { MemoryRouter } from 'react-router-dom';
-// Redux
 import { Provider } from 'react-redux';
 import {
   SET_LOCALE,
@@ -15,7 +11,6 @@ import {
   LocaleNames,
   locale_JP,
 } from '../../features/localization/locales';
-// Components
 import { MenuDisplay } from './Navbar';
 import { LinksDropdown } from './LinksDropdown';
 

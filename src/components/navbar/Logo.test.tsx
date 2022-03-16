@@ -1,9 +1,6 @@
-// Testing libraries
 import { render } from '@testing-library/react';
-// Redux
 import { Provider } from 'react-redux';
 import { createTestStore } from '../../app/store';
-// Components
 import { Logo } from './Logo';
 
 let store = createTestStore();

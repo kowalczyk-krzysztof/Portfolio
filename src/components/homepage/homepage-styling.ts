@@ -1,6 +1,5 @@
 import styled from 'styled-components/macro';
 import { Link } from 'react-router-dom';
-// Variables
 import {
   black,
   lightBlue,
@@ -12,7 +11,6 @@ import {
   font2_25rem,
 } from '../../createGlobalStyle';
 
-// Link
 export const StyledHomepageLink = styled(Link)`
   align-self: center;
   cursor: pointer;
@@ -27,7 +25,7 @@ export const StyledHomepageLink = styled(Link)`
     background: ${lightBlueHover};
   }
 `;
-// Homepage container
+
 export const HomepageContent = styled.main<{
   background: string;
   color: string;

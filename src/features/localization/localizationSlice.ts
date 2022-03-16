@@ -8,9 +8,9 @@ import {
   locale_JP,
 } from './locales';
 
-export interface Localization {
-  locale: Locale;
-}
+export type Localization = {
+  readonly locale: Locale;
+};
 
 const initialState: Localization = {
   locale: locale_ENG,
@@ -21,9 +21,19 @@ const localizationSlice = createSlice({
   initialState,
   reducers: {
     SET_LOCALE(state, action: PayloadAction<LocaleNames>) {
-      if (action.payload === LocaleNames.ENG) state.locale = locale_ENG;
-      if (action.payload === LocaleNames.PL) state.locale = locale_PL;
-      if (action.payload === LocaleNames.JP) state.locale = locale_JP;
+      switch (action.payload) {
+        case LocaleNames.ENG:
+          state.locale = locale_ENG;
+          break;
+        case LocaleNames.PL:
+          state.locale = locale_PL;
+          break;
+        case LocaleNames.JP:
+          state.locale = locale_JP;
+          break;
+        default:
+          break;
+      }
     },
   },
 });

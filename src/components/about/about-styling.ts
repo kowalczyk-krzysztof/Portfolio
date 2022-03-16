@@ -1,8 +1,6 @@
 import styled from 'styled-components';
-// Variables
 import { lightBlue, font1_25rem } from '../../createGlobalStyle';
 
-// Main container
 export const StyledAboutContainer = styled.main`
   z-index: 0;
   display: flex;
@@ -11,14 +9,12 @@ export const StyledAboutContainer = styled.main`
   flex-wrap: wrap;
 `;
 
-// Picture container
 export const StyledPictureContainer = styled.div`
   order: 1;
   display: flex;
   align-items: center;
   flex-wrap: nowrap;
 `;
-// Picture
 export const StyledPicture = styled.img`
   width: 21.875rem;
   height: 21.875rem;
@@ -30,7 +26,6 @@ export const StyledPicture = styled.img`
     rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 `;
 
-// Text container
 export const StyledTextContainer = styled.figcaption<{ background: string }>`
   width: 50%;
   font-weight: 900;
@@ -45,7 +40,7 @@ export const StyledTextContainer = styled.figcaption<{ background: string }>`
       rgba(0, 0, 0, 0.09) 0px 32px 16px;
   }
 `;
-// Text + picture container
+
 export const StyledAboutWrapper = styled.figure`
   display: flex;
   flex-direction: row;
@@ -81,7 +76,6 @@ export const StyledAboutWrapper = styled.figure`
   }
 `;
 
-// Text + icons  main container
 export const StyledTechnologyContainer = styled.div`
   margin-top: 5vh;
   text-align: center;
@@ -93,7 +87,6 @@ export const StyledTechnologyContainer = styled.div`
   flex-wrap: wrap;
 `;
 
-// Text + icons centered container
 export const StyledTechnologyWrapper = styled.div<{ background: string }>`
   background: ${(props) => props.background};
   border: 5px dashed ${lightBlue};
@@ -105,12 +98,9 @@ export const StyledTechnologyWrapper = styled.div<{ background: string }>`
   width: 20rem;
 `;
 
-// Icon wrapper
 export const StyledTechnologyIconWrapper = styled.div`
   display: inline-flex;
 `;
-
-// Icon container
 export const StyledTechnologyIcon = styled.div`
   padding: 2px;
 `;

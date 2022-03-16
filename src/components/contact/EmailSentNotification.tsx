@@ -16,18 +16,23 @@ export const EmailSentNotification: FC<Props> = ({ isEmailSent }) => {
   const [text, setText] = useState<string>('');
 
   useEffect(() => {
-    if (isEmailSent === EmailSendingStyle.LOADING) {
-      setColor(lightGray);
-      setText(sendEmailLoading);
-    } else if (isEmailSent === EmailSendingStyle.SUCCESS) {
-      setColor(lightGreen);
-      setText(sendEmailSuccess);
-    } else if (isEmailSent === EmailSendingStyle.FAILURE) {
-      setColor(lightRed);
-      setText(sendEmailFailure);
-    } else {
-      setColor('');
-      setText('');
+    switch (isEmailSent) {
+      case EmailSendingStyle.LOADING:
+        setColor(lightGray);
+        setText(sendEmailLoading);
+        break;
+      case EmailSendingStyle.SUCCESS:
+        setColor(lightGreen);
+        setText(sendEmailSuccess);
+        break;
+      case EmailSendingStyle.FAILURE:
+        setColor(lightRed);
+        setText(sendEmailFailure);
+        break;
+      default:
+        setColor('');
+        setText('');
+        break;
     }
   }, [isEmailSent, sendEmailFailure, sendEmailSuccess, sendEmailLoading]);
 

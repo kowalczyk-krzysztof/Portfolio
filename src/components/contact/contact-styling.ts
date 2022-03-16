@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-// Variables
 import {
   white,
   darkBlue,
@@ -11,32 +10,31 @@ import {
   font1_5rem,
 } from '../../createGlobalStyle';
 
-// Invalid input warnings
 export const StyledNotificationWarning = styled.div<{ visibility: number }>`
   opacity: ${(props) => props.visibility};
   font-size: ${font1rem};
   color: #ff6161;
   user-select: none;
 `;
-// Button container
+
 export const StyledButtonContainer = styled.div`
   display: flex;
   flex-direction: column;
 `;
-// Email status
+
 export const StyledEmailNotification = styled.div<{ color: string }>`
   font-size: ${font1rem};
   text-align: center;
   color: ${(props) => props.color};
   user-select: none;
 `;
-// Characters left counter
+
 export const StyledCharactersLeft = styled.p`
   margin: 0;
   margin-top: 0.5rem;
   text-align: center;
 `;
-// Form container
+
 export const StyledForm = styled.form`
   color: ${lightGray};
   background: ${darkBlue};
@@ -48,7 +46,6 @@ export const StyledForm = styled.form`
   padding: 1rem;
 `;
 
-// Input field
 export const StyledInput = styled.input<{
   border: string;
   shadow: string;
@@ -61,7 +58,7 @@ export const StyledInput = styled.input<{
     box-shadow: 0 0 0 3px ${(props) => props.shadow};
   }
 `;
-// Text area
+
 export const StyledTextArea = styled.textarea<{
   border: string;
   shadow: string;
@@ -74,19 +71,18 @@ export const StyledTextArea = styled.textarea<{
     box-shadow: 0 0 0 3px ${(props) => props.shadow};
   }
 `;
-// Label
+
 export const StyledLabel = styled.label`
   user-select: none;
   margin-bottom: 10px;
 `;
 
-// Title and text below
 export const StyledContactTitleContainer = styled.div`
   font-weight: bold;
   text-align: center;
   margin: 2rem;
 `;
-// Form section wrapper
+
 export const StyledFormElement = styled.div`
   display: flex;
   flex-direction: column;
@@ -102,13 +98,12 @@ export const StyledFormElement = styled.div`
   }
 `;
 
-// Contact link container
 export const StyledContactLinkContainer = styled.div`
   display: flex;
   justify-content: center;
   margin-bottom: 1rem;
 `;
-// Contact link wrapper
+
 export const StyledContactLinkWrapper = styled.div`
   display: flex;
   align-items: center;
@@ -117,7 +112,7 @@ export const StyledContactLinkWrapper = styled.div`
   border-radius: 25px;
 `;
 
-// Contact links - to style styled-icons, give them a class
+// to style styled-icons, give them a class
 export const StyledContactLinkBig = styled.a`
   padding: 5px;
   .contacticons {
@@ -127,7 +122,6 @@ export const StyledContactLinkBig = styled.a`
   }
 `;
 
-// Submit button
 export const StyledSubmitButton = styled.button`
   background: ${lightBlue};
   cursor: pointer;
@@ -139,7 +133,7 @@ export const StyledSubmitButton = styled.button`
     background: ${lightBlueHover};
   }
 `;
-// Main container
+
 export const StyledContactContainer = styled.main`
   z-index: 0;
   margin-bottom: 2rem;

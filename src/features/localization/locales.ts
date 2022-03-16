@@ -1,39 +1,36 @@
-// Values for locale names
 export enum LocaleNames {
   ENG = 'ENG',
   PL = 'PL',
   JP = 'JP',
 }
-// Locale interface
-export interface Locale {
-  name: LocaleNames;
-  navbarHome: string;
-  navbarAbout: string;
-  navbarContact: string;
-  homeH1: string;
-  homeH2: string;
-  homeDescription: string;
-  homePassion: string;
-  learnMore: string;
-  buttonSend: string;
-  contactH1: string;
-  contactNameField: string;
-  contactEmailField: string;
-  contactMessageField: string;
-  inputCharactersLeft: string;
-  enterName: string;
-  invalidEmail: string;
-  enterMessage: string;
-  sendEmailLoading: string;
-  sendEmailSuccess: string;
-  sendEmailFailure: string;
-  contactMeText: string;
-  aboutDescription: string;
-  aboutTechnologies: string;
-  aboutHobbies: string;
-}
+export type Locale = {
+  readonly name: LocaleNames;
+  readonly navbarHome: string;
+  readonly navbarAbout: string;
+  readonly navbarContact: string;
+  readonly homeH1: string;
+  readonly homeH2: string;
+  readonly homeDescription: string;
+  readonly homePassion: string;
+  readonly learnMore: string;
+  readonly buttonSend: string;
+  readonly contactH1: string;
+  readonly contactNameField: string;
+  readonly contactEmailField: string;
+  readonly contactMessageField: string;
+  readonly inputCharactersLeft: string;
+  readonly enterName: string;
+  readonly invalidEmail: string;
+  readonly enterMessage: string;
+  readonly sendEmailLoading: string;
+  readonly sendEmailSuccess: string;
+  readonly sendEmailFailure: string;
+  readonly contactMeText: string;
+  readonly aboutDescription: string;
+  readonly aboutTechnologies: string;
+  readonly aboutHobbies: string;
+};
 
-// English locale
 export const locale_ENG: Locale = {
   name: LocaleNames.ENG,
   navbarHome: 'Home',
@@ -61,7 +58,7 @@ export const locale_ENG: Locale = {
   aboutTechnologies: `Technologies I use:`,
   aboutHobbies: `In my free time I like to work on improving myself. I believe that staying fit has a huge impact on productivity, so I try to stay in shape. Learning languages is my hobby - knowing a language opens a whole new world and makes you grow as a person. Currently I can speak English and Polish fluently and I'm working on reaching fluency in Japanese.`,
 };
-// Polish locale
+
 export const locale_PL: Locale = {
   name: LocaleNames.PL,
   navbarHome: 'Strona Główna',
@@ -89,7 +86,7 @@ export const locale_PL: Locale = {
   aboutTechnologies: `Technologie, których używam:`,
   aboutHobbies: `W wolnym czasie lubię pracować nad sobą. Uważam, że zdrowy tryb życia ma ogromny wpływ na produktywność, więc staram się żyć aktywnie. Moim hobby jest uczenie się języków - gdy poznasz obcy język, otwiera się przed tobą zupełnie nowy świat, co poszerza twoje horyzonty. Obecnie posługuje się biegle językiem angielskim i polskim oraz japońskim w stopniu zaawansowanym.`,
 };
-// Japanese locale
+
 export const locale_JP: Locale = {
   name: LocaleNames.JP,
   navbarHome: 'ホーム',

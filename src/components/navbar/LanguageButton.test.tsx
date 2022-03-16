@@ -1,7 +1,5 @@
-// Testing libraries
 import { render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-// Redux
 import { createTestStore } from '../../app/store';
 import { Provider } from 'react-redux';
 import { FlagNames, AriaLables } from './LanguageToggle';
@@ -11,7 +9,6 @@ import {
   LocaleNames,
   locale_JP,
 } from '../../features/localization/locales';
-// Components
 import { LanguageButton } from './LanguageButton';
 
 let store = createTestStore();

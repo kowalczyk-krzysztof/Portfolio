@@ -1,6 +1,5 @@
 import styled, { keyframes } from 'styled-components/macro';
 import { NavLink } from 'react-router-dom';
-// Variables
 import {
   white,
   black,
@@ -18,13 +17,13 @@ const MenuFade = keyframes`
 from {opacity: 0;}
   to {opacity: 1;}
 `;
-// Icons
+
 export const MenuIconWrapper = styled.div`
   :hover {
     color: ${veryLightBlue};
   }
 `;
-// Logo container
+
 export const StyledLogo = styled.div`
   display: flex;
   justify-content: flex-start;
@@ -36,12 +35,12 @@ export const StyledLogo = styled.div`
     }
   }
 `;
-// Theme toggle cintainer
+
 export const StyledThemeToggle = styled.div`
   order: 1;
   display: inline-flex;
 `;
-// Theme toggle slider
+
 export const StyledThemeToggleSlider = styled.input`
   /* How this works:
     // The box 
@@ -86,13 +85,13 @@ export const StyledThemeToggleSlider = styled.input`
     transform: scale(0.85) translateX(34px); /* this does the sliding process */
   }
 `;
-// Language toggle container
+
 export const StyledLanguage = styled.div`
   order: 2;
   display: flex;
   justify-content: flex-end;
 `;
-// Language toggle buttons
+
 export const StyledLanguageButtons = styled.button`
   :hover {
     transform: scale(0.9, 0.9);
@@ -106,7 +105,6 @@ export const StyledLanguageButtons = styled.button`
   }
 `;
 
-// Links
 /*
 To make links highlight on active you need to give them a class property  
 activeClassName="active" (can be any name) and then do it like this
@@ -137,7 +135,7 @@ export const StyledLink = styled(NavLink)`
     }
   }
 `;
-// Links container - max height has to be 0 for dropdown onClickAway to work properly
+// max height has to be 0 for dropdown onClickAway to work properly
 export const StyledLinksDropdown = styled.div<{
   display: string;
 }>`
@@ -151,7 +149,6 @@ export const StyledLinksDropdown = styled.div<{
   }
 `;
 
-// Link list at width > 768
 export const StyledFlexLinkList = styled.div`
   display: none;
   order: 1;
@@ -161,7 +158,6 @@ export const StyledFlexLinkList = styled.div`
   }
 `;
 
-// Menu button container
 export const StyledMenu = styled.div`
   order: 2;
   button {
@@ -170,7 +166,7 @@ export const StyledMenu = styled.div`
     }
   }
 `;
-// Navbar
+
 export const StyledNavbar = styled.nav`
   grid-area: navbar;
   display: flex;
