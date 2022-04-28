@@ -74,6 +74,14 @@ export const StyledHomeWrapper = styled.figure`
       height: 15.938rem;
     }
   }
+
+  @media only screen and (max-width: 400px) {
+    ${StyledPicture} {
+      border-radius: 50%;
+      width: 12rem;
+      height: 12rem;
+    }
+  }
 `;
 
 export const StyledTechnologyContainer = styled.div`
@@ -96,6 +104,9 @@ export const StyledTechnologyWrapper = styled.div<{ background: string }>`
     rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px,
     rgba(0, 0, 0, 0.09) 0px 32px 16px;
   width: 20rem;
+  @media only screen and (max-width: 400px) {
+    width: 10rem;
+  }
 `;
 
 export const StyledTechnologyIconWrapper = styled.div`

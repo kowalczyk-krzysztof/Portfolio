@@ -9,7 +9,7 @@ import {
 
 export const StyledContactLink = styled.a`
   color: ${lightGray};
-  padding-right: 5px;
+  padding-right: 10px;
   :hover {
     color: ${veryLightBlue};
   }

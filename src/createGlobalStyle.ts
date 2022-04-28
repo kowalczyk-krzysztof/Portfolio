@@ -13,7 +13,7 @@ export const lightBlueHover: string = '#74b9db';
 export const lightRed: string = '#f74848';
 export const lightGreen: string = '#0F0';
 
-export const smallIcon: string = '24';
+export const smallIcon: string = '28';
 export const mediumIcon: string = '36';
 export const bigIcon: string = '38';
 
